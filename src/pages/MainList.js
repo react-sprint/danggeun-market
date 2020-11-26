@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 function MainList() {
   return (
     <div>
-      <h2>list home</h2>
+      <h2>HOME</h2>
       <Link to="/write-new-stuff">ss</Link>
     </div>
   );
