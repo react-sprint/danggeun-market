@@ -1,7 +1,12 @@
 import React from 'react';
+import Templates from './components/neighborhood/Templates';
 
 function App() {
-  return <h1>Dangeun Market Clone</h1>;
+  return (
+    <div className="neighborhood">
+      <Templates />
+    </div>
+  );
 }
 
 export default App;
