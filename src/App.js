@@ -1,11 +1,18 @@
 import React from 'react';
-import Templates from './components/neighborhood/Templates';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import Templates from './pages/Templates';
+import WritingStuff from './pages/WritingStuff';
+import MainList from './pages/MainList';
 
 function App() {
   return (
-    <div className="neighborhood">
-      <Templates />
-    </div>
+    <BrowserRouter>
+      <Switch>
+        <Route exact path="/" component={MainList} />
+        <Route path="/write-new-stuff" component={WritingStuff} />
+        <Route path="/templater" component={Templates} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 
