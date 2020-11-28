@@ -43,7 +43,8 @@
       "arrow-body-style": [
         "error",
         "always"
-      ]
+      ],
+      "import/no-unresolved": "off"
     },
     "env": {
       "browser": true

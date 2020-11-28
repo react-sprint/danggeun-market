@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useInput from '../utils/hooks/useInput';
 import BottomNavBar from '../components/common/BottomNavBar';
 import { Danggeun } from '../styles/LoginStyle';
 import {
@@ -12,9 +11,7 @@ import {
   ModifyEndButton,
 } from '../styles/ProfileModifyStyle';
 
-// eslint-disable-next-line react/prop-types
-const ProfileModifyPage = ({ data }) => {
-  const { value, onChange } = useInput(data);
+const ProfileModifyPage = () => {
   return (
     <>
       <Link to="/">
@@ -25,7 +22,7 @@ const ProfileModifyPage = ({ data }) => {
       <TopText>프로필 수정</TopText>
       <ProfileImage />
 
-      <ProfileName value={value} onChange={onChange} type="text" />
+      <ProfileName />
       <Link to="/profile">
         <ModifyEndButton>수정완료</ModifyEndButton>
       </Link>
@@ -35,7 +32,5 @@ const ProfileModifyPage = ({ data }) => {
     </>
   );
 };
-
-ProfileName.defaultProps = { data: '' };
 
 export default ProfileModifyPage;
