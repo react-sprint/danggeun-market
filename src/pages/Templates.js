@@ -9,11 +9,13 @@ const StyledWrapper = styled.div`
   align-items: center;
 `;
 
-const Templates = () => (
-  <StyledWrapper>
-    <Header />
-    <Body />
-  </StyledWrapper>
-);
+const Templates = () => {
+  return (
+    <StyledWrapper>
+      <Header />
+      <Body />
+    </StyledWrapper>
+  );
+};
 
 export default Templates;
