@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import BottomNavBar from '../components/common/BottomNavBar';
 
-function MainList() {
+const MainList = () => {
   return (
     <>
       <h2>Item List</h2>
@@ -18,6 +18,6 @@ function MainList() {
       <BottomNavBar />
     </>
   );
-}
+};
 
 export default MainList;

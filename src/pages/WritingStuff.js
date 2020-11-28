@@ -1,7 +1,7 @@
 import React from 'react';
 import BottomNavBar from '../components/common/BottomNavBar';
 
-function WritingStuff() {
+const WritingStuff = () => {
   return (
     <div>
       <form>
@@ -30,6 +30,6 @@ function WritingStuff() {
       <BottomNavBar />
     </div>
   );
-}
+};
 
 export default WritingStuff;

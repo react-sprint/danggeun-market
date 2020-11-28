@@ -49,10 +49,10 @@ export const NavWrtieBlock = styled.div`
   justify-content: center;
 
   position: absolute;
-  top: 5px;
+  top: 7px;
   left: 120px;
 
-  width: 28px;
+  width: 30px;
   height: 30px;
 
   background-image: url(${write});
