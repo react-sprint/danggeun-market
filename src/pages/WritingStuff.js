@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { dbService, storageService } from '../utils/api/fbInstance';
+import React from 'react';
+import BottomNavBar from '../components/common/BottomNavBar';
 
-function WritingStuff() {
+const WritingStuff = () => {
   const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
   const [attachment, setAttachment] = useState(null);
 
@@ -50,8 +52,7 @@ function WritingStuff() {
 
   const onClearPhoto = () => {
     setAttachment(null);
-  };
-
+  };  
   return (
     <div>
       <form>
@@ -102,8 +103,9 @@ function WritingStuff() {
           <button onClick={onSubmit}>작성</button>
         </div>
       </form>
+      <BottomNavBar />
     </div>
   );
-}
+};
 
 export default WritingStuff;
