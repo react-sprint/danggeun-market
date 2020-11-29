@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
 
 const MainList = () => {
   return (
@@ -15,7 +15,7 @@ const MainList = () => {
       <Link to="/profile" style={{ textDecoration: 'none' }}>
         프로필
       </Link>
-      <BottomNavBar />
+      <MenuBar />
     </>
   );
 };

@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { Danggeun } from '../styles/LoginStyle';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
 
 const AttentionBlock = styled.div`
   margin-top: 100px;
@@ -17,7 +17,7 @@ const AttentionPage = () => {
       <Link to="/profile">돌아가기</Link>
       <AttentionBlock>관심상품 페이지입니다</AttentionBlock>
       <Danggeun />
-      <BottomNavBar />
+      <MenuBar />
     </>
   );
 };

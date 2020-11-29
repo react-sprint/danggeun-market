@@ -1,20 +1,31 @@
-import React, { useCallback } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { ProfileName } from '../styles/ProfileStyle';
+import { ProfileModify, ProfileName } from '../styles/ProfileStyle';
 import { modify } from '../modules/profile';
 
 const ContainerModify = () => {
   const dispatch = useDispatch();
 
-  const profileModify = useSelector((e) => {
-    return e.target.value;
+  const { profile } = useSelector((state) => {
+    return {
+      profile: state.profile.profile,
+    };
   });
 
-  const onChangeInput = useCallback(() => {
-    return dispatch(modify());
-  }, [dispatch]);
+  const onChange = (e) => {
+    return dispatch(modify(e.target.value));
+  };
 
-  return <ProfileName input={profileModify} onChange={onChangeInput} />;
+  const onClick = () => {
+    return dispatch(modify);
+  };
+
+  return (
+    <>
+      <ProfileName value={profile} onChange={onChange} modift={modify} />
+      <ProfileModify onClick={onClick} />
+    </>
+  );
 };
 
 export default ContainerModify;

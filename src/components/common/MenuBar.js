@@ -9,7 +9,7 @@ import {
   BottomBlock,
 } from '../../styles/BottomNavStyle';
 
-const BottomNavBar = () => {
+const MenuBar = () => {
   const history = useHistory();
   const goBack = () => {
     history.goBack();
@@ -50,4 +50,4 @@ const BottomNavBar = () => {
   );
 };
 
-export default BottomNavBar;
+export default MenuBar;

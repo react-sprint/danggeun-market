@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
+import ContainerModify from '../containers/ContainerModify';
 import { Danggeun } from '../styles/LoginStyle';
 import {
   AttentionBlock,
@@ -27,7 +28,7 @@ const ProfilePage = () => {
         <ProfileModify>수정</ProfileModify>
       </Link>
 
-      <ProfileName>군침이 싸악</ProfileName>
+      <ProfileName />
 
       <Link to="/sale">
         <SaleBlock>판매상품</SaleBlock>
@@ -36,7 +37,7 @@ const ProfilePage = () => {
         <AttentionBlock>관심상품</AttentionBlock>
       </Link>
       <Danggeun />
-      <BottomNavBar />
+      <MenuBar />
     </>
   );
 };

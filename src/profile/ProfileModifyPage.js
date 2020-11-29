@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
+import profile from '../modules/profile';
 import { Danggeun } from '../styles/LoginStyle';
 import {
   BackImage,
@@ -28,7 +29,7 @@ const ProfileModifyPage = () => {
       </Link>
 
       <Danggeun />
-      <BottomNavBar />
+      <MenuBar />
     </>
   );
 };

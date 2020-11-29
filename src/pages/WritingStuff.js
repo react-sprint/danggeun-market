@@ -1,5 +1,5 @@
 import React from 'react';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
 
 const WritingStuff = () => {
   return (
@@ -27,7 +27,7 @@ const WritingStuff = () => {
           <button type="submit">작성</button>
         </div>
       </form>
-      <BottomNavBar />
+      <MenuBar />
     </div>
   );
 };
