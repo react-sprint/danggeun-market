@@ -4,19 +4,11 @@ import BottomNavBar from '../components/common/BottomNavBar';
 
 const MainList = () => {
   return (
-    <>
-      <h2>Item List</h2>
-      <Link to="/login" style={{ textDecoration: 'none' }}>
-        로그인
-      </Link>
-      <br />
-      <br />
-      <br />
-      <Link to="/profile" style={{ textDecoration: 'none' }}>
-        프로필
-      </Link>
-      <BottomNavBar />
-    </>
+    <div>
+      <h2>HOME</h2>
+      <Link to="/write-new-stuff">ss</Link>
+    <BottomNavBar />
+    </div>
   );
 };
 
