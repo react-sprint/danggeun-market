@@ -1,6 +1,7 @@
 import React from 'react';
+import BottomNavBar from '../components/common/BottomNavBar';
 
-function WritingStuff() {
+const WritingStuff = () => {
   return (
     <div>
       <form>
@@ -26,8 +27,9 @@ function WritingStuff() {
           <button type="submit">작성</button>
         </div>
       </form>
+      <BottomNavBar />
     </div>
   );
-}
+};
 
 export default WritingStuff;
