@@ -25,12 +25,14 @@ const StyledLongUnderline = styled(StyledUnderline)`
   width: 379px;
 `;
 
-const Body = () => (
-  <StyledWrapper>
-    <StyledButton>현재위치로 찾기</StyledButton>
-    <StyledSpan>근처 동네</StyledSpan>
-    <StyledLongUnderline />
-  </StyledWrapper>
-);
+const Body = () => {
+  return (
+    <StyledWrapper>
+      <StyledButton>현재위치로 찾기</StyledButton>
+      <StyledSpan>근처 동네</StyledSpan>
+      <StyledLongUnderline />
+    </StyledWrapper>
+  );
+};
 
 export default Body;
