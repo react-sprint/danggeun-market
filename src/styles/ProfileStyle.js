@@ -3,10 +3,11 @@ import x from '../images/ico/ic_window_close_outline_18.png';
 import danggeun from '../images/ico/ico_logo_72x72.png';
 import loopy from '../images/ico/loopy.jpeg';
 
+export const ProfileWrapper = styled.div``;
+
 export const BackImage = styled.div`
   display: flex;
 
-  position: absolute;
   left: 23.21px;
   top: 38.21px;
 
@@ -20,10 +21,6 @@ export const BackImage = styled.div`
 export const TopBlock = styled.div`
   display: flex;
 
-  position: absolute;
-  left: 0px;
-  top: 71px;
-
   width: 412px;
   height: 0px;
 
@@ -31,10 +28,6 @@ export const TopBlock = styled.div`
 `;
 
 export const TopText = styled.p`
-  position: absolute;
-  left: 160px;
-  top: 20px;
-
   width: 94px;
   height: 17px;
 
@@ -50,10 +43,6 @@ export const TopText = styled.p`
 `;
 
 export const ProfileImage = styled.div`
-  position: absolute;
-  left: 110px;
-  top: 110px;
-
   width: 200px;
   height: 200px;
 
@@ -65,10 +54,6 @@ export const ProfileImage = styled.div`
 `;
 
 export const ProfileModify = styled.p`
-  position: absolute;
-  left: 305px;
-  top: 270px;
-
   width: 40px;
   height: 25px;
 
@@ -85,10 +70,6 @@ export const ProfileName = styled.div`
   display: flex;
   justify-content: center;
 
-  position: absolute;
-  top: 346px;
-  left: 110px;
-
   width: 200px;
   height: 50px;
 
@@ -103,10 +84,6 @@ export const ProfileName = styled.div`
 `;
 
 export const SaleBlock = styled.button`
-  position: absolute;
-  left: 17px;
-  top: 450px;
-
   width: 380px;
   height: 60px;
 
@@ -120,10 +97,6 @@ export const SaleBlock = styled.button`
 `;
 
 export const AttentionBlock = styled.button`
-  position: absolute;
-  left: 17px;
-  top: 535px;
-
   width: 380px;
   height: 60px;
 
@@ -137,10 +110,6 @@ export const AttentionBlock = styled.button`
 `;
 
 export const Danggeun = styled.div`
-  position: absolute;
-  top: 600px;
-  left: 173px;
-
   width: 72px;
   height: 72px;
 

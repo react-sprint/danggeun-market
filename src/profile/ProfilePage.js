@@ -11,32 +11,35 @@ import {
   SaleBlock,
   TopBlock,
   TopText,
+  ProfileWrapper,
 } from '../styles/ProfileStyle';
 
 const ProfilePage = () => {
   return (
     <>
-      <Link to="/">
-        <BackImage />
-      </Link>
-      <TopBlock />
+      <ProfileWrapper>
+        <Link to="/">
+          <BackImage />
+        </Link>
+        <TopBlock />
 
-      <TopText>프로필</TopText>
-      <ProfileImage />
-      <Link to="/profilemodify">
-        <ProfileModify>수정</ProfileModify>
-      </Link>
+        <TopText>프로필</TopText>
+        <ProfileImage />
+        <Link to="/profilemodify">
+          <ProfileModify>수정</ProfileModify>
+        </Link>
 
-      <ProfileName>군침이 싸악</ProfileName>
+        <ProfileName>군침이 싸악</ProfileName>
 
-      <Link to="/sale">
-        <SaleBlock>판매상품</SaleBlock>
-      </Link>
-      <Link to="/attention">
-        <AttentionBlock>관심상품</AttentionBlock>
-      </Link>
-      <Danggeun />
-      <BottomNavBar />
+        <Link to="/sale">
+          <SaleBlock>판매상품</SaleBlock>
+        </Link>
+        <Link to="/attention">
+          <AttentionBlock>관심상품</AttentionBlock>
+        </Link>
+        <Danggeun />
+        <BottomNavBar />
+      </ProfileWrapper>
     </>
   );
 };

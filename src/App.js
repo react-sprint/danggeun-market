@@ -10,21 +10,31 @@ import ProfileModifyPage from './profile/ProfileModifyPage';
 import SalePage from './pages/SalePage';
 import AttentionPage from './pages/Attention';
 import Gps from './pages/Gps';
+import Header from './components/common/Header';
+import BottomNavBar from './components/common/BottomNavBar';
+
+import { Layout } from './styles/Layout';
 
 const App = () => {
   return (
     <Switch>
-      <Route exact path="/" component={MainList} />
-      <Route path="/write-new-stuff" component={WritingStuff} />
-      <Route path="/templater" component={Templates} />
-      <Route exact path="/login" component={LoginPage} />
-      <Route exact path="/register" component={RegisterPage} />
-      <Route exact path="/profile" component={ProfilePage} />
-      <Route exact path="/profilemodify" component={ProfileModifyPage} />
-      <Route exact path="/sale" component={SalePage} />
-      <Route exact path="/attention" component={AttentionPage} />
-      <Route exact path="/write" component={WritingStuff} />
-      <Route exact path="/gps" component={Gps} />
+      <Layout>
+        <Header />
+
+        <Route exact path="/" component={MainList} />
+        <Route path="/write-new-stuff" component={WritingStuff} />
+        <Route path="/templater" component={Templates} />
+        <Route exact path="/login" component={LoginPage} />
+        <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/profile" component={ProfilePage} />
+        <Route exact path="/profilemodify" component={ProfileModifyPage} />
+        <Route exact path="/sale" component={SalePage} />
+        <Route exact path="/attention" component={AttentionPage} />
+        <Route exact path="/write" component={WritingStuff} />
+        <Route exact path="/gps" component={Gps} />
+
+        <BottomNavBar />
+      </Layout>
     </Switch>
   );
 };
