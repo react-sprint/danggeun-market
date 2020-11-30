@@ -1,20 +1,14 @@
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import {
   NavHomeBlock,
   NavWrtieBlock,
   NavNearBlock,
-  NavBackBlock,
   NavMyDaangnBlock,
   BottomBlock,
-} from '../../styles/BottomNavStyle';
+} from '../../styles/MenuBarStyle';
 
 const MenuBar = () => {
-  const history = useHistory();
-  const goBack = () => {
-    history.goBack();
-  };
-
   return (
     <BottomBlock>
       <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
@@ -35,16 +29,10 @@ const MenuBar = () => {
         </NavNearBlock>
       </Link>
 
-      <Link to="/profile" style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to="/mydanggeun" style={{ textDecoration: 'none', color: 'black' }}>
         <NavMyDaangnBlock>
           <p>나의 당근</p>
         </NavMyDaangnBlock>
-      </Link>
-
-      <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-        <NavBackBlock onClick={goBack}>
-          <p>튀어</p>
-        </NavBackBlock>
       </Link>
     </BottomBlock>
   );

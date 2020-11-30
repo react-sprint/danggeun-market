@@ -20,7 +20,10 @@ const initialState = {
 const profile = (state = initialState, action) => {
   switch (action.type) {
     case MODIFY:
-      return { ...state, profile: action.data };
+      return {
+        ...state,
+        profile: action.data,
+      };
     default:
       return state;
   }
