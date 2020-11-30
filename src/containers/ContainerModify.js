@@ -20,12 +20,7 @@ const ContainerModify = () => {
     return dispatch(modify);
   };
 
-  return (
-    <>
-      <ProfileName value={profile} onChange={onChange} modift={modify} />
-      <ProfileModify onClick={onClick} />
-    </>
-  );
+  return {};
 };
 
 export default ContainerModify;

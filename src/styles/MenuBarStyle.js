@@ -3,25 +3,24 @@ import home from '../images/ico/ico_tab_home_n.png';
 import write from '../images/ico/ico_write_btn.png';
 import near from '../images/ico/ico_tab_near_by_n.png';
 import mydanggeun from '../images/ico/ico_tab_mydanggeun_n.png';
-import back from '../images/ico/ico_back_home_arrow.png';
 
 export const BottomBlock = styled.div`
-  display: flex;
-
-  position: absolute;
+  position: fixed;
   left: 0px;
-  top: 680px;
+  bottom: 0px;
 
-  width: 412px;
-  height: 0px;
+  width: 100%;
+  height: 60px;
 
-  border: 1px solid #ff8a3d;
+  border-top: 1px solid #ff8a3d;
+  border-left: none;
+  border-right: none;
+  border-bottom: none;
 
   font-size: 10px;
   font-weight: 400;
 
-  text-align: center;
-  justify-content: space-between;
+  background-color: white;
 `;
 
 export const NavHomeBlock = styled.div`
@@ -30,7 +29,7 @@ export const NavHomeBlock = styled.div`
 
   position: absolute;
   top: 3px;
-  left: 38px;
+  left: 60px;
 
   width: 40px;
   height: 40px;
@@ -50,7 +49,7 @@ export const NavWrtieBlock = styled.div`
 
   position: absolute;
   top: 7px;
-  left: 120px;
+  left: 150px;
 
   width: 30px;
   height: 30px;
@@ -70,7 +69,7 @@ export const NavNearBlock = styled.div`
 
   position: absolute;
   top: 6px;
-  left: 194px;
+  left: 230px;
 
   width: 30px;
   height: 30px;
@@ -90,32 +89,12 @@ export const NavMyDaangnBlock = styled.div`
 
   position: absolute;
   top: 5px;
-  left: 267px;
+  left: 300px;
 
   width: 40px;
   height: 30px;
 
   background-image: url(${mydanggeun});
-  background-size: cover;
-
-  p {
-    position: absolute;
-    top: 25px;
-  }
-`;
-
-export const NavBackBlock = styled.div`
-  display: flex;
-  justify-content: center;
-
-  position: absolute;
-  top: 7px;
-  left: 348px;
-
-  width: 30px;
-  height: 30px;
-
-  background-image: url(${back});
   background-size: cover;
 
   p {
