@@ -8,12 +8,8 @@ import back from '../images/ico/ico_back_home_arrow.png';
 export const BottomBlock = styled.div`
   display: flex;
 
-  position: absolute;
-  left: 0px;
-  top: 680px;
-
-  width: 412px;
-  height: 0px;
+  width: 100%;
+  height: 40px;
 
   border: 1px solid #ff8a3d;
 
@@ -27,8 +23,6 @@ export const BottomBlock = styled.div`
 export const NavHomeBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 3px;
   left: 38px;
 
@@ -39,7 +33,6 @@ export const NavHomeBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 28px;
   }
 `;
@@ -47,8 +40,6 @@ export const NavHomeBlock = styled.div`
 export const NavWrtieBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 7px;
   left: 120px;
 
@@ -59,7 +50,6 @@ export const NavWrtieBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;
@@ -67,8 +57,6 @@ export const NavWrtieBlock = styled.div`
 export const NavNearBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 6px;
   left: 194px;
 
@@ -79,7 +67,6 @@ export const NavNearBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;
@@ -87,8 +74,6 @@ export const NavNearBlock = styled.div`
 export const NavMyDaangnBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 5px;
   left: 267px;
 
@@ -99,7 +84,6 @@ export const NavMyDaangnBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;
@@ -107,8 +91,6 @@ export const NavMyDaangnBlock = styled.div`
 export const NavBackBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 7px;
   left: 348px;
 
@@ -119,7 +101,6 @@ export const NavBackBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;

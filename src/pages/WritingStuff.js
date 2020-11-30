@@ -1,7 +1,57 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { dbService, storageService } from '../utils/api/fbInstance';
 import BottomNavBar from '../components/common/BottomNavBar';
 
 const WritingStuff = () => {
+  const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
+  const [attachment, setAttachment] = useState(null);
+
+  const onSubmit = async (event) => {
+    event.preventDefault();
+    const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
+    const response = await fileRef.putString(attachment, 'data_url');
+    const attachmentUrl = await response.ref.getDownloadURL();
+    const stuff = {
+      input: inputs,
+      createAt: Date.now(),
+      creatorId: 'userid',
+      attachmentUrl,
+    };
+
+    dbService.collection('stuffList').add(stuff);
+    setInputs({ title: '', price: '', contents: '' });
+    setAttachment(null);
+  };
+
+  const onChange = (event) => {
+    const {
+      target: { value, name },
+    } = event;
+
+    setInputs({ ...inputs, [name]: value });
+  };
+
+  const onFileChange = (event) => {
+    const {
+      target: { files },
+    } = event;
+    const theFile = files[0];
+    const reader = new FileReader();
+    reader.onloadend = (finishedEvent) => {
+      console.log(finishedEvent);
+      const {
+        currentTarget: { result },
+      } = finishedEvent;
+
+      setAttachment(result);
+    };
+    reader.readAsDataURL(theFile);
+  };
+
+  const onClearPhoto = () => {
+    setAttachment(null);
+  };
   return (
     <div>
       <form>
