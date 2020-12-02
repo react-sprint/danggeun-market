@@ -505,12 +505,3 @@ export const ReviewText = styled.p`
   font-size: 13px;
   font-weight: 300;
 `;
-
-export const EmptyBox = styled.div`
-  position: absolute;
-  top: 812px;
-  left: 0px;
-
-  width: 100%;
-  height: 60px;
-`;

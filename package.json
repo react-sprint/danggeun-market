@@ -44,13 +44,12 @@
       "linebreak-style": 0,
       "no-console": "off",
       "no-unused-vars": "off",
-      "arrow-body-style": [
-        "error",
-        "always"
-      ],
       "react/prop-types": 0,
       "import/no-unresolved": "off",
-      "react/react-in-jsx-scope": "off"
+      "react/react-in-jsx-scope": "off",
+      "no-shadow": "off",
+      "object-curly-newline": "off",
+      "object-shorthand": 0
     },
     "env": {
       "browser": true

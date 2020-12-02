@@ -6,18 +6,6 @@ import sale from '../images/ico/ico_sales.png';
 import purchase from '../images/ico/ico_purchase.png';
 import watch from '../images/ico/ico_watch.png';
 
-export const TopBlock = styled.div`
-  display: flex;
-
-  position: absolute;
-  top: 65px;
-  left: 0px;
-  width: 412px;
-  height: 0px;
-
-  border: 1px solid #f0f0f0;
-`;
-
 export const MyDanggeunBlock = styled.p`
   display: flex;
 
@@ -622,17 +610,15 @@ export const AppSet = styled.div`
     left: 40px;
 
     width: 300px;
+    padding-bottom: 80px;
 
     font-size: 14px;
     font-weight: 300;
   }
 `;
 
-export const EmptyBox = styled.div`
-  position: absolute;
-  top: 1170px;
-  left: 0px;
+export const DanggeunBlock = styled.div`
+  display: flex;
 
-  width: 414px;
-  height: 60px;
+  font-size: 16px;
 `;

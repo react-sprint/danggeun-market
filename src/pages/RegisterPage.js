@@ -17,9 +17,7 @@ import {
 } from '../styles/RegisterStyle';
 
 const LoginPage = () => {
-  const onClick = () => {
-    return console.log('회원가입 성공');
-  };
+  const onClick = () => console.log('회원가입 성공');
   return (
     <>
       <Link to="/">

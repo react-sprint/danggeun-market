@@ -7,27 +7,28 @@ import {
   NavMyDaangnBlock,
   BottomBlock,
 } from '../../styles/MenuBarStyle';
+import { LinkStyle } from '../../styles/LinkStyle';
 
-const MenuBar = () => {
-  return (
-    <BottomBlock>
-      <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+const MenuBar = () => (
+  <BottomBlock>
+    <LinkStyle>
+      <Link to="/">
         <NavHomeBlock />
       </Link>
 
-      <Link to="/write" style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to="/write">
         <NavWrtieBlock />
       </Link>
 
-      <Link to="/gps" style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to="/gps">
         <NavNearBlock />
       </Link>
 
-      <Link to="/mydanggeun" style={{ textDecoration: 'none', color: 'black' }}>
+      <Link to="/mydanggeun">
         <NavMyDaangnBlock />
       </Link>
-    </BottomBlock>
-  );
-};
+    </LinkStyle>
+  </BottomBlock>
+);
 
 export default MenuBar;

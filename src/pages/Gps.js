@@ -8,12 +8,10 @@ const GpsBlock = styled.div`
   font-size: 20px;
 `;
 
-const Gps = () => {
-  return (
-    <>
-      <GpsBlock>성재님이 만드실 페이지입니다.</GpsBlock>
-    </>
-  );
-};
+const Gps = () => (
+  <>
+    <GpsBlock>성재님이 만드실 페이지입니다.</GpsBlock>
+  </>
+);
 
 export default Gps;

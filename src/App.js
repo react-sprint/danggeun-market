@@ -14,27 +14,25 @@ import MenuBar from './components/common/MenuBar';
 import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 
-const App = () => {
-  return (
-    <Switch>
-      <Layout>
-        <Route exact path="/" component={MainList} />
-        <Route path="/write-new-stuff" component={WritingStuff} />
-        <Route path="/templater" component={Templates} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/register" component={RegisterPage} />
-        <Route exact path="/sale" component={SalePage} />
-        <Route exact path="/attention" component={AttentionPage} />
-        <Route exact path="/write" component={WritingStuff} />
-        <Route exact path="/gps" component={Gps} />
-        <Route exact path="/mydanggeun" component={MyDanggeun} />
-        <Route exact path="/profile" component={ProfilePage} />
-        <Route exact path="/profileedit" component={ProfileEdit} />
+const App = () => (
+  <Switch>
+    <Layout>
+      <Route exact path="/" component={MainList} />
+      <Route path="/write-new-stuff" component={WritingStuff} />
+      <Route path="/templater" component={Templates} />
+      <Route exact path="/login" component={LoginPage} />
+      <Route exact path="/register" component={RegisterPage} />
+      <Route exact path="/sale" component={SalePage} />
+      <Route exact path="/attention" component={AttentionPage} />
+      <Route exact path="/write" component={WritingStuff} />
+      <Route exact path="/gps" component={Gps} />
+      <Route exact path="/mydanggeun" component={MyDanggeun} />
+      <Route exact path="/profile" component={ProfilePage} />
+      <Route exact path="/profileedit" component={ProfileEdit} />
 
-        <MenuBar />
-      </Layout>
-    </Switch>
-  );
-};
+      <MenuBar />
+    </Layout>
+  </Switch>
+);
 
 export default App;

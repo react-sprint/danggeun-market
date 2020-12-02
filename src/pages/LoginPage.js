@@ -15,9 +15,7 @@ import {
 } from '../styles/LoginStyle';
 
 const LoginPage = () => {
-  const onClick = () => {
-    return console.log('로그인 성공');
-  };
+  const onClick = () => console.log('로그인 성공');
   return (
     <>
       <Link to="/">

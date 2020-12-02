@@ -11,15 +11,13 @@ const AttentionBlock = styled.div`
   font-size: 20px;
 `;
 
-const AttentionPage = () => {
-  return (
-    <>
-      <Link to="/profile">돌아가기</Link>
-      <AttentionBlock>관심상품 페이지입니다</AttentionBlock>
-      <Danggeun />
-      <MenuBar />
-    </>
-  );
-};
+const AttentionPage = () => (
+  <>
+    <Link to="/profile">돌아가기</Link>
+    <AttentionBlock>관심상품 페이지입니다</AttentionBlock>
+    <Danggeun />
+    <MenuBar />
+  </>
+);
 
 export default AttentionPage;
