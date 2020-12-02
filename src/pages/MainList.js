@@ -7,7 +7,7 @@ const MainList = () => {
     <div>
       <h2>HOME</h2>
       <Link to="/write-new-stuff">ss</Link>
-    <BottomNavBar />
+      <BottomNavBar />
     </div>
   );
 };

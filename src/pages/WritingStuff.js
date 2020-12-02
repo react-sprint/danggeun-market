@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { dbService, storageService } from '../utils/api/fbInstance';
-import React from 'react';
 import BottomNavBar from '../components/common/BottomNavBar';
 
 const WritingStuff = () => {
@@ -52,7 +51,7 @@ const WritingStuff = () => {
 
   const onClearPhoto = () => {
     setAttachment(null);
-  };  
+  };
   return (
     <div>
       <form>
