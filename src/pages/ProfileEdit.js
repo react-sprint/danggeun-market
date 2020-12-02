@@ -1,32 +1,37 @@
 // 프로필 -> 프로필 수정 화면
 
 import React from 'react';
-import Clock from 'react-live-clock';
 import { Link } from 'react-router-dom';
-import MenuBar from '../components/common/MenuBar';
+import { Danggeun } from '../components/layout/DanggeunImage';
 import {
-  TimerBlock,
-  TimerLineBlock,
-  TopBlock,
-  BackArrow,
+  TopLine,
   ProfileImage,
+  Camera,
+  NameEdit,
+  EndText,
+  TextBlock,
+  TopDiv,
+  BackArrow,
 } from '../styles/ProfileEditStyle';
 
-const ProfileEdit = () => {
-  return (
-    <>
-      <TimerBlock>
-        <Clock format="YYYY년 MM월 DD일 HH:mm:ss" ticking />
-      </TimerBlock>
-      <TimerLineBlock />
-      <Link to="/profilev2">
+const ProfileEdit = ({ modify }) => (
+  <>
+    <TopDiv>
+      <Link to="profilev2">
         <BackArrow />
       </Link>
-      <ProfileImage />
-      <TopBlock />
-      <MenuBar />
-    </>
-  );
-};
+      <TextBlock>프로필 수정</TextBlock>
+      <Link to="/profilev2" style={{ textDecoration: 'none', color: 'black' }}>
+        <EndText>완료</EndText>
+      </Link>
+    </TopDiv>
+
+    <TopLine />
+    <ProfileImage />
+    <Camera />
+    <NameEdit value={modify} />
+    <Danggeun />
+  </>
+);
 
 export default ProfileEdit;

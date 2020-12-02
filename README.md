@@ -14,3 +14,4 @@
 
 - [Figma - 로그인, 위치검색](https://www.figma.com/file/MT0GvguLZRFQ1hd14yT2xL/Dangun?node-id=0%3A1)
 - [Figma - 프로필](https://www.figma.com/file/KViW9jZ3vjDb1MjaklDg3r/Untitled?node-id=0%3A1)
+- [Figma - 프로필, 프로필수정, 나의 당근](https://www.figma.com/file/IL2j9rd338DbZlXTgipAjX/mydangguen?node-id=0%3A1)

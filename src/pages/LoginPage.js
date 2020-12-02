@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import MenuBar from '../components/common/MenuBar';
 import {
   BackImage,
   TopBlock,
@@ -46,7 +45,6 @@ const LoginPage = () => {
         </RegisterButton>
       </Link>
       <Danggeun />
-      <MenuBar />
     </>
   );
 };

@@ -1,9 +1,7 @@
 // 나의 당근 화면
 
 import React from 'react';
-import Clock from 'react-live-clock';
 import { Link } from 'react-router-dom';
-import MenuBar from '../components/common/MenuBar';
 import {
   MyDanggeunBlock,
   ProfileBlock,
@@ -11,7 +9,6 @@ import {
   ProfileLine,
   ProfileName,
   ListLine,
-  TimerLineBlock,
   TopBlock,
   TopImageBlock,
   CameraBlock,
@@ -45,10 +42,6 @@ import {
 const MyDanggeun = () => {
   return (
     <>
-      <TimerBlock>
-        <Clock format="YYYY년 MM월 DD일 HH:mm:ss" ticking />
-      </TimerBlock>
-      <TimerLineBlock />
       <TopBlock />
       <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
       <TopImageBlock />
@@ -120,7 +113,6 @@ const MyDanggeun = () => {
         <p>앱 설정</p>
       </AppSet>
       <EmptyBox />
-      <MenuBar />
     </>
   );
 };

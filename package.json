@@ -40,14 +40,13 @@
       "react/prefer-stateless-function": 0,
       "react/jsx-filename-extension": 0,
       "react/jsx-one-expression-per-line": 0,
+      "import/prefer-default-export": "off",
       "linebreak-style": 0,
       "no-console": "off",
       "no-unused-vars": "off",
-      "arrow-body-style": [
-        "error",
-        "always"
-      ],
-      "import/no-unresolved": "off"
+      "react/prop-types": 0,
+      "import/no-unresolved": "off",
+      "react/react-in-jsx-scope": "off"
     },
     "env": {
       "browser": true

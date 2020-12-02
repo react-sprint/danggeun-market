@@ -17,7 +17,6 @@ const SalePage = () => {
       <Link to="/profile">돌아가기</Link>
       <SalePageBlock>판매상품 페이지입니다</SalePageBlock>
       <Danggeun />
-      <MenuBar />
     </>
   );
 };

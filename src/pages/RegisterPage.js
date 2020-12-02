@@ -45,7 +45,6 @@ const LoginPage = () => {
         </RegisterButton>
       </Link>
       <Danggeun />
-      <MenuBar />
     </>
   );
 };

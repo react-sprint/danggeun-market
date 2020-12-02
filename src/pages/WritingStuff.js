@@ -27,7 +27,6 @@ const WritingStuff = () => {
           <button type="submit">작성</button>
         </div>
       </form>
-      <MenuBar />
     </div>
   );
 };

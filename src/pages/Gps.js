@@ -12,7 +12,6 @@ const Gps = () => {
   return (
     <>
       <GpsBlock>성재님이 만드실 페이지입니다.</GpsBlock>
-      <MenuBar />
     </>
   );
 };

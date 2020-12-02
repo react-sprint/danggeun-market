@@ -13,7 +13,7 @@ export const TimerBlock = styled.div`
 
 export const TimerLineBlock = styled.div`
   position: absolute;
-  top: 35px;
+  top: 5px;
   left: 0px;
 
   width: 412px;
@@ -25,7 +25,7 @@ export const TopBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 95px;
+  top: 65px;
   left: 0px;
   width: 412px;
   height: 0px;
@@ -37,7 +37,7 @@ export const MyDanggeunBlock = styled.p`
   display: flex;
 
   position: absolute;
-  top: 37px;
+  top: 7px;
   left: 18px;
 
   font-weight: 500;
@@ -48,7 +48,7 @@ export const TopImageBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 50px;
+  top: 20px;
   left: 357px;
   right: 15px;
 
@@ -63,7 +63,7 @@ export const ProfileBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 121px;
+  top: 91px;
   left: 17px;
 
   width: 69px;
@@ -77,7 +77,7 @@ export const ProfileBlock = styled.div`
 
 export const CameraBlock = styled.div`
   position: absolute;
-  top: 165px;
+  top: 135px;
   left: 60px;
 
   width: 26px;
@@ -91,7 +91,7 @@ export const ProfileName = styled.p`
   display: flex;
 
   position: absolute;
-  top: 115px;
+  top: 85px;
   left: 100px;
 
   font-size: 16px;
@@ -102,7 +102,7 @@ export const ProfileAddress = styled.p`
   display: flex;
 
   position: absolute;
-  top: 150px;
+  top: 120px;
   left: 100px;
 
   font-size: 12px;
@@ -115,7 +115,7 @@ export const ProfileUrl = styled.button`
   justify-content: center;
 
   position: absolute;
-  top: 140px;
+  top: 110px;
   right: 30px;
 
   width: 92px;
@@ -137,7 +137,7 @@ export const ProfileLine = styled.div`
   display: flex;
 
   position: absolute;
-  top: 220px;
+  top: 190px;
   left: 0px;
 
   width: 412px;
@@ -150,7 +150,7 @@ export const SaleBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 240px;
+  top: 210px;
   left: 45px;
 
   width: 61px;
@@ -166,7 +166,7 @@ export const PurchaseBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 240px;
+  top: 210px;
   left: 175px;
 
   width: 61px;
@@ -182,7 +182,7 @@ export const WatchBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 240px;
+  top: 210px;
   left: 305px;
 
   width: 61px;
@@ -198,7 +198,7 @@ export const SaleText = styled.p`
   display: flex;
   position: absolute;
 
-  top: 295px;
+  top: 265px;
   left: 50px;
 
   width: 61px;
@@ -213,7 +213,7 @@ export const PurchaseText = styled.p`
   display: flex;
   position: absolute;
 
-  top: 295px;
+  top: 265px;
   left: 180px;
 
   width: 61px;
@@ -228,7 +228,7 @@ export const WatchText = styled.p`
   display: flex;
   position: absolute;
 
-  top: 295px;
+  top: 265px;
   left: 310px;
 
   width: 61px;
@@ -243,7 +243,7 @@ export const ListLine = styled.div`
   display: flex;
 
   position: absolute;
-  top: 350px;
+  top: 320px;
   left: 0px;
 
   width: 413px;
@@ -257,7 +257,7 @@ export const MyAddressBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 380px;
+  top: 350px;
   left: 30px;
 
   width: 30px;
@@ -283,7 +283,7 @@ export const AddressAuthBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 440px;
+  top: 410px;
   left: 30px;
 
   width: 30px;
@@ -309,7 +309,7 @@ export const KeywordBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 500px;
+  top: 470px;
   left: 30px;
 
   width: 30px;
@@ -335,7 +335,7 @@ export const CollectBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 560px;
+  top: 530px;
   left: 30px;
 
   width: 30px;
@@ -362,7 +362,7 @@ export const ListLineTwo = styled.div`
   display: flex;
 
   position: absolute;
-  top: 610px;
+  top: 580px;
   left: 0px;
 
   width: 413px;
@@ -376,7 +376,7 @@ export const TownWrite = styled.div`
   display: flex;
 
   position: absolute;
-  top: 640px;
+  top: 610px;
   left: 30px;
 
   width: 30px;
@@ -403,7 +403,7 @@ export const TownComment = styled.div`
   display: flex;
 
   position: absolute;
-  top: 700px;
+  top: 670px;
   left: 30px;
 
   width: 30px;
@@ -430,7 +430,7 @@ export const TownTheme = styled.div`
   display: flex;
 
   position: absolute;
-  top: 760px;
+  top: 730px;
   left: 30px;
 
   width: 30px;
@@ -457,7 +457,7 @@ export const ListLineThree = styled.div`
   display: flex;
 
   position: absolute;
-  top: 810px;
+  top: 780px;
   left: 0px;
 
   width: 413px;
@@ -471,7 +471,7 @@ export const CeoMenu = styled.div`
   display: flex;
 
   position: absolute;
-  top: 840px;
+  top: 810px;
   left: 30px;
 
   width: 30px;
@@ -498,7 +498,7 @@ export const ListLineFour = styled.div`
   display: flex;
 
   position: absolute;
-  top: 890px;
+  top: 860px;
   left: 0px;
 
   width: 413px;
@@ -514,7 +514,7 @@ export const FriendBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 920px;
+  top: 890px;
   left: 30px;
 
   width: 30px;
@@ -541,7 +541,7 @@ export const DanggeunShare = styled.div`
   display: flex;
 
   position: absolute;
-  top: 980px;
+  top: 950px;
   left: 30px;
 
   width: 30px;
@@ -567,7 +567,7 @@ export const NoticeBlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 1040px;
+  top: 1010px;
   left: 30px;
 
   width: 30px;
@@ -594,7 +594,7 @@ export const QnABlock = styled.div`
   display: flex;
 
   position: absolute;
-  top: 1100px;
+  top: 1070px;
   left: 30px;
 
   width: 30px;
@@ -620,7 +620,7 @@ export const AppSet = styled.div`
   display: flex;
 
   position: absolute;
-  top: 1160px;
+  top: 1130px;
   left: 30px;
 
   width: 30px;
@@ -645,7 +645,7 @@ export const AppSet = styled.div`
 
 export const EmptyBox = styled.div`
   position: absolute;
-  top: 1200px;
+  top: 1170px;
   left: 0px;
 
   width: 414px;
