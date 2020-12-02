@@ -13,7 +13,9 @@ const MenuBar = () => (
   <BottomBlock>
     <LinkStyle>
       <Link to="/">
-        <NavHomeBlock />
+        <NavHomeBlock>
+          <p>홈</p>
+        </NavHomeBlock>
       </Link>
 
       <Link to="/write">

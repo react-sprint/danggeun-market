@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import {
   TopBlock,
@@ -35,78 +36,84 @@ import {
   ChatText,
 } from '../styles/ProfileStyle';
 
-const ProfilePage = () => (
-  <>
-    <Link to="/mydanggeun">
-      <BackArrow />
-    </Link>
-    <TopBlock />
-    <Profile>프로필</Profile>
-    <ShareBlock />
-    <Link to="/profileedit">
-      <MenuBlock />
-    </Link>
+const ProfilePage = () => {
+  const { name } = useSelector(({ profilename }) => ({
+    name: profilename.name,
+  }));
 
-    <ProfileImage />
-    <ProfileName>성윤</ProfileName>
-    <MannerBlock>매너온도</MannerBlock>
-    <MannerImage />
+  return (
+    <>
+      <Link to="/mydanggeun">
+        <BackArrow />
+      </Link>
+      <TopBlock />
+      <Profile>프로필</Profile>
+      <ShareBlock />
+      <Link to="/profileedit">
+        <MenuBlock />
+      </Link>
 
-    <Temperature>
-      <p>첫 온도 36.5 C</p>
-      <hr />
-    </Temperature>
-    <BlueHr />
-    <TemperatureImage>
-      <p>36.5 C</p>
-    </TemperatureImage>
-    <Heart>
-      <p>재거래희망률 -%</p>
-    </Heart>
-    <HeartText>표시될 만큼 충분히 대화하지 않았어요</HeartText>
+      <ProfileImage />
+      <ProfileName>{name}</ProfileName>
+      <MannerBlock>매너온도</MannerBlock>
+      <MannerImage />
 
-    <ChatBlock>
-      <p>응답률 33%</p>
-    </ChatBlock>
-    <ChatText>보통 1시간 내에 응답</ChatText>
+      <Temperature>
+        <p>첫 온도 36.5 C</p>
+        <hr />
+      </Temperature>
+      <BlueHr />
+      <TemperatureImage>
+        <p>36.5 C</p>
+      </TemperatureImage>
+      <Heart>
+        <p>재거래희망률 -%</p>
+      </Heart>
+      <HeartText>표시될 만큼 충분히 대화하지 않았어요</HeartText>
 
-    <ListLine>
-      <p>
-        안양6동 9회 인증
-        <br />
-        <br />
-        2020년 11월30일 가입 (최근 3일 이내 활동)
-      </p>
-    </ListLine>
+      <ChatBlock>
+        <p>응답률 33%</p>
+      </ChatBlock>
+      <ChatText>보통 1시간 내에 응답</ChatText>
 
-    <BadgeBlock>
-      <p>활동 배지2개</p>
-      <BadgeArrow />
-    </BadgeBlock>
+      <ListLine>
+        <p>
+          안양6동 9회 인증
+          <br />
+          <br />
+          2020년 11월30일 가입 (최근 3일 이내 활동)
+        </p>
+      </ListLine>
 
-    <SaleBlock>
-      <p>판매상품1개</p>
-      <SaleArrow />
-    </SaleBlock>
+      <BadgeBlock>
+        <p>활동 배지2개</p>
+        <BadgeArrow />
+      </BadgeBlock>
 
-    <TownBlock>
-      <p>동네생활</p>
-      <TownArrow />
-    </TownBlock>
+      <SaleBlock>
+        <p>판매상품1개</p>
+        <SaleArrow />
+      </SaleBlock>
 
-    <Manner>
-      <p>받은 매너 평가</p>
-      <MannerArrow />
-    </Manner>
-    <MannerText>받은 매너 칭찬이 없습니다</MannerText>
+      <TownBlock>
+        <p>동네생활</p>
+        <TownArrow />
+      </TownBlock>
 
-    <ReviewBlock>
-      <p>받은 거래 후기(0)</p>
-      <ReviewArrow />
-    </ReviewBlock>
-    <ReviewText>받은 후기가 없습니다.</ReviewText>
-    <MenuBar />
-  </>
-);
+      <Manner>
+        <p>받은 매너 평가</p>
+        <MannerArrow />
+      </Manner>
+      <MannerText>받은 매너 칭찬이 없습니다</MannerText>
+
+      <ReviewBlock>
+        <p>받은 거래 후기(0)</p>
+        <ReviewArrow />
+      </ReviewBlock>
+      <ReviewText>받은 후기가 없습니다.</ReviewText>
+      <MenuBar />
+    </>
+  );
+};
 
 export default ProfilePage;
