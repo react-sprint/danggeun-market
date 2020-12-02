@@ -14,24 +14,26 @@ import {
   BackArrow,
 } from '../styles/ProfileEditStyle';
 
-const ProfileEdit = ({ modify }) => (
-  <>
-    <TopDiv>
-      <Link to="profilev2">
-        <BackArrow />
-      </Link>
-      <TextBlock>프로필 수정</TextBlock>
-      <Link to="/profilev2" style={{ textDecoration: 'none', color: 'black' }}>
-        <EndText>완료</EndText>
-      </Link>
-    </TopDiv>
+const ProfileEdit = () => {
+  return (
+    <>
+      <TopDiv>
+        <Link to="profile">
+          <BackArrow />
+        </Link>
+        <TextBlock>프로필 수정</TextBlock>
+        <Link to="/profile" style={{ textDecoration: 'none', color: 'black' }}>
+          <EndText>완료</EndText>
+        </Link>
+      </TopDiv>
 
-    <TopLine />
-    <ProfileImage />
-    <Camera />
-    <NameEdit value={modify} />
-    <Danggeun />
-  </>
-);
+      <TopLine />
+      <ProfileImage />
+      <Camera />
+      <NameEdit value="성윤" />
+      <Danggeun />
+    </>
+  );
+};
 
 export default ProfileEdit;

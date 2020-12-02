@@ -1,13 +1,7 @@
 // 나의 당근 화면
 
 import React from 'react';
-<<<<<<< HEAD
 import { Link } from 'react-router-dom';
-=======
-import Clock from 'react-live-clock';
-import { Link } from 'react-router-dom';
-import MenuBar from '../components/common/MenuBar';
->>>>>>> profile-redux-flow
 import {
   MyDanggeunBlock,
   ProfileBlock,
@@ -15,10 +9,6 @@ import {
   ProfileLine,
   ProfileName,
   ListLine,
-<<<<<<< HEAD
-=======
-  TimerLineBlock,
->>>>>>> profile-redux-flow
   TopBlock,
   TopImageBlock,
   CameraBlock,
@@ -29,7 +19,6 @@ import {
   SaleText,
   PurchaseText,
   WatchText,
-  TimerBlock,
   MyAddressBlock,
   AddressAuthBlock,
   KeywordBlock,
@@ -52,13 +41,6 @@ import {
 const MyDanggeun = () => {
   return (
     <>
-<<<<<<< HEAD
-=======
-      <TimerBlock>
-        <Clock format="YYYY년 MM월 DD일 HH:mm:ss" ticking />
-      </TimerBlock>
-      <TimerLineBlock />
->>>>>>> profile-redux-flow
       <TopBlock />
       <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
       <TopImageBlock />
@@ -67,7 +49,7 @@ const MyDanggeun = () => {
       <CameraBlock />
       <ProfileName>성윤</ProfileName>
       <ProfileAddress>안양6동</ProfileAddress>
-      <Link to="./profilev2">
+      <Link to="./profile">
         <ProfileUrl>프로필 보기</ProfileUrl>
       </Link>
       <ProfileLine />
@@ -130,10 +112,6 @@ const MyDanggeun = () => {
         <p>앱 설정</p>
       </AppSet>
       <EmptyBox />
-<<<<<<< HEAD
-=======
-      <MenuBar />
->>>>>>> profile-redux-flow
     </>
   );
 };

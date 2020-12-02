@@ -22,6 +22,8 @@ export const BackArrow = styled.div`
 `;
 
 export const Profile = styled.p`
+  display: flex;
+
   position: absolute;
   top: 7px;
   left: 60px;
@@ -31,6 +33,8 @@ export const Profile = styled.p`
 `;
 
 export const ShareBlock = styled.div`
+  display: flex;
+
   position: absolute;
   top: 23px;
   right: 60px;
@@ -45,6 +49,8 @@ export const ShareBlock = styled.div`
 `;
 
 export const MenuBlock = styled.div`
+  display: flex;
+
   position: absolute;
   top: 20px;
   right: 10px;
@@ -59,9 +65,11 @@ export const MenuBlock = styled.div`
 `;
 
 export const TopBlock = styled.div`
-  width: 100%;
-
-  margin-top: 65px;
+  position: absolute;
+  top: 65px;
+  left: 0px;
+  width: 99%;
+  height: 0px;
 
   border: 1px solid #f0f0f0;
 `;
@@ -86,7 +94,7 @@ export const ProfileName = styled.p`
   display: flex;
 
   position: absolute;
-  top: 100px;
+  top: 130px;
   left: 110px;
 
   font-size: 16px;
@@ -437,7 +445,7 @@ export const MannerText = styled.p`
 export const MannerArrow = styled.div`
   position: absolute;
   top: 25px;
-  left: 375px;
+  right: 30px;
 
   width: 9px;
   height: 17px;
@@ -455,12 +463,12 @@ export const ReviewBlock = styled.div`
   width: 100%;
   height: 100px;
 
-  padding-bottom: 60px;
-
   border-bottom: 1px solid #f0f0f0;
   border-top: none;
   border-left: none;
   border-right: none;
+
+  padding-bottom: 60px;
 
   cursor: pointer;
 
@@ -496,4 +504,13 @@ export const ReviewText = styled.p`
 
   font-size: 13px;
   font-weight: 300;
+`;
+
+export const EmptyBox = styled.div`
+  position: absolute;
+  top: 812px;
+  left: 0px;
+
+  width: 100%;
+  height: 60px;
 `;
