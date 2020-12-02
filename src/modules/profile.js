@@ -11,6 +11,7 @@ const initialState = {
   profile: '빠끄',
 };
 
+<<<<<<< HEAD
 // const profile = (state = initialState, action) => {
 //   switch (action.type) {
 //     case MODIFY:
@@ -24,6 +25,19 @@ const initialState = {
 // };
 
 // export default profile;
+=======
+const profile = (state = initialState, action) => {
+  switch (action.type) {
+    case MODIFY:
+      return {
+        ...state,
+        profile: action.data,
+      };
+    default:
+      return state;
+  }
+};
+>>>>>>> profile-redux-flow
 
 export default handleActions(
   {
