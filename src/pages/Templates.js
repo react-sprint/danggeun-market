@@ -10,10 +10,12 @@ const StyledWrapper = styled.div`
 `;
 
 const Templates = () => {
-  <StyledWrapper>
-    <Header />
-    <Body />
-  </StyledWrapper>;
+  return (
+    <StyledWrapper>
+      <Header />
+      <Body />
+    </StyledWrapper>
+  );
 };
 
 export default Templates;
