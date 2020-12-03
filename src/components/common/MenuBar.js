@@ -4,13 +4,13 @@ import {
   NavHomeBlock,
   NavWrtieBlock,
   NavNearBlock,
-  NavMyDaangnBlock,
-  BottomBlock,
+  NavMyCarrotBlock,
+  NavBottomBlock,
 } from '../../styles/MenuBarStyle';
 import { LinkStyle } from '../../styles/LinkStyle';
 
 const MenuBar = () => (
-  <BottomBlock>
+  <NavBottomBlock>
     <LinkStyle>
       <Link to="/">
         <NavHomeBlock>
@@ -27,10 +27,10 @@ const MenuBar = () => (
       </Link>
 
       <Link to="/mydanggeun">
-        <NavMyDaangnBlock />
+        <NavMyCarrotBlock />
       </Link>
     </LinkStyle>
-  </BottomBlock>
+  </NavBottomBlock>
 );
 
 export default MenuBar;

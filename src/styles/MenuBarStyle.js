@@ -4,7 +4,7 @@ import write from '../images/ico/ico_write_btn.png';
 import near from '../images/ico/ico_tab_near_by_n.png';
 import mydanggeun from '../images/ico/ico_tab_mydanggeun_n.png';
 
-export const BottomBlock = styled.div`
+export const NavBottomBlock = styled.div`
   position: fixed;
   left: 0px;
   bottom: 0px;
@@ -83,7 +83,7 @@ export const NavNearBlock = styled.div`
   }
 `;
 
-export const NavMyDaangnBlock = styled.div`
+export const NavMyCarrotBlock = styled.div`
   display: flex;
   justify-content: center;
 

@@ -218,12 +218,13 @@ export const HeartText = styled.p`
 export const ChatBlock = styled.div`
   position: absolute;
   top: 260px;
-  left: 220px;
+  left: 240px;
   width: 25px;
   height: 25px;
 
   background-image: url(${danggeun});
   background-size: cover;
+
   p {
     position: absolute;
     top: -5px;
@@ -240,7 +241,7 @@ export const ChatBlock = styled.div`
 export const ChatText = styled.p`
   position: absolute;
   top: 275px;
-  left: 245px;
+  left: 265px;
 
   width: 130px;
 

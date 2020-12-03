@@ -68,6 +68,8 @@ export const EditText = styled.div`
 
 export const TopDiv = styled.div`
   display: flex;
+
+  justify-content: space-between;
 `;
 
 export const EndText = styled.p`

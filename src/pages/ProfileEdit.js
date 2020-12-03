@@ -22,7 +22,7 @@ const ProfileEdit = () => {
     name: profilename.name,
   }));
 
-  const [tempName, setTempName] = useState('');
+  const [tempName, setTempName] = useState(name);
 
   const dispatch = useDispatch();
 

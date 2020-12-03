@@ -6,12 +6,16 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
+    "firebase": "^8.1.1",
+    "md5": "^2.3.0",
     "moment-timezone": "^0.5.32",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^6.12.2",
     "react-live-clock": "^5.0.13",
     "react-moment": "^1.0.0",
     "react-redux": "^7.2.2",
@@ -32,8 +36,9 @@
   },
   "eslintConfig": {
     "extends": [
+      "airbnb",
       "prettier",
-      "airbnb"
+      "react-app"
     ],
     "parser": "babel-eslint",
     "rules": {
@@ -66,5 +71,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "after": {
+    "overrides": "none"
   }
 }

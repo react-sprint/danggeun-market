@@ -1,5 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
+import firebase from '../utils/api/fbInstance';
 import {
   BackImage,
   TopBlock,
@@ -15,7 +17,28 @@ import {
 } from '../styles/LoginStyle';
 
 const LoginPage = () => {
-  const onClick = () => console.log('로그인 성공');
+  const { register, handleSubmit, watch, errors } = useForm();
+  const [errorFormSubmit, setErrorFormSubmit] = useState('');
+  const [loading, setLoading] = useState(false);
+
+  const onSubmit = async (data) => {
+    try {
+      setLoading(true);
+
+      await firebase
+        .auth()
+        .signInWithEmailAndPassword(data.email, data.password);
+
+      setLoading(false);
+    } catch (error) {
+      setErrorFormSubmit(error.message);
+      setLoading(false);
+      setTimeout(() => {
+        setErrorFormSubmit('');
+      }, 5000);
+    }
+  };
+
   return (
     <>
       <Link to="/">
@@ -24,14 +47,14 @@ const LoginPage = () => {
       <TopBlock />
       <TopText>로그인</TopText>
 
-      <IdText>ID</IdText>
+      <IdText>Email</IdText>
       <IdBlock />
 
       <PasswordText>Password</PasswordText>
       <PasswordBlock type="password" />
 
       <Link to="/">
-        <LoginButton onClick={onClick}>
+        <LoginButton>
           <p>로그인</p>
         </LoginButton>
       </Link>
