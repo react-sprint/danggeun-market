@@ -617,8 +617,46 @@ export const AppSet = styled.div`
   }
 `;
 
-export const DanggeunBlock = styled.div`
+export const LogoutLine = styled.div`
   display: flex;
 
-  font-size: 16px;
+  position: absolute;
+  top: 1180px;
+  left: 0px;
+
+  width: 413px;
+  height: 9px;
+
+  cursor: pointer;
+
+  border: none;
+  background: #f0f0f0;
+`;
+
+export const LogOutButton = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 1200px;
+  left: 30px;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+
+  background-image: url(${danggeun});
+  background-size: cover;
+
+  p {
+    position: absolute;
+    top: -7px;
+    left: 40px;
+
+    width: 300px;
+    padding-bottom: 80px;
+
+    font-size: 14px;
+    font-weight: 300;
+  }
 `;
