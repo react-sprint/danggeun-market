@@ -114,7 +114,7 @@ export const PasswordBlock = styled.input`
   background: #ffffff;
 `;
 
-export const LoginButton = styled.button`
+export const LoginButton = styled.input`
   display: flex;
   justify-content: center;
 
@@ -130,16 +130,12 @@ export const LoginButton = styled.button`
 
   background: #ff8a3d;
 
-  p {
-    width: 380px;
+  font-weight: 400;
+  font-size: 18px;
 
-    font-weight: 400;
-    font-size: 18px;
+  color: #ffffff;
 
-    color: #ffffff;
-
-    line-height: 21px;
-  }
+  line-height: 21px;
 `;
 
 export const RegisterText = styled.p`

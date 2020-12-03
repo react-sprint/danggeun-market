@@ -19,9 +19,11 @@
 ### Stack
 
 - [React]
-- [React-Hook-Form]
 - [React-Router]
+- [React-Hook-Form]
 - [Redux]
+- [React-Redux]
+- [Redix-Action]
 - [Styled-Components]
 - [Firebase]
 - [Axios]

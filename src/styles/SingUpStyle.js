@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import x from '../images/ico/ic_window_close_outline_18.png';
-import danggeun from '../images/ico/ico_logo_72x72.png';
 
 export const BackImage = styled.div`
   display: flex;
@@ -159,7 +158,7 @@ export const RegisterText = styled.p`
   align-items: center;
 `;
 
-export const RegisterButton = styled.button`
+export const RegisterButton = styled.input`
   display: flex;
   justify-content: center;
 
@@ -175,14 +174,8 @@ export const RegisterButton = styled.button`
 
   background: #495058;
 
-  p {
-    font-weight: 400;
-    font-size: 18px;
-
-    color: #ffffff;
-
-    line-height: 20px;
-  }
+  color: white;
+  font-size: 17px;
 `;
 
 export const PasswordConfirmText = styled.p`

@@ -13,12 +13,12 @@ import {
   LoginButton,
   RegisterButton,
   RegisterText,
-  Danggeun,
 } from '../styles/LoginStyle';
+import MenuBar from '../components/common/MenuBar';
 
 const LoginPage = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const [errorFormSubmit, setErrorFormSubmit] = useState('');
+  const { register, errors, handleSubmit } = useForm();
+  const [errorFromSubmit, setErrorFromSubmit] = useState('');
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
@@ -31,10 +31,10 @@ const LoginPage = () => {
 
       setLoading(false);
     } catch (error) {
-      setErrorFormSubmit(error.message);
+      setErrorFromSubmit(error.message);
       setLoading(false);
       setTimeout(() => {
-        setErrorFormSubmit('');
+        setErrorFromSubmit('');
       }, 5000);
     }
   };
@@ -46,26 +46,41 @@ const LoginPage = () => {
       </Link>
       <TopBlock />
       <TopText>로그인</TopText>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <IdText>Email</IdText>
+        <IdBlock
+          name="email"
+          type="email"
+          ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+        />
+        {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
 
-      <IdText>Email</IdText>
-      <IdBlock />
+        <PasswordText>Password</PasswordText>
+        <PasswordBlock
+          name="password"
+          type="password"
+          ref={register({ required: true, minLength: 6 })}
+        />
 
-      <PasswordText>Password</PasswordText>
-      <PasswordBlock type="password" />
+        {errors.password && errors.password.type === 'required' && (
+          <p>올바른 비밀번호가 아닙니다.</p>
+        )}
+        {errors.password && errors.password.type === 'minLength' && (
+          <p>비밀번호의 길이가 밎지 않습니다.</p>
+        )}
 
-      <Link to="/">
-        <LoginButton>
-          <p>로그인</p>
-        </LoginButton>
-      </Link>
+        {errorFromSubmit && <p>{errorFromSubmit}</p>}
 
-      <RegisterText>아직 계정이 없으신가요?</RegisterText>
-      <Link to="register">
-        <RegisterButton>
-          <p>회원가입</p>
-        </RegisterButton>
-      </Link>
-      <Danggeun />
+        <LoginButton type="submit" disabled={loading} value="로그인" />
+
+        <RegisterText>아직 계정이 없으신가요?</RegisterText>
+        <Link to="/signup">
+          <RegisterButton>
+            <p>회원가입</p>
+          </RegisterButton>
+        </Link>
+        <MenuBar />
+      </form>
     </>
   );
 };
