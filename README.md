@@ -18,10 +18,10 @@
 
 ### Stack
 
-- [React]
-- [React-Hook-Form]
-- [React-Router]
-- [Redux]
-- [Styled-Components]
-- [Firebase]
-- [Axios]
+- [React]<img src="../../icon/react.png" width="20px" height="20px" />
+- [React-Hook-Form]<img src='../../icon/react-hook-form.png' width="20px" height="20px" />
+- [React-Router]<img src='../../icon/react-router.png' width="20px" height="20px"/>
+- [Redux]<img src='../../icon/redux.png' width="20px" height="20px"/>
+- [Styled-Components]<img src='../../icon/styled-component.png' width="20px" height="20px"/>
+- [Firebase]<img src='../../icon/firebase.png' width="20px" height="20px"/>
+- [Axios]<img src='../../icon/axios.png' width="20px" height="20px" />
