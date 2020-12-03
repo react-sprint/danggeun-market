@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
 import { Danggeun } from '../styles/LoginStyle';
 
 const SalePageBlock = styled.div`
@@ -11,15 +11,12 @@ const SalePageBlock = styled.div`
   font-size: 20px;
 `;
 
-const SalePage = () => {
-  return (
-    <>
-      <Link to="/profile">돌아가기</Link>
-      <SalePageBlock>판매상품 페이지입니다</SalePageBlock>
-      <Danggeun />
-      <BottomNavBar />
-    </>
-  );
-};
+const SalePage = () => (
+  <>
+    <Link to="/profile">돌아가기</Link>
+    <SalePageBlock>판매상품 페이지입니다</SalePageBlock>
+    <Danggeun />
+  </>
+);
 
 export default SalePage;

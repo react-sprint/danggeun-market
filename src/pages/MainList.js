@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
 import { dbService } from '../utils/api/fbInstance';
 
 const MainList = () => {
@@ -18,7 +18,7 @@ const MainList = () => {
     <div>
       <h2>HOME</h2>
       <Link to="/write-new-stuff">ss</Link>
-      <BottomNavBar />
+      <MenuBar />
     </div>
   );
 };
