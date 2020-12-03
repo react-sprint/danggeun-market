@@ -1,21 +1,24 @@
 import { createAction, handleActions } from 'redux-actions';
 
 // 액션 타입 정의
-const MODIFY = 'profile/MODIFY';
+const CHANGE_NAME = 'profile/CHANGE_NAME';
 
 // 액션 생성 함수 정의
-export const modify = createAction(MODIFY);
+export const changeName = createAction(CHANGE_NAME, (name) => name);
 
 // 초기 상태 정의
-const initialState = { profile: '' };
+const initialState = {
+  name: '성윤',
+};
 
-const profile = handleActions(
+const profilename = handleActions(
   {
-    [MODIFY]: (e) => {
-      return e.target.value;
-    },
+    [CHANGE_NAME]: (state, { payload: name }) => ({
+      ...state,
+      name: name,
+    }),
   },
   initialState,
 );
 
-export default profile;
+export default profilename;
