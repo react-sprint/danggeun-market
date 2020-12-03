@@ -6,14 +6,19 @@ import {
   BackImage,
   TopBlock,
   TopText,
+  IdContainer,
   IdText,
   IdBlock,
+  PasswordContainer,
   PasswordText,
   PasswordBlock,
   LoginButton,
   RegisterButton,
   RegisterText,
   Danggeun,
+  LoginWrapper,
+  InputContainer,
+  ButtonContainer,
 } from '../styles/LoginStyle';
 
 const LoginPage = () => {
@@ -41,17 +46,13 @@ const LoginPage = () => {
 
   return (
     <>
-      <Link to="/">
-        <BackImage />
-      </Link>
-      <TopBlock />
-      <TopText>로그인</TopText>
-
       <IdText>Email</IdText>
       <IdBlock />
 
-      <PasswordText>Password</PasswordText>
-      <PasswordBlock type="password" />
+      <PasswordContainer>
+        <PasswordText>Password</PasswordText>
+        <PasswordBlock type="password" />
+      </PasswordContainer>
 
       <Link to="/">
         <LoginButton>

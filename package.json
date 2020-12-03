@@ -23,6 +23,7 @@
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
     "redux-actions": "^2.6.5",
+    "redux-devtools": "^3.7.0",
     "redux-devtools-extension": "^2.13.8",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.1",
@@ -54,7 +55,12 @@
       "react/react-in-jsx-scope": "off",
       "no-shadow": "off",
       "object-curly-newline": "off",
-      "object-shorthand": 0
+      "object-shorthand": 0,
+      "arrow-body-style": [
+        "error",
+        "always"
+      ],
+      "import/no-unresolved": "off"
     },
     "env": {
       "browser": true

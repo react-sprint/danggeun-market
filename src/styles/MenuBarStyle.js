@@ -26,8 +26,6 @@ export const NavBottomBlock = styled.div`
 export const NavHomeBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 3px;
   left: 60px;
 
@@ -38,7 +36,6 @@ export const NavHomeBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 28px;
   }
 `;
@@ -58,7 +55,6 @@ export const NavWrtieBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;
@@ -66,8 +62,6 @@ export const NavWrtieBlock = styled.div`
 export const NavNearBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 6px;
   left: 230px;
 
@@ -78,7 +72,6 @@ export const NavNearBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;
@@ -86,8 +79,6 @@ export const NavNearBlock = styled.div`
 export const NavMyCarrotBlock = styled.div`
   display: flex;
   justify-content: center;
-
-  position: absolute;
   top: 5px;
   left: 300px;
 
@@ -98,7 +89,6 @@ export const NavMyCarrotBlock = styled.div`
   background-size: cover;
 
   p {
-    position: absolute;
     top: 25px;
   }
 `;
