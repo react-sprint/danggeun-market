@@ -9,6 +9,7 @@ import ResetStyles from './resetStyle/ResetStyles';
 import rootReducer from './modules';
 
 const store = createStore(rootReducer, composeWithDevTools());
+console.log(store);
 
 ReactDOM.render(
   <React.StrictMode>

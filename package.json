@@ -32,8 +32,8 @@
   },
   "eslintConfig": {
     "extends": [
-      "prettier",
-      "airbnb"
+      "airbnb",
+      "prettier"
     ],
     "parser": "babel-eslint",
     "rules": {
