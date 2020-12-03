@@ -55,7 +55,7 @@ export const IdText = styled.p`
   width: 22px;
   height: 17px;
 
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
 
   line-height: 17px;
@@ -75,7 +75,7 @@ export const EmailBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 16px;
 
   background: #ffffff;
 `;
@@ -89,7 +89,7 @@ export const PasswordText = styled.p`
   height: 17px;
 
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 
   line-height: 17px;
 
@@ -108,7 +108,7 @@ export const PasswordBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 16px;
 
   background: #ffffff;
 `;
@@ -172,10 +172,15 @@ export const RegisterButton = styled.input`
   border: none;
   border-radius: 6px;
 
-  background: #495058;
-
   color: white;
   font-size: 17px;
+
+  font-weight: 400;
+  font-size: 18px;
+
+  line-height: 20px;
+
+  background: #495058;
 `;
 
 export const PasswordConfirmText = styled.p`
@@ -206,7 +211,7 @@ export const PasswordConfirmBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 16px;
 
   background: #ffffff;
 `;

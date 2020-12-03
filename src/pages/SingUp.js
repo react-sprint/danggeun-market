@@ -110,8 +110,8 @@ const SingUpPage = () => {
 
         {errorFormSubmit && <p>{errorFormSubmit}</p>}
 
-        <RegisterText>계정을 만들어 당근마켓을 이용해보세요</RegisterText>
-        <RegisterButton type="submit" disabled={loading} />
+        <RegisterText>회원가입을 하면 바로 로그인이 됩니다.</RegisterText>
+        <RegisterButton type="submit" disabled={loading} value="회원가입" />
         <MenuBar />
       </form>
     </>

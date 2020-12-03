@@ -76,7 +76,7 @@ export const IdBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 16px;
 
   background: #ffffff;
 `;
@@ -109,7 +109,7 @@ export const PasswordBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 16px;
 
   background: #ffffff;
 `;
@@ -178,7 +178,7 @@ export const RegisterButton = styled.button`
 
     color: #ffffff;
 
-    line-height: 20px;
+    line-height: 17px;
   }
 `;
 

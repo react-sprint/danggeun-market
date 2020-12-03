@@ -69,7 +69,7 @@ const LoginPage = () => {
           <p>비밀번호의 길이가 밎지 않습니다.</p>
         )}
 
-        {errorFromSubmit && <p>{errorFromSubmit}</p>}
+        {errorFromSubmit && <p>로그인 실패</p>}
 
         <LoginButton type="submit" disabled={loading} value="로그인" />
 
