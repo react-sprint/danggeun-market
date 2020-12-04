@@ -2,22 +2,24 @@ import { dbService } from '../utils/api/fbInstance';
 
 const BRING_STUFF = 'bringStuff/BRING_STUFF';
 
-export const bringStuff = () => ({ type: BRING_STUFF });
-
-// eslint-disable-next-line prefer-const
-let list = [];
-const getList = async (state) => {
-  const stuffList = await dbService.collection('stuffList').get();
-  stuffList.forEach((fstore) => list.push(fstore.data()));
-  // console.log(list);
-  state.concat(list);
-  return state;
+export const bringStuff = async () => {
+  // eslint-disable-next-line prefer-const
+  let list = [];
+  // eslint-disable-next-line prefer-const
+  let data = await dbService.collection('stuffList').get();
+  data.forEach((fstore) => list.push(fstore.data()));
+  return {
+    type: BRING_STUFF,
+    payload: list,
+  };
 };
 
-export default function stuffs(state = [], action) {
+export default function stuffs(state = {}, action) {
   switch (action.type) {
     case BRING_STUFF:
-      return getList(state);
+      console.log(action.payload);
+
+      return { ...state, data: action.payload };
     default:
       return state;
   }
