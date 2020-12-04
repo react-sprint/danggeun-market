@@ -2,19 +2,19 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import firebase from '../utils/api/fbInstance';
+import { LoginButton } from '../styles/LoginStyle';
+import MenuBar from '../components/common/MenuBar';
 import {
-  BackImage,
   TopBlock,
   TopText,
-  IdText,
-  IdBlock,
-  PasswordText,
+  BackImage,
+  EmailBlock,
+  EmailText,
   PasswordBlock,
-  LoginButton,
+  PasswordText,
   RegisterButton,
   RegisterText,
-} from '../styles/LoginStyle';
-import MenuBar from '../components/common/MenuBar';
+} from '../components/layout/LoginLayout';
 
 const LoginPage = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -47,8 +47,8 @@ const LoginPage = () => {
       <TopBlock />
       <TopText>로그인</TopText>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <IdText>Email</IdText>
-        <IdBlock
+        <EmailText>Email</EmailText>
+        <EmailBlock
           name="email"
           type="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
@@ -75,9 +75,7 @@ const LoginPage = () => {
 
         <RegisterText>아직 계정이 없으신가요?</RegisterText>
         <Link to="/signup">
-          <RegisterButton>
-            <p>회원가입</p>
-          </RegisterButton>
+          <RegisterButton>회원가입</RegisterButton>
         </Link>
         <MenuBar />
       </form>

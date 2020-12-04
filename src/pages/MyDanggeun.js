@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { TopBlock } from '../components/layout/TopBlock';
+import { TopBlock } from '../components/layout/LoginLayout';
 import {
   MyDanggeunBlock,
   ProfileBlock,

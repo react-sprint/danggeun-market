@@ -23,82 +23,41 @@ export const NavBottomBlock = styled.div`
   background-color: white;
 `;
 
-export const NavHomeBlock = styled.div`
+export const LayOutBlock = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
+  align-items: center;
 
-  position: absolute;
-  top: 3px;
-  left: 60px;
+  padding-top: 10px;
+`;
 
-  width: 40px;
-  height: 40px;
+export const NavHomeBlock = styled.div`
+  width: 35px;
+  height: 35px;
 
   background-image: url(${home});
   background-size: cover;
-
-  p {
-    position: absolute;
-    top: 28px;
-  }
 `;
 
 export const NavWrtieBlock = styled.div`
-  display: flex;
-  justify-content: center;
-
-  position: absolute;
-  top: 7px;
-  left: 150px;
-
-  width: 30px;
-  height: 30px;
-
+  width: 35px;
+  height: 35px;
   background-image: url(${write});
   background-size: cover;
-
-  p {
-    position: absolute;
-    top: 25px;
-  }
 `;
 
 export const NavNearBlock = styled.div`
-  display: flex;
-  justify-content: center;
-
-  position: absolute;
-  top: 6px;
-  left: 230px;
-
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 
   background-image: url(${near});
   background-size: cover;
-
-  p {
-    position: absolute;
-    top: 25px;
-  }
 `;
 
 export const NavMyCarrotBlock = styled.div`
-  display: flex;
-  justify-content: center;
-
-  position: absolute;
-  top: 5px;
-  left: 300px;
-
-  width: 40px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 
   background-image: url(${mydanggeun});
   background-size: cover;
-
-  p {
-    position: absolute;
-    top: 25px;
-  }
 `;

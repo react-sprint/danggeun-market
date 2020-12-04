@@ -6,31 +6,34 @@ import {
   NavNearBlock,
   NavMyCarrotBlock,
   NavBottomBlock,
+  LayOutBlock,
 } from '../../styles/MenuBarStyle';
-import { LinkStyle } from '../../styles/LinkStyle';
 
-const MenuBar = () => (
-  <NavBottomBlock>
-    <LinkStyle>
-      <Link to="/">
-        <NavHomeBlock>
-          <p>홈</p>
-        </NavHomeBlock>
-      </Link>
+const MenuBar = () => {
+  return (
+    <NavBottomBlock>
+      <LayOutBlock>
+        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
+          <NavHomeBlock />
+        </Link>
 
-      <Link to="/write">
-        <NavWrtieBlock />
-      </Link>
+        <Link to="/write" style={{ textDecoration: 'none', color: 'black' }}>
+          <NavWrtieBlock />
+        </Link>
 
-      <Link to="/gps">
-        <NavNearBlock />
-      </Link>
+        <Link to="/gps" style={{ textDecoration: 'none', color: 'black' }}>
+          <NavNearBlock />
+        </Link>
 
-      <Link to="/mydanggeun">
-        <NavMyCarrotBlock />
-      </Link>
-    </LinkStyle>
-  </NavBottomBlock>
-);
+        <Link
+          to="/mydanggeun"
+          style={{ textDecoration: 'none', color: 'black' }}
+        >
+          <NavMyCarrotBlock />
+        </Link>
+      </LayOutBlock>
+    </NavBottomBlock>
+  );
+};
 
 export default MenuBar;

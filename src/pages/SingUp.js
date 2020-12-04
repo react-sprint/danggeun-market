@@ -5,15 +5,17 @@ import { Link } from 'react-router-dom';
 import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
 import {
-  BackImage,
   TopBlock,
   TopText,
-  IdText,
+  BackImage,
   EmailBlock,
+  EmailText,
   PasswordText,
   PasswordBlock,
   RegisterButton,
   RegisterText,
+} from '../components/layout/LoginLayout';
+import {
   PasswordConfirmText,
   PasswordConfirmBlock,
 } from '../styles/SingUpStyle';
@@ -66,7 +68,7 @@ const SingUpPage = () => {
       <TopText>회원가입</TopText>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <IdText>Email</IdText>
+        <EmailText>Email</EmailText>
         <EmailBlock
           name="email"
           type="email"
@@ -111,7 +113,9 @@ const SingUpPage = () => {
         {errorFormSubmit && <p>{errorFormSubmit}</p>}
 
         <RegisterText>회원가입을 하면 바로 로그인이 됩니다.</RegisterText>
-        <RegisterButton type="submit" disabled={loading} value="회원가입" />
+        <RegisterButton type="submit" disabled={loading}>
+          회원가입
+        </RegisterButton>
         <MenuBar />
       </form>
     </>
