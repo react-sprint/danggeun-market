@@ -3,17 +3,17 @@ import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import { dbService } from '../utils/api/fbInstance';
+import { bringStuff } from '../modules/bringStuff';
 
 const MainList = () => {
-  const getList = async () => {
-    const list = await dbService.collection('stuffList').get();
-    console.log(list);
-  };
+  const dispatch = useDispatch();
+  const stuff = useSelector((state) => state.stuffs);
 
   useEffect(() => {
-    getList();
+    dispatch(bringStuff());
+    console.log(stuff);
   }, []);
-  // 리덕스로 옮기면댐
+
   return (
     <div>
       <h2>HOME</h2>

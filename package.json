@@ -58,7 +58,8 @@
       "object-curly-newline": "off",
       "object-shorthand": 0,
       "no-plusplus": "off",
-      "react/button-has-type": "off"
+      "react/button-has-type": "off",
+      "no-case-declarations":"off"
     },
     "env": {
       "browser": true
