@@ -20,6 +20,7 @@ export const LoginButton = styled.input`
   font-size: 18px;
 
   color: #ffffff;
+  cursor: pointer;
 
   line-height: 21px;
 `;

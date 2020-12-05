@@ -18,7 +18,12 @@ import {
 import {
   PasswordConfirmText,
   PasswordConfirmBlock,
-} from '../styles/SingUpStyle';
+} from '../styles/SignUpStyle';
+import {
+  EmailError,
+  PasswordConfirmError,
+  PasswordError,
+} from '../styles/ErrorStyle';
 
 const SingUpPage = () => {
   const { register, watch, errors, handleSubmit } = useForm();
@@ -74,7 +79,7 @@ const SingUpPage = () => {
           type="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        {errors.email && <p>잘못된 이메일 입니다.</p>}
+        <EmailError>{errors.email && <p>잘못된 이메일 입니다.</p>}</EmailError>
 
         <PasswordText>Password</PasswordText>
         <PasswordBlock
@@ -99,16 +104,19 @@ const SingUpPage = () => {
             validate: (value) => value === password.current,
           })}
         />
+        <PasswordError>
+          {errors.password_confirm &&
+            errors.password_confirm.type === 'required' && (
+              <p>잘못된 비밀번호 입니다.</p>
+            )}
+        </PasswordError>
 
-        {errors.password_confirm &&
-          errors.password_confirm.type === 'required' && (
-            <p>잘못된 비밀번호 입니다.</p>
-          )}
-
-        {errors.password_confirm &&
-          errors.password_confirm.type === 'validate' && (
-            <p>비밀번호가 일치하지 않습니다.</p>
-          )}
+        <PasswordConfirmError>
+          {errors.password_confirm &&
+            errors.password_confirm.type === 'validate' && (
+              <p>비밀번호가 일치하지 않습니다.</p>
+            )}
+        </PasswordConfirmError>
 
         {errorFormSubmit && <p>{errorFormSubmit}</p>}
 

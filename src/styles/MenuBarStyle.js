@@ -27,8 +27,6 @@ export const LayOutBlock = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
-
-  padding-top: 10px;
 `;
 
 export const NavHomeBlock = styled.div`
@@ -37,6 +35,10 @@ export const NavHomeBlock = styled.div`
 
   background-image: url(${home});
   background-size: cover;
+
+  p {
+    margin-left: 13px;
+  }
 `;
 
 export const NavWrtieBlock = styled.div`
@@ -44,6 +46,10 @@ export const NavWrtieBlock = styled.div`
   height: 35px;
   background-image: url(${write});
   background-size: cover;
+
+  p {
+    margin-left: 5px;
+  }
 `;
 
 export const NavNearBlock = styled.div`
@@ -52,6 +58,10 @@ export const NavNearBlock = styled.div`
 
   background-image: url(${near});
   background-size: cover;
+
+  p {
+    margin-left: 9px;
+  }
 `;
 
 export const NavMyCarrotBlock = styled.div`
@@ -60,4 +70,16 @@ export const NavMyCarrotBlock = styled.div`
 
   background-image: url(${mydanggeun});
   background-size: cover;
+`;
+
+export const LinkStyle = styled.div`
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
+
+  p {
+    padding-top: 37px;
+    width: 100%;
+  }
 `;

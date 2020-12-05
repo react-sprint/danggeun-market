@@ -15,6 +15,7 @@ import {
   RegisterButton,
   RegisterText,
 } from '../components/layout/LoginLayout';
+import { EmailError, LoginPasswordError } from '../styles/ErrorStyle';
 
 const LoginPage = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -53,7 +54,10 @@ const LoginPage = () => {
           type="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
+
+        <EmailError>
+          {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
+        </EmailError>
 
         <PasswordText>Password</PasswordText>
         <PasswordBlock
@@ -62,12 +66,14 @@ const LoginPage = () => {
           ref={register({ required: true, minLength: 6 })}
         />
 
-        {errors.password && errors.password.type === 'required' && (
-          <p>올바른 비밀번호가 아닙니다.</p>
-        )}
-        {errors.password && errors.password.type === 'minLength' && (
-          <p>비밀번호의 길이가 밎지 않습니다.</p>
-        )}
+        <LoginPasswordError>
+          {errors.password && errors.password.type === 'required' && (
+            <p>올바른 비밀번호가 아닙니다.</p>
+          )}
+          {errors.password && errors.password.type === 'minLength' && (
+            <p>비밀번호의 길이가 밎지 않습니다.</p>
+          )}
+        </LoginPasswordError>
 
         {errorFromSubmit && <p>로그인 실패</p>}
 

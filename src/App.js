@@ -5,7 +5,7 @@ import Templates from './pages/Templates';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
-import SingUpPage from './pages/SingUp';
+import SingUpPage from './pages/SignUp';
 import SalePage from './pages/SalePage';
 import AttentionPage from './pages/Attention';
 import Gps from './pages/Gps';
@@ -32,7 +32,7 @@ const App = () => {
         history.push('/login');
       }
     });
-  }, [dispatch, history]);
+  });
 
   // if (!isLoading) {
   //   return <div>...loading</div>;

@@ -75,6 +75,7 @@ export const EmailBlock = styled.input`
   border-radius: 6px;
 
   font-size: 18px;
+  cursor: pointer;
 
   background: #ffffff;
 `;
@@ -108,6 +109,7 @@ export const PasswordBlock = styled.input`
   border-radius: 6px;
 
   font-size: 16px;
+  cursor: pointer;
 
   background: #ffffff;
 `;
@@ -118,7 +120,6 @@ export const RegisterText = styled.p`
   left: 23px;
   top: 500px;
 
-  width: 200px;
   height: 23px;
 
   font-size: 12px;
@@ -151,6 +152,8 @@ export const RegisterButton = styled.button`
   font-size: 18px;
 
   line-height: 53px;
+
+  cursor: pointer;
 
   background: #495058;
 `;

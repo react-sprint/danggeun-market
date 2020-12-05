@@ -7,32 +7,40 @@ import {
   NavMyCarrotBlock,
   NavBottomBlock,
   LayOutBlock,
+  LinkStyle,
 } from '../../styles/MenuBarStyle';
 
 const MenuBar = () => {
   return (
-    <NavBottomBlock>
-      <LayOutBlock>
-        <Link to="/" style={{ textDecoration: 'none', color: 'black' }}>
-          <NavHomeBlock />
-        </Link>
+    <LinkStyle>
+      <NavBottomBlock>
+        <LayOutBlock>
+          <Link to="/">
+            <NavHomeBlock>
+              <p>홈</p>
+            </NavHomeBlock>
+          </Link>
 
-        <Link to="/write" style={{ textDecoration: 'none', color: 'black' }}>
-          <NavWrtieBlock />
-        </Link>
+          <Link to="/write">
+            <NavWrtieBlock>
+              <p>글쓰기</p>
+            </NavWrtieBlock>
+          </Link>
 
-        <Link to="/gps" style={{ textDecoration: 'none', color: 'black' }}>
-          <NavNearBlock />
-        </Link>
+          <Link to="/gps">
+            <NavNearBlock>
+              <p>위치</p>
+            </NavNearBlock>
+          </Link>
 
-        <Link
-          to="/mydanggeun"
-          style={{ textDecoration: 'none', color: 'black' }}
-        >
-          <NavMyCarrotBlock />
-        </Link>
-      </LayOutBlock>
-    </NavBottomBlock>
+          <Link to="/mydanggeun">
+            <NavMyCarrotBlock>
+              <p>나의당근</p>
+            </NavMyCarrotBlock>
+          </Link>
+        </LayOutBlock>
+      </NavBottomBlock>
+    </LinkStyle>
   );
 };
 

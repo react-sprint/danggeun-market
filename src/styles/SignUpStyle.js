@@ -29,6 +29,7 @@ export const PasswordConfirmBlock = styled.input`
   border-radius: 6px;
 
   font-size: 18px;
+  cursor: pointer;
 
   background: #ffffff;
 `;
