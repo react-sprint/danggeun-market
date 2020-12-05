@@ -12,14 +12,16 @@ const StyledWrapper = styled.div`
   align-items: center;
 `;
 
-const Templates = () => (
-  <StyledWrapper>
-    <Header />
-    <Provider store={store}>
-      <Body />
-    </Provider>
-    <List />
-  </StyledWrapper>
-);
+const Templates = () => {
+  return (
+    <StyledWrapper>
+      <Header />
+      <Provider store={store}>
+        <Body />
+      </Provider>
+      <List />
+    </StyledWrapper>
+  );
+};
 
 export default Templates;

@@ -1,13 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-function MainList() {
+const MainList = () => {
   return (
-    <div>
-      <h2>list home</h2>
-      <Link to="/write-new-stuff">ss</Link>
-    </div>
+    <>
+      <h1>Item_List</h1>
+    </>
   );
-}
+};
 
 export default MainList;

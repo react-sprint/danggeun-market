@@ -1,6 +1,7 @@
 import React from 'react';
+import MenuBar from '../components/common/MenuBar';
 
-function WritingStuff() {
+const WritingStuff = () => {
   return (
     <div>
       <form>
@@ -28,6 +29,6 @@ function WritingStuff() {
       </form>
     </div>
   );
-}
+};
 
 export default WritingStuff;
