@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Templates from './pages/Templates';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
@@ -20,7 +19,6 @@ const App = () => {
       <Layout>
         <Route exact path="/" component={MainList} />
         <Route path="/write-new-stuff" component={WritingStuff} />
-        <Route path="/templater" component={Templates} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/register" component={RegisterPage} />
         <Route exact path="/sale" component={SalePage} />

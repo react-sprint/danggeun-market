@@ -1,17 +1,27 @@
 import React from 'react';
 import styled from 'styled-components';
-import MenuBar from '../components/common/MenuBar';
+import { Provider } from 'react-redux';
+import Header from '../components/neighborhood/Header';
+import Body from '../components/neighborhood/Body';
+import store from '../components/neighborhood/store';
+import List from '../components/neighborhood/List';
 
-const GpsBlock = styled.div`
-  margin-top: 100px;
-  text-align: center;
-  font-size: 20px;
+const StyledWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
-const Gps = () => (
-  <>
-    <GpsBlock>성재님이 만드실 페이지입니다.</GpsBlock>
-  </>
-);
+const Gps = () => {
+  return (
+    <StyledWrapper>
+      <Header />
+      <Provider store={store}>
+        <Body />
+      </Provider>
+      <List />
+    </StyledWrapper>
+  );
+};
 
 export default Gps;
