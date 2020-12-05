@@ -40,7 +40,7 @@ const Body = (props) => {
 };
 
 function mapStateToProps(state) {
-  // console.log(state);
+  return state;
 }
 
 const mapDispatchToProps = (dispatch) => ({
