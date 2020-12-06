@@ -52,19 +52,17 @@ const StyledUnderline = styled.div`
   background-color: #ebebed;
 `;
 
-const Header = () => {
-  return (
-    <StyledWrapper>
-      <StyledArrowBackIcon />
-      <StyledSearchBarWrapper>
-        <StyledSearchIcon />
-        <StyledInput placeholder="동명(읍, 면)으로 검색 (ex. 서초동)" />
-        <StyledCloseIcon />
-        <StyledUnderline />
-      </StyledSearchBarWrapper>
-    </StyledWrapper>
-  );
-};
+const Header = () => (
+  <StyledWrapper>
+    <StyledArrowBackIcon />
+    <StyledSearchBarWrapper>
+      <StyledSearchIcon />
+      <StyledInput placeholder="동명(읍, 면)으로 검색 (ex. 서초동)" />
+      <StyledCloseIcon />
+      <StyledUnderline />
+    </StyledSearchBarWrapper>
+  </StyledWrapper>
+);
 
 export default Header;
 export { StyledUnderline };

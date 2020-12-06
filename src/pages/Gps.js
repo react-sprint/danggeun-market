@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import BottomNavBar from '../components/common/BottomNavBar';
+import MenuBar from '../components/common/MenuBar';
 
 const GpsBlock = styled.div`
   margin-top: 100px;
@@ -8,13 +8,10 @@ const GpsBlock = styled.div`
   font-size: 20px;
 `;
 
-const Gps = () => {
-  return (
-    <>
-      <GpsBlock>성재님이 만드실 페이지입니다.</GpsBlock>
-      <BottomNavBar />
-    </>
-  );
-};
+const Gps = () => (
+  <>
+    <GpsBlock>성재님이 만드실 페이지입니다.</GpsBlock>
+  </>
+);
 
 export default Gps;

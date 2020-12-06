@@ -1,149 +1,508 @@
 import styled from 'styled-components';
-import x from '../images/ico/ic_window_close_outline_18.png';
-import danggeun from '../images/ico/ico_logo_72x72.png';
-import loopy from '../images/ico/loopy.jpeg';
+import danggeun from '../images/ico/ico_logo_48x48.png';
+import profile from '../images/ico/ico_profile_placeholder.png';
+import back from '../images/ico/ico_back_home_arrow.png';
+import arrow from '../images/ico/ico_profile_arrow.png';
+import share from '../images/ico/ico_mydaangn_share_outline_24.png';
+import menu from '../images/ico/ico_more.png';
 
-export const BackImage = styled.div`
+export const BackArrow = styled.div`
+  display: flex;
+  position: absolute;
+  top: 26px;
+  left: 22px;
+
+  width: 17px;
+  height: 17px;
+
+  cursor: pointer;
+
+  background-image: url(${back});
+  background-size: cover;
+`;
+
+export const Profile = styled.p`
   display: flex;
 
   position: absolute;
-  left: 23.21px;
-  top: 38.21px;
+  top: 7px;
+  left: 60px;
 
-  width: 14.58px;
-  height: 14.58px;
+  font-weight: 500;
+  font-size: 18px;
+`;
 
-  background-image: url(${x});
+export const ShareBlock = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 23px;
+  right: 60px;
+
+  width: 25px;
+  height: 25px;
+
+  cursor: pointer;
+
+  background-image: url(${share});
+  background-size: cover;
+`;
+
+export const MenuBlock = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 20px;
+  right: 10px;
+
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+
+  background-image: url(${menu});
   background-size: cover;
 `;
 
 export const TopBlock = styled.div`
-  display: flex;
-
   position: absolute;
+  top: 65px;
   left: 0px;
-  top: 71px;
-
-  width: 412px;
+  width: 99%;
   height: 0px;
 
-  border: 1px solid #c9c9c9;
-`;
-
-export const TopText = styled.p`
-  position: absolute;
-  left: 160px;
-  top: 20px;
-
-  width: 94px;
-  height: 17px;
-
-  color: #000000;
-
-  font-size: 18px;
-  font-weight: 500;
-
-  font-family: Roboto;
-  font-style: normal;
-  line-height: 21px;
-  text-align: center;
+  border: 1px solid #f0f0f0;
 `;
 
 export const ProfileImage = styled.div`
+  display: flex;
+
   position: absolute;
-  left: 110px;
-  top: 110px;
+  top: 91px;
+  left: 17px;
 
-  width: 200px;
-  height: 200px;
+  width: 69px;
+  height: 69px;
 
-  border: 2px solid #c9c9c9;
-  border-radius: 50%;
+  cursor: pointer;
 
-  background-image: url(${loopy});
+  background-image: url(${profile});
   background-size: cover;
 `;
 
-export const ProfileModify = styled.p`
+export const ProfileName = styled.p`
+  display: flex;
+
   position: absolute;
-  left: 305px;
-  top: 270px;
+  top: 130px;
+  left: 110px;
 
-  width: 40px;
-  height: 25px;
+  font-size: 16px;
+  font-weight: 600;
 
-  font-size: 20px;
-  font-weight: normal;
-
-  color: #ff8a3d;
-
-  line-height: 23px;
-  text-align: center;
+  cursor: pointer;
 `;
 
-export const ProfileName = styled.div`
+export const MannerBlock = styled.p`
+  display: flex;
+
+  position: absolute;
+  top: 160px;
+  left: 20px;
+
+  font-size: 15px;
+  text-decoration: underline;
+
+  cursor: pointer;
+`;
+
+export const MannerImage = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 172px;
+  left: 73px;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url(${danggeun});
+  background-size: cover;
+`;
+
+export const Temperature = styled.div`
   display: flex;
   justify-content: center;
 
   position: absolute;
-  top: 346px;
-  left: 110px;
+  top: 220px;
+  left: 0px;
+
+  width: 100%;
+  height: 70px;
+
+  p {
+    position: absolute;
+    top: -30px;
+    left: 120px;
+
+    width: 100px;
+    height: 10px;
+
+    font-size: 12px;
+  }
+
+  hr {
+    position: absolute;
+    top: 0px;
+    width: 380px;
+    height: 10px;
+
+    border-radius: 20px;
+    border: none;
+
+    background: #f0f0f0;
+  }
+`;
+
+export const BlueHr = styled.hr`
+  position: absolute;
+  top: 220px;
+  left: 17px;
+
+  width: 150px;
+  height: 10px;
+
+  border-radius: 20px;
+  border: none;
+
+  background: #1565c0;
+`;
+
+export const Heart = styled.div`
+  position: absolute;
+
+  top: 260px;
+  left: 17px;
+
+  width: 25px;
+  height: 25px;
+
+  background-image: url(${danggeun});
+  background-size: cover;
+
+  p {
+    position: absolute;
+    top: -5px;
+    left: 25px;
+
+    width: 100px;
+    height: 10px;
+
+    font-size: 12px;
+    font-weight: 400;
+  }
+`;
+
+export const HeartText = styled.p`
+  position: absolute;
+  top: 275px;
+  left: 42px;
 
   width: 200px;
-  height: 50px;
 
-  border-bottom: 2px solid #ff8a3d;
+  font-size: 11px;
+  font-weight: 300;
+`;
+
+export const ChatBlock = styled.div`
+  position: absolute;
+  top: 260px;
+  left: 240px;
+  width: 25px;
+  height: 25px;
+
+  background-image: url(${danggeun});
+  background-size: cover;
+
+  p {
+    position: absolute;
+    top: -5px;
+    left: 25px;
+
+    width: 60px;
+    height: 10px;
+
+    font-size: 12px;
+    font-weight: 400;
+  }
+`;
+
+export const ChatText = styled.p`
+  position: absolute;
+  top: 275px;
+  left: 265px;
+
+  width: 130px;
+
+  font-size: 11px;
+  font-weight: 300;
+`;
+
+export const TemperatureImage = styled.div`
+  position: absolute;
+  top: 185px;
+  left: 365px;
+
+  width: 40px;
+  height: 40px;
+
+  background-image: url(${danggeun});
+  background-size: cover;
+  p {
+    position: absolute;
+    top: -1px;
+    right: 30px;
+
+    width: 50px;
+
+    font-size: 16px;
+  }
+`;
+
+export const ListLine = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 320px;
+  left: 0px;
+
+  width: 100%;
+  height: 80px;
+
+  background: #f0f0f0;
+
+  p {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    font-size: 11px;
+    font-weight: 400;
+  }
+`;
+
+export const BadgeBlock = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 400px;
+  left: 0px;
+
+  width: 100%;
+  height: 70px;
+
+  border-bottom: 1px solid #f0f0f0;
   border-top: none;
   border-left: none;
   border-right: none;
 
-  color: black;
-  font-size: 18px;
-  line-height: 60px;
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+
+    font-size: 14px;
+  }
 `;
 
-export const SaleBlock = styled.button`
+export const BadgeArrow = styled.div`
+  display: flex;
   position: absolute;
-  left: 17px;
-  top: 450px;
+  top: 26px;
+  right: 30px;
 
-  width: 380px;
-  height: 60px;
+  width: 9px;
+  height: 17px;
 
-  border: 1px solid #d6d5da;
-  box-sizing: border-box;
-  border-radius: 10px;
-
-  font-size: 18px;
-
-  background: #ffffff;
-`;
-
-export const AttentionBlock = styled.button`
-  position: absolute;
-  left: 17px;
-  top: 535px;
-
-  width: 380px;
-  height: 60px;
-
-  border: 1px solid #d6d5da;
-  box-sizing: border-box;
-  border-radius: 10px;
-
-  font-size: 18px;
-
-  background: #ffffff;
-`;
-
-export const Danggeun = styled.div`
-  position: absolute;
-  top: 600px;
-  left: 173px;
-
-  width: 72px;
-  height: 72px;
-
-  background-image: url(${danggeun});
+  background-image: url(${arrow});
   background-size: cover;
+`;
+
+export const SaleBlock = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 470px;
+  left: 0px;
+
+  width: 100%;
+  height: 70px;
+
+  border-bottom: 1px solid #f0f0f0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+
+    font-size: 14px;
+  }
+`;
+
+export const SaleArrow = styled.div`
+  display: flex;
+  position: absolute;
+  top: 26px;
+  right: 30px;
+
+  width: 9px;
+  height: 17px;
+
+  background-image: url(${arrow});
+  background-size: cover;
+`;
+
+export const TownBlock = styled.div`
+  display: flex;
+
+  position: absolute;
+  top: 540px;
+  left: 0px;
+
+  width: 100%;
+  height: 70px;
+
+  border-bottom: 1px solid #f0f0f0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    top: 13px;
+    left: 20px;
+
+    font-size: 14px;
+  }
+`;
+
+export const TownArrow = styled.div`
+  display: flex;
+  position: absolute;
+  top: 26px;
+  right: 30px;
+
+  width: 9px;
+  height: 17px;
+
+  background-image: url(${arrow});
+  background-size: cover;
+`;
+
+export const Manner = styled.div`
+  display: flex;
+  position: absolute;
+  top: 610px;
+  left: 0px;
+
+  width: 100%;
+  height: 100px;
+
+  border-bottom: 1px solid #f0f0f0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    font-size: 14px;
+  }
+`;
+
+export const MannerText = styled.p`
+  position: absolute;
+  top: 660px;
+  left: 20px;
+
+  font-size: 13px;
+  font-weight: 300;
+`;
+
+export const MannerArrow = styled.div`
+  position: absolute;
+  top: 25px;
+  right: 30px;
+
+  width: 9px;
+  height: 17px;
+
+  background-image: url(${arrow});
+  background-size: cover;
+`;
+
+export const ReviewBlock = styled.div`
+  display: flex;
+  position: absolute;
+  top: 710px;
+  left: 0px;
+
+  width: 100%;
+  height: 100px;
+
+  border-bottom: 1px solid #f0f0f0;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+
+  padding-bottom: 60px;
+
+  cursor: pointer;
+
+  p {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+
+    font-size: 14px;
+  }
+`;
+
+export const ReviewArrow = styled.div`
+  position: absolute;
+  top: 25px;
+  right: 30px;
+
+  width: 9px;
+  height: 17px;
+
+  background-image: url(${arrow});
+  background-size: cover;
+`;
+export const ReviewText = styled.p`
+  display: flex;
+
+  position: absolute;
+  top: 760px;
+  left: 20px;
+
+  width: 120px;
+  height: 10px;
+
+  font-size: 13px;
+  font-weight: 300;
 `;

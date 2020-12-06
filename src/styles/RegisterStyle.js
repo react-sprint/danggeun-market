@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import x from '../images/ico/ic_window_close_outline_18.png';
+import x from '../images/ico/ico_window_close_outline_18.png';
 import danggeun from '../images/ico/ico_logo_72x72.png';
 
 export const BackImage = styled.div`
@@ -64,7 +64,7 @@ export const IdText = styled.p`
   color: #8e8e8e;
 `;
 
-export const IdBlock = styled.input`
+export const EmailBlock = styled.input`
   position: absolute;
   left: 18px;
   top: 150px;
@@ -216,16 +216,4 @@ export const PasswordConfirmBlock = styled.input`
   font-size: 20px;
 
   background: #ffffff;
-`;
-
-export const Danggeun = styled.div`
-  position: absolute;
-  top: 600px;
-  left: 173px;
-
-  width: 72px;
-  height: 72px;
-
-  background-image: url(${danggeun});
-  background-size: cover;
 `;

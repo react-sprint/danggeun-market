@@ -1,13 +1,16 @@
 import styled from 'styled-components';
-import x from '../images/ico/ic_window_close_outline_18.png';
+import x from '../images/ico/ico_window_close_outline_18.png';
 import danggeun from '../images/ico/ico_logo_72x72.png';
+
+export const LoginWrapper = styled.div`
+  height: calc(100vh - 40px - 62.58px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+`;
 
 export const BackImage = styled.div`
   display: flex;
-
-  position: absolute;
-  left: 23.21px;
-  top: 38.21px;
 
   width: 14.58px;
   height: 14.58px;
@@ -19,10 +22,6 @@ export const BackImage = styled.div`
 export const TopBlock = styled.div`
   display: flex;
 
-  position: absolute;
-  left: 0px;
-  top: 71px;
-
   width: 412px;
   height: 0px;
 
@@ -30,10 +29,6 @@ export const TopBlock = styled.div`
 `;
 
 export const TopText = styled.p`
-  position: absolute;
-  left: 160px;
-  top: 20px;
-
   width: 94px;
   height: 17px;
 
@@ -48,14 +43,13 @@ export const TopText = styled.p`
   text-align: center;
 `;
 
+export const IdContainer = styled.div`
+  padding-top: 27px;
+`;
+
 export const IdText = styled.p`
-  position: absolute;
-  left: 23px;
-  top: 100px;
-
-  width: 22px;
   height: 17px;
-
+  margin-bottom: 11px;
   font-size: 18px;
   font-weight: 400;
 
@@ -65,13 +59,9 @@ export const IdText = styled.p`
 `;
 
 export const IdBlock = styled.input`
-  position: absolute;
-  left: 18px;
-  top: 150px;
-
-  width: 380px;
   height: 53px;
-
+  width: 100%;
+  margin-bottom: 11px;
   border: 1.5px solid #d6d5da;
   box-sizing: border-box;
   border-radius: 6px;
@@ -81,14 +71,10 @@ export const IdBlock = styled.input`
   background: #ffffff;
 `;
 
+export const PasswordContainer = styled.div``;
 export const PasswordText = styled.p`
-  position: absolute;
-  left: 23px;
-  top: 210px;
-
-  width: 79px;
   height: 17px;
-
+  margin-bottom: 11px;
   font-weight: 400;
   font-size: 18px;
 
@@ -98,13 +84,9 @@ export const PasswordText = styled.p`
 `;
 
 export const PasswordBlock = styled.input`
-  position: absolute;
-  left: 20px;
-  top: 260px;
-
-  width: 380px;
   height: 53px;
-
+  width: 100%;
+  margin-bottom: 11px;
   border: 1.5px solid #d6d5da;
   box-sizing: border-box;
   border-radius: 6px;
@@ -117,18 +99,17 @@ export const PasswordBlock = styled.input`
 export const LoginButton = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  position: absolute;
-  left: 18px;
-  top: 430px;
-
-  width: 380px;
+  width: 100%;
   height: 53px;
 
   border: none;
   border-radius: 6px;
 
   background: #ff8a3d;
+
+  margin-bottom: 16px;
 
   p {
     width: 380px;
@@ -144,11 +125,6 @@ export const LoginButton = styled.button`
 
 export const RegisterText = styled.p`
   display: flex;
-  position: absolute;
-  left: 23px;
-  top: 500px;
-
-  width: 127px;
   height: 23px;
 
   font-size: 12px;
@@ -163,12 +139,9 @@ export const RegisterText = styled.p`
 export const RegisterButton = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  position: absolute;
-  left: 18px;
-  top: 540px;
-
-  width: 380px;
+  width: 100%;
   height: 53px;
 
   border: none;
@@ -186,12 +159,12 @@ export const RegisterButton = styled.button`
   }
 `;
 
-export const Danggeun = styled.div`
-  position: absolute;
-  top: 600px;
-  left: 173px;
+export const InputContainer = styled.div``;
+export const ButtonContainer = styled.div`
+  margin-bottom: 20vh;
+`;
 
-  width: 72px;
+export const Danggeun = styled.div`
   height: 72px;
 
   background-image: url(${danggeun});

@@ -6,18 +6,24 @@
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
+    "axios": "^0.21.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-airbnb": "^18.2.1",
-    "firebase": "^8.1.1",
     "eslint-config-prettier": "^6.15.0",
+    "firebase": "^8.1.1",
+    "md5": "^2.3.0",
+    "moment-timezone": "^0.5.32",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
+    "react-hook-form": "^6.12.2",
+    "react-live-clock": "^5.0.13",
+    "react-moment": "^1.0.0",
     "react-redux": "^7.2.2",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
-    "redux-devtools": "^3.7.0",
     "redux-actions": "^2.6.5",
+    "redux-devtools": "^3.7.0",
     "redux-devtools-extension": "^2.13.8",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.1",
@@ -32,25 +38,28 @@
   },
   "eslintConfig": {
     "extends": [
+      "airbnb",
       "prettier",
-      "airbnb"
+      "react-app"
     ],
     "parser": "babel-eslint",
     "rules": {
       "react/prefer-stateless-function": 0,
       "react/jsx-filename-extension": 0,
       "react/jsx-one-expression-per-line": 0,
+      "import/prefer-default-export": "off",
       "linebreak-style": 0,
       "no-console": "off",
       "no-unused-vars": "off",
-      "arrow-body-style": [
-        "error",
-        "always"
-      ],
-      "import/prefer-default-export": "off",
+      "react/prop-types": 0,
+      "import/no-unresolved": "off",
+      "react/react-in-jsx-scope": "off",
+      "no-shadow": "off",
+      "object-curly-newline": "off",
+      "object-shorthand": 0,
       "no-plusplus": "off",
       "react/button-has-type": "off",
-      "import/no-unresolved": "off"
+      "no-case-declarations":"off"
     },
     "env": {
       "browser": true
@@ -67,5 +76,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "after": {
+    "overrides": "none"
   }
 }

@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
-import inputs from './writeStuff';
-import { modify } from './profile';
+import profilename from './profile';
+import stuffs from './bringStuff';
 
 const rootReducer = combineReducers({
-  inputs,
-  modify,
+  profilename,
+  stuffs,
 });
 
 export default rootReducer;
