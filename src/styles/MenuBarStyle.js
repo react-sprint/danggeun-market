@@ -24,7 +24,7 @@ export const NavBottomBlock = styled.div`
 `;
 
 export const LayOutBlock = styled.div`
-  display: flex;
+  display: flex
   justify-content: space-around;
   align-items: center;
 `;
