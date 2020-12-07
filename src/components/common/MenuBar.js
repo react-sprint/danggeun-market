@@ -9,28 +9,30 @@ import {
 } from '../../styles/MenuBarStyle';
 import { LinkStyle } from '../../styles/LinkStyle';
 
-const MenuBar = () => (
-  <NavBottomBlock>
-    <LinkStyle>
-      <Link to="/">
-        <NavHomeBlock>
-          <p>홈</p>
-        </NavHomeBlock>
-      </Link>
+const MenuBar = () => {
+  return (
+    <NavBottomBlock>
+      <LinkStyle>
+        <Link to="/">
+          <NavHomeBlock>
+            <p>홈</p>
+          </NavHomeBlock>
+        </Link>
 
-      <Link to="/write">
-        <NavWrtieBlock />
-      </Link>
+        <Link to="/write">
+          <NavWrtieBlock />
+        </Link>
 
-      <Link to="/gps">
-        <NavNearBlock />
-      </Link>
+        <Link to="/gps">
+          <NavNearBlock />
+        </Link>
 
-      <Link to="/mydanggeun">
-        <NavMyCarrotBlock />
-      </Link>
-    </LinkStyle>
-  </NavBottomBlock>
-);
+        <Link to="/mydanggeun">
+          <NavMyCarrotBlock />
+        </Link>
+      </LinkStyle>
+    </NavBottomBlock>
+  );
+};
 
 export default MenuBar;

@@ -6,14 +6,16 @@ import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './App';
 import rootReducer from './modules';
+import ResetStyles from './resetStyle/ResetStyles';
 
 const store = createStore(rootReducer, composeWithDevTools());
 
 ReactDOM.render(
-  <BrowserRouter>
-    <Provider store={store}>
+  <>
+    <ResetStyles />
+    <BrowserRouter>
       <App />
-    </Provider>
-  </BrowserRouter>,
+    </BrowserRouter>
+  </>,
   document.getElementById('root'),
 );
