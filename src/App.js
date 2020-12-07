@@ -5,7 +5,7 @@ import Templates from './pages/Templates';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
-import SingUpPage from './pages/SignUp';
+import SignUpPage from './pages/SignUp';
 import SalePage from './pages/SalePage';
 import AttentionPage from './pages/Attention';
 import Gps from './pages/Gps';
@@ -43,12 +43,9 @@ const App = () => {
         <Route path="/write-new-stuff" component={WritingStuff} />
         <Route path="/templater" component={Templates} />
         <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/signup" component={SingUpPage} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/register" component={RegisterPage} />
+        <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/sale" component={SalePage} />
         <Route exact path="/attention" component={AttentionPage} />
-        <Route exact path="/write" component={WritingStuff} />
         <Route exact path="/gps" component={Gps} />
         <Route exact path="/mydanggeun" component={MyDanggeun} />
         <Route exact path="/profile" component={ProfilePage} />

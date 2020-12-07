@@ -1,12 +1,5 @@
 import styled from 'styled-components';
 
-export const LoginWrapper = styled.div`
-  height: calc(100vh - 40px - 62.58px);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-`;
-
 export const BackImage = styled.div`
   display: flex;
 
@@ -69,16 +62,14 @@ export const IdBlock = styled.input`
   background: #ffffff;
 `;
 
-export const PasswordContainer = styled.div``;
 export const PasswordText = styled.p`
   height: 17px;
   margin-bottom: 11px;
   font-weight: 400;
   font-size: 18px;
 
-  line-height: 17px;
-
-  color: #8e8e8e;
+  color: #ffffff;
+  cursor: pointer;
 `;
 
 export const PasswordBlock = styled.input`
