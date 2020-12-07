@@ -77,7 +77,9 @@ const LoginPage = () => {
 
         {errorFromSubmit && <p>로그인 실패</p>}
 
-        <LoginButton type="submit" disabled={loading} value="로그인" />
+        <LoginButton type="submit" disabled={loading}>
+          로그인
+        </LoginButton>
 
         <RegisterText>아직 계정이 없으신가요?</RegisterText>
         <Link to="/signup">

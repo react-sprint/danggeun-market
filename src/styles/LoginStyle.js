@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
-export const LoginButton = styled.input`
+export const LoginButton = styled.button`
   display: flex;
   justify-content: center;
+  align-items: center;
 
   position: absolute;
   left: 18px;
@@ -21,6 +22,4 @@ export const LoginButton = styled.input`
 
   color: #ffffff;
   cursor: pointer;
-
-  line-height: 21px;
 `;

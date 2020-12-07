@@ -25,7 +25,7 @@ import {
   PasswordError,
 } from '../styles/ErrorStyle';
 
-const SingUpPage = () => {
+const SignUpPage = () => {
   const { register, watch, errors, handleSubmit } = useForm();
   const [errorFormSubmit, setErrorFormSubmit] = useState('');
   const [loading, setLoading] = useState(false);
@@ -130,4 +130,4 @@ const SingUpPage = () => {
   );
 };
 
-export default SingUpPage;
+export default SignUpPage;

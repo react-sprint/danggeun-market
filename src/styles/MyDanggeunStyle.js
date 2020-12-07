@@ -633,7 +633,7 @@ export const LogoutLine = styled.div`
   background: #f0f0f0;
 `;
 
-export const LogOutButton = styled.div`
+export const LogOutButton = styled.button`
   display: flex;
 
   position: absolute;
@@ -643,6 +643,9 @@ export const LogOutButton = styled.div`
   width: 30px;
   height: 30px;
 
+  border: none;
+  background: white;
+
   cursor: pointer;
 
   background-image: url(${danggeun});
@@ -650,10 +653,10 @@ export const LogOutButton = styled.div`
 
   p {
     position: absolute;
+    width: 100px;
     top: -7px;
-    left: 40px;
+    left: 15px;
 
-    width: 300px;
     padding-bottom: 80px;
 
     font-size: 14px;
