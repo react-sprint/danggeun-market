@@ -1,6 +1,4 @@
 import styled from 'styled-components';
-import x from '../images/ico/ic_window_close_outline_18.png';
-import danggeun from '../images/ico/ico_logo_72x72.png';
 
 export const LoginWrapper = styled.div`
   height: calc(100vh - 40px - 62.58px);
@@ -109,64 +107,5 @@ export const LoginButton = styled.button`
 
   background: #ff8a3d;
 
-  margin-bottom: 16px;
-
-  p {
-    width: 380px;
-
-    font-weight: 400;
-    font-size: 18px;
-
-    color: #ffffff;
-
-    line-height: 21px;
-  }
-`;
-
-export const RegisterText = styled.p`
-  display: flex;
-  height: 23px;
-
-  font-size: 12px;
-  font-weight: 500;
-
-  color: #8e8e8e;
-
-  line-height: 14px;
-  align-items: center;
-`;
-
-export const RegisterButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 53px;
-
-  border: none;
-  border-radius: 6px;
-
-  background: #495058;
-
-  p {
-    font-weight: 400;
-    font-size: 18px;
-
-    color: #ffffff;
-
-    line-height: 20px;
-  }
-`;
-
-export const InputContainer = styled.div``;
-export const ButtonContainer = styled.div`
-  margin-bottom: 20vh;
-`;
-
-export const Danggeun = styled.div`
-  height: 72px;
-
-  background-image: url(${danggeun});
-  background-size: cover;
+  line-height: 21px;
 `;

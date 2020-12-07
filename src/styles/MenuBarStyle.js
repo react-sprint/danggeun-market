@@ -23,72 +23,63 @@ export const NavBottomBlock = styled.div`
   background-color: white;
 `;
 
-export const NavHomeBlock = styled.div`
-  display: flex;
-  justify-content: center;
-  top: 3px;
-  left: 60px;
+export const LayOutBlock = styled.div`
+  display: flex
+  justify-content: space-around;
+  align-items: center;
+`;
 
-  width: 40px;
-  height: 40px;
+export const NavHomeBlock = styled.div`
+  width: 35px;
+  height: 35px;
 
   background-image: url(${home});
   background-size: cover;
 
   p {
-    top: 28px;
+    margin-left: 13px;
   }
 `;
 
 export const NavWrtieBlock = styled.div`
-  display: flex;
-  justify-content: center;
-
-  position: absolute;
-  top: 7px;
-  left: 150px;
-
-  width: 30px;
-  height: 30px;
-
+  width: 35px;
+  height: 35px;
   background-image: url(${write});
   background-size: cover;
 
   p {
-    top: 25px;
+    margin-left: 5px;
   }
 `;
 
 export const NavNearBlock = styled.div`
-  display: flex;
-  justify-content: center;
-  top: 6px;
-  left: 230px;
-
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 
   background-image: url(${near});
   background-size: cover;
 
   p {
-    top: 25px;
+    margin-left: 9px;
   }
 `;
 
 export const NavMyCarrotBlock = styled.div`
-  display: flex;
-  justify-content: center;
-  top: 5px;
-  left: 300px;
-
-  width: 40px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
 
   background-image: url(${mydanggeun});
   background-size: cover;
+`;
+
+export const LinkStyle = styled.div`
+  a {
+    text-decoration: none;
+    color: #000000;
+  }
 
   p {
-    top: 25px;
+    padding-top: 37px;
+    width: 100%;
   }
 `;
