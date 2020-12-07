@@ -11,7 +11,6 @@ import AttentionPage from './pages/Attention';
 import Gps from './pages/Gps';
 import MyDanggeun from './pages/MyDanggeun';
 import ProfileEdit from './pages/ProfileEdit';
-import MenuBar from './components/common/MenuBar';
 import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
@@ -34,9 +33,9 @@ const App = () => {
     });
   });
 
-  // if (!isLoading) {
-  //   return <div>...loading</div>;
-  // }
+import MenuBar from './components/common/MenuBar';
+
+const App = () => {
   return (
     <Switch>
       <Layout>
@@ -51,11 +50,10 @@ const App = () => {
         <Route exact path="/mydanggeun" component={MyDanggeun} />
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/profileedit" component={ProfileEdit} />
-
         <MenuBar />
       </Layout>
     </Switch>
   );
 };
-
+ 
 export default App;
