@@ -99,6 +99,6 @@ export const NameEdit = styled.input`
   font-size: 18px;
   font-weight: 400;
   text-align: center;
-
   line-height: 60px;
+  cursor: pointer;
 `;

@@ -12,13 +12,13 @@ const store = createStore(rootReducer, composeWithDevTools());
 // console.log(store);
 
 ReactDOM.render(
-  <React.StrictMode>
+  <>
     <ResetStyles />
     <BrowserRouter>
       <Provider store={store}>
         <App />
       </Provider>
     </BrowserRouter>
-  </React.StrictMode>,
+  </>,
   document.getElementById('root'),
 );

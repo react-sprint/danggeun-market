@@ -1,10 +1,10 @@
 import { combineReducers } from 'redux';
 import profilename from './profile';
-import stuffs from './bringStuff';
+import user from './user';
 
 const rootReducer = combineReducers({
   profilename,
-  stuffs,
+  user,
 });
 
 export default rootReducer;

@@ -54,7 +54,7 @@ const WritingStuff = () => {
   };
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <input type="file" accept="image/*" onChange={onFileChange} />
           {attachment && (
@@ -99,7 +99,7 @@ const WritingStuff = () => {
           />
         </div>
         <div>
-          <button onClick={onSubmit}>작성</button>
+          <button type="button">작성</button>
         </div>
       </form>
       <MenuBar />
