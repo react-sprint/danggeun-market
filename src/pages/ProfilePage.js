@@ -37,11 +37,9 @@ import {
 } from '../styles/ProfileStyle';
 
 const ProfilePage = () => {
-  const { name } = useSelector(({ profilename }) => {
-    return {
-      name: profilename.name,
-    };
-  });
+  const { name } = useSelector(({ profilename }) => ({
+    name: profilename.name,
+  }));
 
   return (
     <>
