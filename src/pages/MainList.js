@@ -1,10 +1,12 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const MainList = () => {
   return (
-    <>
-      <h1>Item_List</h1>
-    </>
+    <div>
+      <h2>HOME</h2>
+      <Link to="/write-new-stuff">ss</Link>
+    </div>
   );
 };
 
