@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Templates from './pages/Templates';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
@@ -11,6 +10,7 @@ import AttentionPage from './pages/Attention';
 import Gps from './pages/Gps';
 import MyDanggeun from './pages/MyDanggeun';
 import ProfileEdit from './pages/ProfileEdit';
+import MenuBar from './components/common/MenuBar';
 import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
@@ -33,15 +33,14 @@ const App = () => {
     });
   });
 
-import MenuBar from './components/common/MenuBar';
-
-const App = () => {
+  if (!isLoading) {
+    return <div>...loading</div>;
+  }
   return (
     <Switch>
       <Layout>
         <Route exact path="/" component={MainList} />
         <Route path="/write-new-stuff" component={WritingStuff} />
-        <Route path="/templater" component={Templates} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/sale" component={SalePage} />
@@ -50,10 +49,11 @@ const App = () => {
         <Route exact path="/mydanggeun" component={MyDanggeun} />
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/profileedit" component={ProfileEdit} />
+
         <MenuBar />
       </Layout>
     </Switch>
   );
 };
- 
+
 export default App;
