@@ -1,32 +1,16 @@
 import styled from 'styled-components';
-import x from '../images/ico/ic_window_close_outline_18.png';
-import danggeun from '../images/ico/ico_logo_72x72.png';
-
-export const BackImage = styled.div`
-  display: flex;
-
-  position: absolute;
-  left: 23.21px;
-  top: 38.21px;
-
-  width: 14.58px;
-  height: 14.58px;
-
-  background-image: url(${x});
-  background-size: cover;
-`;
+import x from '../../images/ico/ico_window_close_outline_18.png';
 
 export const TopBlock = styled.div`
   display: flex;
 
   position: absolute;
+  top: 65px;
   left: 0px;
-  top: 71px;
-
   width: 412px;
   height: 0px;
 
-  border: 1px solid #c9c9c9;
+  border: 1px solid #f0f0f0;
 `;
 
 export const TopText = styled.p`
@@ -48,7 +32,21 @@ export const TopText = styled.p`
   text-align: center;
 `;
 
-export const IdText = styled.p`
+export const BackImage = styled.div`
+  display: flex;
+
+  position: absolute;
+  left: 23.21px;
+  top: 38.21px;
+
+  width: 14.58px;
+  height: 14.58px;
+
+  background-image: url(${x});
+  background-size: cover;
+`;
+
+export const EmailText = styled.p`
   position: absolute;
   left: 23px;
   top: 100px;
@@ -56,7 +54,7 @@ export const IdText = styled.p`
   width: 22px;
   height: 17px;
 
-  font-size: 18px;
+  font-size: 16px;
   font-weight: 400;
 
   line-height: 17px;
@@ -76,7 +74,8 @@ export const EmailBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 18px;
+  cursor: pointer;
 
   background: #ffffff;
 `;
@@ -90,7 +89,7 @@ export const PasswordText = styled.p`
   height: 17px;
 
   font-weight: 400;
-  font-size: 18px;
+  font-size: 16px;
 
   line-height: 17px;
 
@@ -109,36 +108,10 @@ export const PasswordBlock = styled.input`
   box-sizing: border-box;
   border-radius: 6px;
 
-  font-size: 20px;
+  font-size: 16px;
+  cursor: pointer;
 
   background: #ffffff;
-`;
-
-export const LoginButton = styled.button`
-  display: flex;
-  justify-content: center;
-  position: absolute;
-  left: 18px;
-  top: 430px;
-
-  width: 380px;
-  height: 53px;
-
-  border: none;
-  border-radius: 6px;
-
-  background: #ff8a3d;
-
-  p {
-    width: 380px;
-
-    font-weight: 400;
-    font-size: 18px;
-
-    color: #ffffff;
-
-    line-height: 20px;
-  }
 `;
 
 export const RegisterText = styled.p`
@@ -147,7 +120,6 @@ export const RegisterText = styled.p`
   left: 23px;
   top: 500px;
 
-  width: 380px;
   height: 23px;
 
   font-size: 12px;
@@ -173,47 +145,15 @@ export const RegisterButton = styled.button`
   border: none;
   border-radius: 6px;
 
-  background: #495058;
-
-  p {
-    font-weight: 400;
-    font-size: 18px;
-
-    color: #ffffff;
-
-    line-height: 20px;
-  }
-`;
-
-export const PasswordConfirmText = styled.p`
-  position: absolute;
-  left: 23px;
-  top: 330px;
-
-  width: 79px;
-  height: 17px;
+  color: white;
+  font-size: 17px;
 
   font-weight: 400;
   font-size: 18px;
 
-  line-height: 17px;
+  line-height: 53px;
 
-  color: #8e8e8e;
-`;
+  cursor: pointer;
 
-export const PasswordConfirmBlock = styled.input`
-  position: absolute;
-  left: 20px;
-  top: 380px;
-
-  width: 380px;
-  height: 53px;
-
-  border: 1.5px solid #d6d5da;
-  box-sizing: border-box;
-  border-radius: 6px;
-
-  font-size: 20px;
-
-  background: #ffffff;
+  background: #495058;
 `;

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { dbService, storageService } from '../utils/api/fbInstance';
-import React from 'react';
-import MenuBar from '../components/common/MenuBar';
 
 const WritingStuff = () => {
   const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
@@ -52,10 +50,10 @@ const WritingStuff = () => {
 
   const onClearPhoto = () => {
     setAttachment(null);
-  };  
+  };
   return (
     <div>
-      <form>
+      <form onSubmit={onSubmit}>
         <div>
           <input type="file" accept="image/*" onChange={onFileChange} />
           {attachment && (
@@ -100,7 +98,7 @@ const WritingStuff = () => {
           />
         </div>
         <div>
-          <button onClick={onSubmit}>작성</button>
+          <button type="button">작성</button>
         </div>
       </form>
     </div>
