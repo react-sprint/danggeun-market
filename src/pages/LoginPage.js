@@ -10,22 +10,12 @@ import {
   BackImage,
   EmailBlock,
   EmailText,
-  IdContainer,
-  IdText,
-  IdBlock,
-  PasswordContainer,
-  PasswordText,
   PasswordBlock,
   PasswordText,
   RegisterButton,
   RegisterText,
 } from '../components/layout/LoginLayout';
 import { EmailError, LoginPasswordError } from '../styles/ErrorStyle';
-  Danggeun,
-  LoginWrapper,
-  InputContainer,
-  ButtonContainer,
-} from '../styles/LoginStyle';
 
 const LoginPage = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -75,13 +65,6 @@ const LoginPage = () => {
           type="password"
           ref={register({ required: true, minLength: 6 })}
         />
-      <IdText>Email</IdText>
-      <IdBlock />
-
-      <PasswordContainer>
-        <PasswordText>Password</PasswordText>
-        <PasswordBlock type="password" />
-      </PasswordContainer>
 
         <LoginPasswordError>
           {errors.password && errors.password.type === 'required' && (
