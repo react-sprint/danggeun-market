@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { dbService, storageService } from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
+import Header from '../styles/Header';
+import WritingHeader from '../components/layout/WritingHeader';
 
 const WritingStuff = () => {
   const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
@@ -54,6 +56,7 @@ const WritingStuff = () => {
   };
   return (
     <div>
+      <WritingHeader />
       <form>
         <div>
           <input type="file" accept="image/*" onChange={onFileChange} />

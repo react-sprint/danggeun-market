@@ -7,17 +7,29 @@ import { bringStuff } from '../modules/bringStuff';
 
 const MainList = () => {
   const dispatch = useDispatch();
-  const stuff = useSelector((state) => state.stuffs);
+  // eslint-disable-next-line prefer-const
+  let viewStatus = false;
+  const stuff = useSelector((state) => state.stuffs, viewStatus);
+
+  const listView = async () => {
+    const list = [];
+    const data = await dbService.collection('stuffList').get();
+    data.forEach((fstore) => list.push(fstore.data()));
+
+    dispatch(bringStuff(list));
+    viewStatus = true;
+    console.log(stuff);
+  };
 
   useEffect(() => {
-    dispatch(bringStuff());
-    console.log(stuff);
+    listView();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
     <div>
       <h2>HOME</h2>
-      <Link to="/write-new-stuff">ss</Link>
+      <Link to="/write-new-stuff">글쓰기</Link>
       <MenuBar />
     </div>
   );
