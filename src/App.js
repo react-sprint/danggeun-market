@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
-import Templates from './pages/Templates';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
@@ -34,15 +33,14 @@ const App = () => {
     });
   });
 
-  // if (!isLoading) {
-  //   return <div>...loading</div>;
-  // }
+  if (!isLoading) {
+    return <div>...loading</div>;
+  }
   return (
     <Switch>
       <Layout>
         <Route exact path="/" component={MainList} />
         <Route path="/write-new-stuff" component={WritingStuff} />
-        <Route path="/templater" component={Templates} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/sale" component={SalePage} />
