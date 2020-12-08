@@ -3,7 +3,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { TopBlock } from '../components/layout/TopBlock';
+import { TopBlock } from '../components/layout/LoginLayout';
 import {
   MyDanggeunBlock,
   ProfileBlock,
@@ -36,16 +36,25 @@ import {
   NoticeBlock,
   QnABlock,
   AppSet,
-  DanggeunBlock,
+  LogOutButton,
+  LogoutLine,
 } from '../styles/MyDanggeunStyle';
+import firebase from '../utils/api/fbInstance';
 
 const MyDanggeun = () => {
   const { name } = useSelector(({ profilename }) => ({
     name: profilename.name,
   }));
+  const Logout = async () => {
+    try {
+      await firebase.auth().signOut();
+    } catch (error) {
+      // error
+    }
+  };
 
   return (
-    <DanggeunBlock>
+    <>
       <TopBlock />
       <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
       <TopImageBlock />
@@ -116,7 +125,11 @@ const MyDanggeun = () => {
       <AppSet>
         <p>앱 설정</p>
       </AppSet>
-    </DanggeunBlock>
+      <LogoutLine />
+      <LogOutButton onClick={Logout}>
+        <p>로그아웃</p>
+      </LogOutButton>
+    </>
   );
 };
 

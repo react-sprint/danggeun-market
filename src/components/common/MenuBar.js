@@ -6,32 +6,41 @@ import {
   NavNearBlock,
   NavMyCarrotBlock,
   NavBottomBlock,
+  LayOutBlock,
+  LinkStyle,
 } from '../../styles/MenuBarStyle';
-import { LinkStyle } from '../../styles/LinkStyle';
 
 const MenuBar = () => {
   return (
-    <NavBottomBlock>
-      <LinkStyle>
-        <Link to="/">
-          <NavHomeBlock>
-            <p>홈</p>
-          </NavHomeBlock>
-        </Link>
+    <LinkStyle>
+      <NavBottomBlock>
+        <LayOutBlock>
+          <Link to="/">
+            <NavHomeBlock>
+              <p>홈</p>
+            </NavHomeBlock>
+          </Link>
 
-        <Link to="/write">
-          <NavWrtieBlock />
-        </Link>
+          <Link to="/write">
+            <NavWrtieBlock>
+              <p>글쓰기</p>
+            </NavWrtieBlock>
+          </Link>
 
-        <Link to="/gps">
-          <NavNearBlock />
-        </Link>
+          <Link to="/gps">
+            <NavNearBlock>
+              <p>위치</p>
+            </NavNearBlock>
+          </Link>
 
-        <Link to="/mydanggeun">
-          <NavMyCarrotBlock />
-        </Link>
-      </LinkStyle>
-    </NavBottomBlock>
+          <Link to="/mydanggeun">
+            <NavMyCarrotBlock>
+              <p>나의당근</p>
+            </NavMyCarrotBlock>
+          </Link>
+        </LayOutBlock>
+      </NavBottomBlock>
+    </LinkStyle>
   );
 };
 

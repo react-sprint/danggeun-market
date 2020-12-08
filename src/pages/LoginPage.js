@@ -2,28 +2,24 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import firebase from '../utils/api/fbInstance';
+import { LoginButton } from '../styles/LoginStyle';
+import MenuBar from '../components/common/MenuBar';
 import {
-  BackImage,
   TopBlock,
   TopText,
-  IdContainer,
-  IdText,
-  IdBlock,
-  PasswordContainer,
-  PasswordText,
+  BackImage,
+  EmailBlock,
+  EmailText,
   PasswordBlock,
-  LoginButton,
+  PasswordText,
   RegisterButton,
   RegisterText,
-  Danggeun,
-  LoginWrapper,
-  InputContainer,
-  ButtonContainer,
-} from '../styles/LoginStyle';
+} from '../components/layout/LoginLayout';
+import { EmailError, LoginPasswordError } from '../styles/ErrorStyle';
 
 const LoginPage = () => {
-  const { register, handleSubmit, watch, errors } = useForm();
-  const [errorFormSubmit, setErrorFormSubmit] = useState('');
+  const { register, errors, handleSubmit } = useForm();
+  const [errorFromSubmit, setErrorFromSubmit] = useState('');
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
@@ -36,37 +32,61 @@ const LoginPage = () => {
 
       setLoading(false);
     } catch (error) {
-      setErrorFormSubmit(error.message);
+      setErrorFromSubmit(error.message);
       setLoading(false);
       setTimeout(() => {
-        setErrorFormSubmit('');
+        setErrorFromSubmit('');
       }, 5000);
     }
   };
 
   return (
     <>
-      <IdText>Email</IdText>
-      <IdBlock />
-
-      <PasswordContainer>
-        <PasswordText>Password</PasswordText>
-        <PasswordBlock type="password" />
-      </PasswordContainer>
-
       <Link to="/">
-        <LoginButton>
-          <p>로그인</p>
-        </LoginButton>
+        <BackImage />
       </Link>
+      <TopBlock />
+      <TopText>로그인</TopText>
+      <form onSubmit={handleSubmit(onSubmit)}>
+        <EmailText>Email</EmailText>
+        <EmailBlock
+          name="email"
+          type="email"
+          ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+        />
 
-      <RegisterText>아직 계정이 없으신가요?</RegisterText>
-      <Link to="register">
-        <RegisterButton>
-          <p>회원가입</p>
-        </RegisterButton>
-      </Link>
-      <Danggeun />
+        <EmailError>
+          {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
+        </EmailError>
+
+        <PasswordText>Password</PasswordText>
+        <PasswordBlock
+          name="password"
+          type="password"
+          ref={register({ required: true, minLength: 6 })}
+        />
+
+        <LoginPasswordError>
+          {errors.password && errors.password.type === 'required' && (
+            <p>올바른 비밀번호가 아닙니다.</p>
+          )}
+          {errors.password && errors.password.type === 'minLength' && (
+            <p>비밀번호의 길이가 밎지 않습니다.</p>
+          )}
+        </LoginPasswordError>
+
+        {errorFromSubmit && <p>로그인 실패</p>}
+
+        <LoginButton type="submit" disabled={loading}>
+          로그인
+        </LoginButton>
+
+        <RegisterText>아직 계정이 없으신가요?</RegisterText>
+        <Link to="/signup">
+          <RegisterButton>회원가입</RegisterButton>
+        </Link>
+        <MenuBar />
+      </form>
     </>
   );
 };

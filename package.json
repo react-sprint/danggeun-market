@@ -73,7 +73,14 @@
       "react/react-in-jsx-scope": "off",
       "no-shadow": "off",
       "object-curly-newline": "off",
-      "object-shorthand": 0
+      "object-shorthand": 0,
+      "import/no-anonymous-default-export": "off",
+      "func-names": [
+        "error",
+        "never"
+      ],
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn"
     },
     "env": {
       "browser": true

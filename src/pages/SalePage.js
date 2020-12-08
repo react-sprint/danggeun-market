@@ -1,8 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-import MenuBar from '../components/common/MenuBar';
-import { Danggeun } from '../styles/LoginStyle';
 
 const SalePageBlock = styled.div`
   margin-top: 100px;
@@ -15,7 +13,6 @@ const SalePage = () => (
   <>
     <Link to="/profile">돌아가기</Link>
     <SalePageBlock>판매상품 페이지입니다</SalePageBlock>
-    <Danggeun />
   </>
 );
 
