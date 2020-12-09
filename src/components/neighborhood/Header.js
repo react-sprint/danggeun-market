@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import { ReactComponent as ArrowBackIcon } from '../../icon/arrow-back.svg';
+import { Link } from 'react-router-dom';
+import ArrowBackIcon from '../../images/ico/ico_back_home_arrow.png';
 import { ReactComponent as SearchIcon } from '../../icon/search.svg';
 import { ReactComponent as CloseIcon } from '../../icon/close.svg';
 
@@ -12,9 +13,8 @@ const StyledWrapper = styled.div`
   width: 100%;
 `;
 
-const StyledArrowBackIcon = styled(ArrowBackIcon)`
-  width: 29px;
-  height: 29px;
+const StyledArrowBackIcon = styled.img`
+  width: 19.33px;
   cursor: pointer;
 `;
 
@@ -52,17 +52,21 @@ const StyledUnderline = styled.div`
   background-color: #ebebed;
 `;
 
-const Header = () => (
-  <StyledWrapper>
-    <StyledArrowBackIcon />
-    <StyledSearchBarWrapper>
-      <StyledSearchIcon />
-      <StyledInput placeholder="동명(읍, 면)으로 검색 (ex. 서초동)" />
-      <StyledCloseIcon />
-      <StyledUnderline />
-    </StyledSearchBarWrapper>
-  </StyledWrapper>
-);
+const Header = () => {
+  return (
+    <StyledWrapper>
+      <Link to="/">
+        <StyledArrowBackIcon src={ArrowBackIcon} />
+      </Link>
+      <StyledSearchBarWrapper>
+        <StyledSearchIcon />
+        <StyledInput placeholder="동명(읍, 면)으로 검색 (ex. 서초동)" />
+        <StyledCloseIcon />
+        <StyledUnderline />
+      </StyledSearchBarWrapper>
+    </StyledWrapper>
+  );
+};
 
 export default Header;
 export { StyledUnderline };

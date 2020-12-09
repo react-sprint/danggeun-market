@@ -7,9 +7,7 @@ import { bringStuff } from '../modules/bringStuff';
 
 const MainList = () => {
   const dispatch = useDispatch();
-  // eslint-disable-next-line prefer-const
-  let viewStatus = false;
-  const stuff = useSelector((state) => state.stuffs, viewStatus);
+  const stuff = useSelector((state) => state.stuffs);
 
   const listView = async () => {
     const list = [];
@@ -17,8 +15,6 @@ const MainList = () => {
     data.forEach((fstore) => list.push(fstore.data()));
 
     dispatch(bringStuff(list));
-    viewStatus = true;
-    console.log(stuff);
   };
 
   useEffect(() => {
@@ -30,6 +26,11 @@ const MainList = () => {
     <div>
       <h2>HOME</h2>
       <Link to="/write-new-stuff">글쓰기</Link>
+      <ul>
+        {stuff.data?.map((v) => {
+          return <li key={v.createAt}>{v.input.title}</li>;
+        })}
+      </ul>
       <MenuBar />
     </div>
   );

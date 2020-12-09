@@ -10,7 +10,13 @@
     "babel-eslint": "^10.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^6.15.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react-hooks": "^0.0.0-8e5adfbd7",
+    "eslint-plugin-standard": "^5.0.0",
     "firebase": "^8.1.1",
+    "install": "^0.13.0",
     "md5": "^2.3.0",
     "moment-timezone": "^0.5.32",
     "react": "^17.0.1",
@@ -25,6 +31,7 @@
     "redux-actions": "^2.6.5",
     "redux-devtools": "^3.7.0",
     "redux-devtools-extension": "^2.13.8",
+    "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.1",
     "uuid": "^8.3.1",
@@ -44,6 +51,10 @@
     ],
     "parser": "babel-eslint",
     "rules": {
+      "prefer-const": 0,
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/prop-types": 0,
       "react/prefer-stateless-function": 0,
       "react/jsx-filename-extension": 0,
       "react/jsx-one-expression-per-line": 0,
@@ -51,7 +62,14 @@
       "linebreak-style": 0,
       "no-console": "off",
       "no-unused-vars": "off",
-      "react/prop-types": 0,
+      "no-underscore-dangle": [
+        "error",
+        {
+          "allow": [
+            "__REDUX_DEVTOOLS_EXTENSION__"
+          ]
+        }
+      ],
       "import/no-unresolved": "off",
       "react/react-in-jsx-scope": "off",
       "no-shadow": "off",
@@ -59,7 +77,12 @@
       "object-shorthand": 0,
       "no-plusplus": "off",
       "react/button-has-type": "off",
-      "no-case-declarations":"off"
+      "no-case-declarations":"off",
+      "import/no-anonymous-default-export": "off",
+      "func-names": [
+        "error",
+        "never"
+      ]
     },
     "env": {
       "browser": true
@@ -76,6 +99,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "eslint-config-prettier": "^6.15.0"
   },
   "after": {
     "overrides": "none"

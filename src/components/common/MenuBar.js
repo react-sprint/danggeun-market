@@ -6,31 +6,42 @@ import {
   NavNearBlock,
   NavMyCarrotBlock,
   NavBottomBlock,
+  LayOutBlock,
+  LinkStyle,
 } from '../../styles/MenuBarStyle';
-import { LinkStyle } from '../../styles/LinkStyle';
 
-const MenuBar = () => (
-  <NavBottomBlock>
+const MenuBar = () => {
+  return (
     <LinkStyle>
-      <Link to="/">
-        <NavHomeBlock>
-          <p>홈</p>
-        </NavHomeBlock>
-      </Link>
+      <NavBottomBlock>
+        <LayOutBlock>
+          <Link to="/">
+            <NavHomeBlock>
+              <p>홈</p>
+            </NavHomeBlock>
+          </Link>
 
-      <Link to="/write">
-        <NavWrtieBlock />
-      </Link>
+          <Link to="/write-new-stuff">
+            <NavWrtieBlock>
+              <p>글쓰기</p>
+            </NavWrtieBlock>
+          </Link>
 
-      <Link to="/gps">
-        <NavNearBlock />
-      </Link>
+          <Link to="/gps">
+            <NavNearBlock>
+              <p>위치</p>
+            </NavNearBlock>
+          </Link>
 
-      <Link to="/mydanggeun">
-        <NavMyCarrotBlock />
-      </Link>
+          <Link to="/mydanggeun">
+            <NavMyCarrotBlock>
+              <p>나의당근</p>
+            </NavMyCarrotBlock>
+          </Link>
+        </LayOutBlock>
+      </NavBottomBlock>
     </LinkStyle>
-  </NavBottomBlock>
-);
+  );
+};
 
 export default MenuBar;
