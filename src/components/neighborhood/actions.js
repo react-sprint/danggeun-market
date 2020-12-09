@@ -8,7 +8,7 @@ const DISTANCE = 0.007;
 
 let currentCoords = []; // 현재 내 좌표 저장 배열
 let localCoords = []; // 동네 좌표 저장 배열
-let addressList = []; // 좌표로 부터 받아온 주소 저장 배열
+let addressList = new Set(); // 좌표로 부터 받아온 주소 저장 배열
 
 // 현재 내 좌표값 받아오는 함수
 const getCurrentCoords = async () =>
@@ -38,17 +38,19 @@ const getLocalCoords = () => {
 
 // api 데이터 호출 및 addressList 배열에 데이터 push
 const getApiResponse = async (coords) => {
+  let response;
   try {
-    const response = await axios({
+    response = await axios({
       method: 'get',
       url: `https://dapi.kakao.com/v2/local/geo/coord2regioncode.json?x=${coords[0]}&y=${coords[1]}`,
       headers: {
         Authorization: `KakaoAK ${REST_API_KEY}`,
       },
     });
-    addressList.push(response.data.documents[0].address_name);
   } catch (error) {
     console.error(error);
+  } finally {
+    addressList.add(response.data.documents[0].address_name);
   }
 };
 
@@ -68,7 +70,7 @@ const getLocation = async () => {
   currentCoords = await getMyLocation();
   getLocalCoords();
   await runApiLoop();
-  console.log(addressList);
+  return addressList;
 };
 
 export default getLocation;

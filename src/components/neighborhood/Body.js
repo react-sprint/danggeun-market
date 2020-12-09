@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { StyledUnderline } from './Header';
 import List from './List';
 import getLocation from './actions';
 
@@ -22,10 +21,8 @@ const StyledButton = styled.button`
 const StyledSpan = styled.span`
   font-size: 13px;
   font-weight: bold;
-`;
-
-const StyledLongUnderline = styled(StyledUnderline)`
-  width: 379px;
+  vertical-align: middle;
+  line-height: 50px;
 `;
 
 const Body = (props) => {
@@ -34,7 +31,6 @@ const Body = (props) => {
     <StyledWrapper>
       <StyledButton onClick={getLocation}>현재위치로 찾기</StyledButton>
       <StyledSpan>근처 동네</StyledSpan>
-      <StyledLongUnderline />
     </StyledWrapper>
   );
 };
