@@ -54,7 +54,6 @@ const List = () => {
       setAddress(Array.from(value));
     });
   }, []);
-  console.log(address);
 
   return (
     <>

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import getLocation from './actions';
 
 const StyledWrapper = styled.div`
   display: flex;
