@@ -92,9 +92,17 @@ function SelectPhoto({ onChange, attachment, onClearPhoto }) {
         <img src={camera} alt="camera" />
         <span>1/10</span>
       </AddPhotoLabel>
-      {attachment && (
-        <PhotoPreview attachment={attachment} onClearPhoto={onClearPhoto} />
-      )}
+      {attachment?.map((dataUrl, idx) => {
+        // console.log(attachment);
+        return (
+          <PhotoPreview
+            attachment={dataUrl}
+            onClearPhoto={onClearPhoto}
+            // eslint-disable-next-line react/no-array-index-key
+            key={idx}
+          />
+        );
+      })}
     </PhotoWrap>
   );
 }

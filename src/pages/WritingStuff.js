@@ -18,20 +18,32 @@ const WritingStuff = () => {
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
-    const response = await fileRef.putString(attachment, 'data_url');
-    const attachmentUrl = await response.ref.getDownloadURL();
-    const stuff = {
-      input: inputs,
-      category,
-      createAt: Date.now(),
-      creatorId: 'userid',
-      attachmentUrl,
-    };
+    let stuffAttchmentUrl = [];
+    let stuff = null;
+    if (attachment) {
+      for (const dataUrl of attachment) {
+        const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
+        // eslint-disable-next-line no-await-in-loop
+        const response = await fileRef.putString(dataUrl, 'data_url');
+        // eslint-disable-next-line no-await-in-loop
+        const attachmentUrl = await response.ref.getDownloadURL();
 
+        stuffAttchmentUrl.push(attachmentUrl);
+
+        stuff = {
+          input: inputs,
+          category,
+          createAt: Date.now(),
+          creatorId: 'userid',
+          attachmentUrl: stuffAttchmentUrl,
+        };
+      }
+    }
+    console.log(stuff);
     dbService.collection('stuffList').add(stuff);
     setInputs({ title: '', price: '', contents: '' });
     setAttachment(null);
+    // eslint-disable-next-line no-alert
     alert('상품이 성공적으로 등록되었습니다.');
     history.push('/');
   };
@@ -62,17 +74,23 @@ const WritingStuff = () => {
     const {
       target: { files },
     } = event;
-    const theFile = files[0];
-    const reader = new FileReader();
-    reader.onloadend = (finishedEvent) => {
-      console.log(finishedEvent);
-      const {
-        currentTarget: { result },
-      } = finishedEvent;
 
-      setAttachment(result);
-    };
-    reader && reader.readAsDataURL(theFile);
+    let fileUrl = [];
+
+    let theFile = null;
+    const fileArr = Array.from(files);
+
+    fileArr.map((file) => {
+      const reader = new FileReader();
+      reader.onloadend = (event) => {
+        const {
+          currentTarget: { result },
+        } = event;
+        fileUrl.push(result);
+        setAttachment(fileUrl);
+      };
+      reader && reader.readAsDataURL(file);
+    });
   };
 
   const onClearPhoto = () => {
