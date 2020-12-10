@@ -5,16 +5,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import { Danggeun } from '../components/layout/DanggeunImage';
 import {
-  TopLine,
   ProfileImage,
-  Camera,
   NameEdit,
   EndText,
   TextBlock,
-  TopDiv,
   BackArrow,
+  EndBlock,
 } from '../styles/ProfileEditStyle';
 import { changeName } from '../modules/profile';
+import { TopBlock } from '../components/layout/LoginLayout';
 
 const ProfileEdit = () => {
   const { name } = useSelector(({ profilename }) => ({
@@ -31,20 +30,21 @@ const ProfileEdit = () => {
 
   return (
     <>
-      <TopDiv>
+      <TopBlock>
         <Link to="/profile">
           <BackArrow />
         </Link>
         <TextBlock>프로필 수정</TextBlock>
 
-        <Link to="/profile">
-          <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
-        </Link>
-      </TopDiv>
+        <EndBlock>
+          <Link to="/profile">
+            <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
+          </Link>
+        </EndBlock>
+      </TopBlock>
 
-      <TopLine />
       <ProfileImage />
-      <Camera />
+
       <NameEdit
         onChange={(e) => setTempName(e.target.value)}
         value={tempName}

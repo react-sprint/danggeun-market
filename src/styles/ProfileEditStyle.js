@@ -5,13 +5,11 @@ import camera from '../images/ico/ico_profile_camera.png';
 
 export const ProfileImage = styled.div`
   display: flex;
-
-  position: absolute;
-  top: 119px;
-  left: 148px;
-
   width: 129px;
   height: 129px;
+
+  margin-left: 32%;
+  margin-top: 50px;
 
   cursor: pointer;
 
@@ -19,33 +17,12 @@ export const ProfileImage = styled.div`
   background-size: cover;
 `;
 
-export const Camera = styled.div`
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 170px;
-  margin-left: 220px;
-
-  width: 30px;
-  height: 30px;
-
-  background-image: url(${camera});
-  background-size: cover;
-`;
-
-export const TopLine = styled.div`
-  margin-top: 6px;
-  border: 1px solid #f0f0f0;
-`;
-
 export const BackArrow = styled.div`
-  display: flex;
-  position: absolute;
-  top: 26px;
-  left: 22px;
-
   width: 17px;
   height: 17px;
+
+  margin-left: 10px;
+  margin-top: 20px;
 
   cursor: pointer;
 
@@ -54,10 +31,8 @@ export const BackArrow = styled.div`
 `;
 
 export const TextBlock = styled.div`
-  position: absolute;
-  top: 25px;
-  left: 60px;
-
+  margin-left: 20px;
+  margin-top: 20px;
   font-weight: 500;
   font-size: 18px;
 `;
@@ -66,17 +41,19 @@ export const EditText = styled.div`
   font-size: 18px;
 `;
 
-export const TopDiv = styled.div`
-  display: flex;
-
-  justify-content: space-between;
-`;
-
 export const EndText = styled.p`
+  margin-left: 100px;
+  margin-top: 20px;
+
   font-weight: 500;
   font-size: 16px;
+`;
 
-  margin-left: 270px;
+export const EndBlock = styled.div`
+  a {
+    text-decoration: none;
+    color: black;
+  }
 `;
 
 export const NameEdit = styled.input`

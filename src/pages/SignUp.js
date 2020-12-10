@@ -6,24 +6,17 @@ import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
 import {
   TopBlock,
-  TopText,
   BackImage,
   EmailBlock,
   EmailText,
   PasswordText,
   PasswordBlock,
-  RegisterButton,
-  RegisterText,
 } from '../components/layout/LoginLayout';
 import {
   PasswordConfirmText,
   PasswordConfirmBlock,
+  RegisterButton,
 } from '../styles/SignUpStyle';
-import {
-  EmailError,
-  PasswordConfirmError,
-  PasswordError,
-} from '../styles/ErrorStyle';
 
 const SignUpPage = () => {
   const { register, watch, errors, handleSubmit } = useForm();
@@ -66,36 +59,56 @@ const SignUpPage = () => {
 
   return (
     <>
-      <Link to="/">
-        <BackImage />
-      </Link>
-      <TopBlock />
-      <TopText>회원가입</TopText>
+      <TopBlock>
+        <Link to="/">
+          <BackImage />
+        </Link>
+        <p>회원가입</p>
+      </TopBlock>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <EmailText>Email</EmailText>
+        <EmailText>
+          Email
+          <div>{errors.email && <>잘못된 이메일 입니다.</>}</div>
+        </EmailText>
         <EmailBlock
           name="email"
           type="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
-        <EmailError>{errors.email && <p>잘못된 이메일 입니다.</p>}</EmailError>
-
-        <PasswordText>Password</PasswordText>
+        <PasswordText>
+          Password
+          <div>
+            {errors.password && errors.password.type === 'required' && (
+              <>잘못된 비밀번호 입니다.</>
+            )}
+          </div>
+          <div>
+            {errors.password && errors.password.type === 'minLength' && (
+              <>비밀번호 길이가 맞지 않습니다.</>
+            )}
+          </div>
+        </PasswordText>
         <PasswordBlock
           name="password"
           type="password"
           ref={register({ required: true, minLength: 6 })}
         />
-
-        {errors.password && errors.password.type === 'required' && (
-          <p>잘못된 비밀번호 입니다.</p>
-        )}
-        {errors.password && errors.password.type === 'minLength' && (
-          <p>비밀번호 길이가 맞지 않습니다.</p>
-        )}
-
-        <PasswordConfirmText>PasswordConfirm</PasswordConfirmText>
+        <PasswordConfirmText>
+          PasswordConfirm
+          <div>
+            {errors.password_confirm &&
+              errors.password_confirm.type === 'required' && (
+                <>잘못된 비밀번호 입니다.</>
+              )}
+          </div>
+          <div>
+            {errors.password_confirm &&
+              errors.password_confirm.type === 'validate' && (
+                <>비밀번호가 일치하지 않습니다.</>
+              )}
+          </div>
+        </PasswordConfirmText>
         <PasswordConfirmBlock
           name="password_confirm"
           type="password"
@@ -104,23 +117,8 @@ const SignUpPage = () => {
             validate: (value) => value === password.current,
           })}
         />
-        <PasswordError>
-          {errors.password_confirm &&
-            errors.password_confirm.type === 'required' && (
-              <p>잘못된 비밀번호 입니다.</p>
-            )}
-        </PasswordError>
 
-        <PasswordConfirmError>
-          {errors.password_confirm &&
-            errors.password_confirm.type === 'validate' && (
-              <p>비밀번호가 일치하지 않습니다.</p>
-            )}
-        </PasswordConfirmError>
-
-        {errorFormSubmit && <p>{errorFormSubmit}</p>}
-
-        <RegisterText>회원가입을 하면 바로 로그인이 됩니다.</RegisterText>
+        <div>{errorFormSubmit && <>{errorFormSubmit}</>}</div>
         <RegisterButton type="submit" disabled={loading}>
           회원가입
         </RegisterButton>
