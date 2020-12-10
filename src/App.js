@@ -7,11 +7,9 @@ import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUp';
 import SalePage from './pages/SalePage';
 import AttentionPage from './pages/Attention';
-import Gps from './pages/Gps';
 import MyDanggeun from './pages/MyDanggeun';
 import ProfileEdit from './pages/ProfileEdit';
 import MenuBar from './components/common/MenuBar';
-import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
@@ -34,20 +32,17 @@ const App = () => {
 
   return (
     <Switch>
-      <Layout>
-        <Route exact path="/" component={MainList} />
-        <Route path="/write-new-stuff" component={WritingStuff} />
-        <Route exact path="/login" component={LoginPage} />
-        <Route exact path="/signup" component={SignUpPage} />
-        <Route exact path="/sale" component={SalePage} />
-        <Route exact path="/attention" component={AttentionPage} />
-        <Route exact path="/gps" component={Gps} />
-        <Route exact path="/mydanggeun" component={MyDanggeun} />
-        <Route exact path="/profile" component={ProfilePage} />
-        <Route exact path="/profileedit" component={ProfileEdit} />
+      <Route exact path="/" component={MainList} />
+      <Route path="/write-new-stuff" component={WritingStuff} />
+      <Route exact path="/login" component={LoginPage} />
+      <Route exact path="/signup" component={SignUpPage} />
+      <Route exact path="/sale" component={SalePage} />
+      <Route exact path="/attention" component={AttentionPage} />
+      <Route exact path="/mydanggeun" component={MyDanggeun} />
+      <Route exact path="/profile" component={ProfilePage} />
+      <Route exact path="/profileedit" component={ProfileEdit} />
 
-        <MenuBar />
-      </Layout>
+      <MenuBar />
     </Switch>
   );
 };

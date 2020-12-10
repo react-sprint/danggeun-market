@@ -1,19 +1,16 @@
-// 프로필 -> 프로필 수정 화면
-
 import React, { useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { Danggeun } from '../components/layout/DanggeunImage';
 import {
   ProfileImage,
   NameEdit,
   EndText,
   TextBlock,
   BackArrow,
-  EndBlock,
-} from '../styles/ProfileEditStyle';
+} from '../components/layout/ProfileEditStyle';
 import { changeName } from '../modules/profile';
 import { TopBlock } from '../components/layout/LoginLayout';
+import { SortBlock } from '../components/common/SortBlock';
 
 const ProfileEdit = () => {
   const { name } = useSelector(({ profilename }) => ({
@@ -36,20 +33,21 @@ const ProfileEdit = () => {
         </Link>
         <TextBlock>프로필 수정</TextBlock>
 
-        <EndBlock>
-          <Link to="/profile">
-            <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
-          </Link>
-        </EndBlock>
+        <Link to="/profile">
+          <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
+        </Link>
       </TopBlock>
 
-      <ProfileImage />
+      <SortBlock>
+        <ProfileImage />
+      </SortBlock>
 
-      <NameEdit
-        onChange={(e) => setTempName(e.target.value)}
-        value={tempName}
-      />
-      <Danggeun />
+      <SortBlock>
+        <NameEdit
+          onChange={(e) => setTempName(e.target.value)}
+          value={tempName}
+        />
+      </SortBlock>
     </>
   );
 };

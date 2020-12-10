@@ -10,14 +10,15 @@ export const TopBlock = styled.div`
     align-items: center;
 
     width: 100%;
-    height: 17px;
-
     color: #000000;
 
     font-size: 18px;
     font-weight: 500;
+  }
 
-    text-align: center;
+  a {
+    text-decoration: none;
+    color: black;
   }
 `;
 
@@ -33,10 +34,9 @@ export const BackImage = styled.div`
   background-size: cover;
 `;
 
-export const EmailText = styled.p`
-  display: flex;
-
+export const EmailandPasswordText = styled.p`
   margin-top: 50px;
+  margin-left: 10%;
 
   font-size: 16px;
   font-weight: 400;
@@ -44,15 +44,10 @@ export const EmailText = styled.p`
   line-height: 17px;
 
   color: #8e8e8e;
-
-  div {
-    margin-left: 70px;
-    color: black;
-  }
 `;
 
-export const EmailBlock = styled.input`
-  width: 100%;
+export const EmailandPasswordBlock = styled.input`
+  width: 80%;
   height: 53px;
 
   border: 1.5px solid #d6d5da;
@@ -65,29 +60,44 @@ export const EmailBlock = styled.input`
   background: #ffffff;
 `;
 
-export const PasswordText = styled.p`
-  display: flex;
-
-  margin-top: 40px;
-
-  color: #8e8e8e;
-
-  div {
-    margin-left: 40px;
-    color: black;
-  }
-`;
-
-export const PasswordBlock = styled.input`
-  width: 100%;
+export const LoginButton = styled.button`
+  width: 80%;
   height: 53px;
 
-  border: 1.5px solid #d6d5da;
-  box-sizing: border-box;
+  margin-left: 40px;
+  margin-top: 120px;
+
+  border: none;
   border-radius: 6px;
 
-  font-size: 16px;
+  background: #ff8a3d;
+
+  font-weight: 400;
+  font-size: 18px;
+
+  color: #ffffff;
+  cursor: pointer;
+`;
+
+export const RegisterButton = styled.button`
+  width: 80%;
+  height: 53px;
+
+  margin-left: 40px;
+  margin-top: 50px;
+
+  border: none;
+  border-radius: 6px;
+
+  color: white;
+  font-size: 17px;
+
+  font-weight: 400;
+  font-size: 18px;
+
+  line-height: 53px;
+
   cursor: pointer;
 
-  background: #ffffff;
+  background: #495058;
 `;

@@ -1,13 +1,10 @@
 import styled from 'styled-components';
 
 export const LoginButton = styled.button`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
+  width: 80%;
   height: 53px;
 
+  margin-left: 40px;
   margin-top: 120px;
 
   border: none;
@@ -23,12 +20,10 @@ export const LoginButton = styled.button`
 `;
 
 export const RegisterButton = styled.button`
-  display: flex;
-  justify-content: center;
-
-  width: 100%;
+  width: 80%;
   height: 53px;
 
+  margin-left: 40px;
   margin-top: 50px;
 
   border: none;

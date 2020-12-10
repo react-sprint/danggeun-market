@@ -8,7 +8,8 @@ import {
   NavBottomBlock,
   LayOutBlock,
   LinkStyle,
-} from '../../styles/MenuBarStyle';
+  DefaultBlock,
+} from '../layout/MenuBarStyle';
 
 const MenuBar = () => {
   return (
@@ -17,25 +18,33 @@ const MenuBar = () => {
         <LayOutBlock>
           <Link to="/">
             <NavHomeBlock>
-              <p>홈</p>
+              <DefaultBlock>
+                <p>홈</p>
+              </DefaultBlock>
             </NavHomeBlock>
           </Link>
 
           <Link to="/write">
             <NavWrtieBlock>
-              <p>글쓰기</p>
+              <DefaultBlock>
+                <p>글쓰기</p>
+              </DefaultBlock>
             </NavWrtieBlock>
           </Link>
 
           <Link to="/gps">
             <NavNearBlock>
-              <p>위치</p>
+              <DefaultBlock>
+                <p>위치</p>
+              </DefaultBlock>
             </NavNearBlock>
           </Link>
 
           <Link to="/mydanggeun">
             <NavMyCarrotBlock>
-              <p>나의당근</p>
+              <DefaultBlock>
+                <p>나의당근</p>
+              </DefaultBlock>
             </NavMyCarrotBlock>
           </Link>
         </LayOutBlock>

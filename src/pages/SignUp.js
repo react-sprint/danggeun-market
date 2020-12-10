@@ -7,16 +7,11 @@ import MenuBar from '../components/common/MenuBar';
 import {
   TopBlock,
   BackImage,
-  EmailBlock,
-  EmailText,
-  PasswordText,
-  PasswordBlock,
-} from '../components/layout/LoginLayout';
-import {
-  PasswordConfirmText,
-  PasswordConfirmBlock,
+  EmailandPasswordBlock,
+  EmailandPasswordText,
   RegisterButton,
-} from '../styles/SignUpStyle';
+} from '../components/layout/LoginLayout';
+import { SortBlock } from '../components/common/SortBlock';
 
 const SignUpPage = () => {
   const { register, watch, errors, handleSubmit } = useForm();
@@ -67,16 +62,18 @@ const SignUpPage = () => {
       </TopBlock>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <EmailText>
+        <EmailandPasswordText>
           Email
           <div>{errors.email && <>잘못된 이메일 입니다.</>}</div>
-        </EmailText>
-        <EmailBlock
-          name="email"
-          type="email"
-          ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-        />
-        <PasswordText>
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="email"
+            type="email"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+        </SortBlock>
+        <EmailandPasswordText>
           Password
           <div>
             {errors.password && errors.password.type === 'required' && (
@@ -88,13 +85,15 @@ const SignUpPage = () => {
               <>비밀번호 길이가 맞지 않습니다.</>
             )}
           </div>
-        </PasswordText>
-        <PasswordBlock
-          name="password"
-          type="password"
-          ref={register({ required: true, minLength: 6 })}
-        />
-        <PasswordConfirmText>
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="password"
+            type="password"
+            ref={register({ required: true, minLength: 6 })}
+          />
+        </SortBlock>
+        <EmailandPasswordText>
           PasswordConfirm
           <div>
             {errors.password_confirm &&
@@ -108,15 +107,17 @@ const SignUpPage = () => {
                 <>비밀번호가 일치하지 않습니다.</>
               )}
           </div>
-        </PasswordConfirmText>
-        <PasswordConfirmBlock
-          name="password_confirm"
-          type="password"
-          ref={register({
-            required: true,
-            validate: (value) => value === password.current,
-          })}
-        />
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="password_confirm"
+            type="password"
+            ref={register({
+              required: true,
+              validate: (value) => value === password.current,
+            })}
+          />
+        </SortBlock>
 
         <div>{errorFormSubmit && <>{errorFormSubmit}</>}</div>
         <RegisterButton type="submit" disabled={loading}>

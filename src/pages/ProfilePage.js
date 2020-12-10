@@ -43,15 +43,16 @@ const ProfilePage = () => {
 
   return (
     <>
-      <Link to="/mydanggeun">
-        <BackArrow />
-      </Link>
-      <TopBlock />
-      <Profile>프로필</Profile>
-      <ShareBlock />
-      <Link to="/profileedit">
-        <MenuBlock />
-      </Link>
+      <TopBlock>
+        <Link to="/mydanggeun">
+          <BackArrow />
+        </Link>
+        <Profile>프로필</Profile>
+        <ShareBlock />
+        <Link to="/profileedit">
+          <MenuBlock />
+        </Link>
+      </TopBlock>
 
       <ProfileImage />
       <ProfileName>{name}</ProfileName>

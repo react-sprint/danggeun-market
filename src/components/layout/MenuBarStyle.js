@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import home from '../images/ico/ico_tab_home_n.png';
-import write from '../images/ico/ico_write_btn.png';
-import near from '../images/ico/ico_tab_near_by_n.png';
-import mydanggeun from '../images/ico/ico_tab_mydanggeun_n.png';
+import home from '../../images/ico/ico_tab_home_n.png';
+import write from '../../images/ico/ico_write_btn.png';
+import near from '../../images/ico/ico_tab_near_by_n.png';
+import mydanggeun from '../../images/ico/ico_tab_mydanggeun_n.png';
 
 export const NavBottomBlock = styled.div`
   position: fixed;
@@ -27,47 +27,36 @@ export const LayOutBlock = styled.div`
   display: flex;
   justify-content: space-around;
   align-items: center;
+
+  margin-top: 8px;
+`;
+
+export const DefaultBlock = styled.div`
+  width: 35px;
+  height: 35px;
+
+  p {
+    display: flex;
+    justify-content: space-around;
+  }
 `;
 
 export const NavHomeBlock = styled.div`
-  width: 35px;
-  height: 35px;
-
   background-image: url(${home});
   background-size: cover;
-
-  p {
-    margin-left: 13px;
-  }
 `;
 
 export const NavWrtieBlock = styled.div`
-  width: 35px;
-  height: 35px;
   background-image: url(${write});
   background-size: cover;
-
-  p {
-    margin-left: 5px;
-  }
 `;
 
 export const NavNearBlock = styled.div`
-  width: 35px;
-  height: 35px;
-
   background-image: url(${near});
   background-size: cover;
-
-  p {
-    margin-left: 9px;
-  }
 `;
 
 export const NavMyCarrotBlock = styled.div`
-  width: 35px;
-  height: 35px;
-
   background-image: url(${mydanggeun});
   background-size: cover;
 `;

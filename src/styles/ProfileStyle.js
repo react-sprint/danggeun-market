@@ -8,12 +8,12 @@ import menu from '../images/ico/ico_more.png';
 
 export const BackArrow = styled.div`
   display: flex;
-  position: absolute;
-  top: 26px;
-  left: 22px;
 
   width: 17px;
   height: 17px;
+
+  margin-top: 30px;
+  margin-left: 30px;
 
   cursor: pointer;
 
@@ -23,10 +23,6 @@ export const BackArrow = styled.div`
 
 export const Profile = styled.p`
   display: flex;
-
-  position: absolute;
-  top: 7px;
-  left: 60px;
 
   font-weight: 500;
   font-size: 18px;
@@ -62,16 +58,6 @@ export const MenuBlock = styled.div`
 
   background-image: url(${menu});
   background-size: cover;
-`;
-
-export const TopBlock = styled.div`
-  position: absolute;
-  top: 65px;
-  left: 0px;
-  width: 99%;
-  height: 0px;
-
-  border: 1px solid #f0f0f0;
 `;
 
 export const ProfileImage = styled.div`

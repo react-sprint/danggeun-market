@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import firebase from '../utils/api/fbInstance';
-import { LoginButton, RegisterButton } from '../styles/LoginStyle';
 import MenuBar from '../components/common/MenuBar';
 import {
   TopBlock,
   BackImage,
-  EmailBlock,
-  EmailText,
-  PasswordBlock,
-  PasswordText,
+  EmailandPasswordBlock,
+  EmailandPasswordText,
+  RegisterButton,
+  LoginButton,
 } from '../components/layout/LoginLayout';
+import { SortBlock } from '../components/common/SortBlock';
 
 const LoginPage = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -42,20 +42,23 @@ const LoginPage = () => {
         <Link to="/">
           <BackImage />
         </Link>
+
         <p>로그인</p>
       </TopBlock>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <EmailText>
+        <EmailandPasswordText>
           Email
           <div>{errors.email && <>이메일 형식이 맞지 않습니다.</>}</div>
-        </EmailText>
-        <EmailBlock
-          name="email"
-          type="email"
-          ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-        />
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="email"
+            type="email"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+        </SortBlock>
 
-        <PasswordText>
+        <EmailandPasswordText>
           Password
           <div>
             {errors.password && errors.password.type === 'required' && (
@@ -67,12 +70,14 @@ const LoginPage = () => {
               <>비밀번호의 길이가 밎지 않습니다.</>
             )}
           </div>
-        </PasswordText>
-        <PasswordBlock
-          name="password"
-          type="password"
-          ref={register({ required: true, minLength: 6 })}
-        />
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="password"
+            type="password"
+            ref={register({ required: true, minLength: 6 })}
+          />
+        </SortBlock>
 
         {errorFromSubmit && <p>로그인 실패</p>}
 
@@ -83,6 +88,7 @@ const LoginPage = () => {
         <Link to="/signup">
           <RegisterButton>회원가입</RegisterButton>
         </Link>
+
         <MenuBar />
       </form>
     </>
