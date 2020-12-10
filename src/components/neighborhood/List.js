@@ -9,16 +9,19 @@ const StyledLongUnderline = styled(StyledUnderline)`
 
 const StyledAddressList = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  height: 50px;
+  align-items: center;
+  height: 47px;
+`;
+
+const StyledButton = styled.button`
+  font-size: 18px;
 `;
 
 const Address = ({ address }) => {
   return (
     <>
       <StyledAddressList>
-        <div>{address.value}</div>
+        <StyledButton type="submit">{address.value}</StyledButton>
       </StyledAddressList>
       <StyledLongUnderline />
     </>
