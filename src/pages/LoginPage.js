@@ -2,20 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import firebase from '../utils/api/fbInstance';
-import { LoginButton } from '../styles/LoginStyle';
+import { LoginButton, RegisterButton } from '../styles/LoginStyle';
 import MenuBar from '../components/common/MenuBar';
 import {
   TopBlock,
-  TopText,
   BackImage,
   EmailBlock,
   EmailText,
   PasswordBlock,
   PasswordText,
-  RegisterButton,
-  RegisterText,
 } from '../components/layout/LoginLayout';
-import { EmailError, LoginPasswordError } from '../styles/ErrorStyle';
 
 const LoginPage = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -42,38 +38,41 @@ const LoginPage = () => {
 
   return (
     <>
-      <Link to="/">
-        <BackImage />
-      </Link>
-      <TopBlock />
-      <TopText>로그인</TopText>
+      <TopBlock>
+        <Link to="/">
+          <BackImage />
+        </Link>
+        <p>로그인</p>
+      </TopBlock>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <EmailText>Email</EmailText>
+        <EmailText>
+          Email
+          <div>{errors.email && <>이메일 형식이 맞지 않습니다.</>}</div>
+        </EmailText>
         <EmailBlock
           name="email"
           type="email"
           ref={register({ required: true, pattern: /^\S+@\S+$/i })}
         />
 
-        <EmailError>
-          {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
-        </EmailError>
-
-        <PasswordText>Password</PasswordText>
+        <PasswordText>
+          Password
+          <div>
+            {errors.password && errors.password.type === 'required' && (
+              <>올바른 비밀번호가 아닙니다.</>
+            )}
+          </div>
+          <div>
+            {errors.password && errors.password.type === 'minLength' && (
+              <>비밀번호의 길이가 밎지 않습니다.</>
+            )}
+          </div>
+        </PasswordText>
         <PasswordBlock
           name="password"
           type="password"
           ref={register({ required: true, minLength: 6 })}
         />
-
-        <LoginPasswordError>
-          {errors.password && errors.password.type === 'required' && (
-            <p>올바른 비밀번호가 아닙니다.</p>
-          )}
-          {errors.password && errors.password.type === 'minLength' && (
-            <p>비밀번호의 길이가 밎지 않습니다.</p>
-          )}
-        </LoginPasswordError>
 
         {errorFromSubmit && <p>로그인 실패</p>}
 
@@ -81,7 +80,6 @@ const LoginPage = () => {
           로그인
         </LoginButton>
 
-        <RegisterText>아직 계정이 없으신가요?</RegisterText>
         <Link to="/signup">
           <RegisterButton>회원가입</RegisterButton>
         </Link>

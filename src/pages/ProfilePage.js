@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import {
-  TopBlock,
   ProfileImage,
   BackArrow,
   Profile,
@@ -35,6 +34,7 @@ import {
   ChatBlock,
   ChatText,
 } from '../styles/ProfileStyle';
+import { TopBlock } from '../components/layout/LoginLayout';
 
 const ProfilePage = () => {
   const { name } = useSelector(({ profilename }) => ({
