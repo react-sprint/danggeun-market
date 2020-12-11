@@ -77,7 +77,6 @@ const WritingStuff = () => {
 
     let fileUrl = [];
 
-    let theFile = null;
     const fileArr = Array.from(files);
 
     fileArr.map((file) => {
@@ -87,6 +86,7 @@ const WritingStuff = () => {
           currentTarget: { result },
         } = event;
         fileUrl.push(result);
+        // load가 끝나면 setState 시키게 변경
         setAttachment(fileUrl);
       };
       reader && reader.readAsDataURL(file);

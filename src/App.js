@@ -15,6 +15,7 @@ import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
+import StuffDetail from './pages/StuffDetail';
 
 const App = () => {
   const history = useHistory();
@@ -39,8 +40,9 @@ const App = () => {
   return (
     <Switch>
       <Route path="/write-new-stuff" component={WritingStuff} />
+      <Route exact path="/" component={MainList} />
+      <Route path="/stuff-detail" component={StuffDetail} />
       <Layout>
-        <Route exact path="/" component={MainList} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/sale" component={SalePage} />
