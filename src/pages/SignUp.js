@@ -55,16 +55,16 @@ const SignUpPage = () => {
   return (
     <>
       <TopBlock>
-        <Link to="/">
-          <BackImage />
-        </Link>
         <p>회원가입</p>
       </TopBlock>
+      <Link to="/">
+        <BackImage />
+      </Link>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
           Email
-          <div>{errors.email && <>잘못된 이메일 입니다.</>}</div>
+          <p>{errors.email && <>잘못된 이메일 입니다.</>}</p>
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock
@@ -75,16 +75,12 @@ const SignUpPage = () => {
         </SortBlock>
         <EmailandPasswordText>
           Password
-          <div>
-            {errors.password && errors.password.type === 'required' && (
-              <>잘못된 비밀번호 입니다.</>
-            )}
-          </div>
-          <div>
-            {errors.password && errors.password.type === 'minLength' && (
-              <>비밀번호 길이가 맞지 않습니다.</>
-            )}
-          </div>
+          {errors.password && errors.password.type === 'required' && (
+            <p>잘못된 비밀번호 입니다.</p>
+          )}
+          {errors.password && errors.password.type === 'minLength' && (
+            <p>비밀번호 길이가 맞지 않습니다.</p>
+          )}
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock
@@ -95,18 +91,14 @@ const SignUpPage = () => {
         </SortBlock>
         <EmailandPasswordText>
           PasswordConfirm
-          <div>
-            {errors.password_confirm &&
-              errors.password_confirm.type === 'required' && (
-                <>잘못된 비밀번호 입니다.</>
-              )}
-          </div>
-          <div>
-            {errors.password_confirm &&
-              errors.password_confirm.type === 'validate' && (
-                <>비밀번호가 일치하지 않습니다.</>
-              )}
-          </div>
+          {errors.password_confirm &&
+            errors.password_confirm.type === 'required' && (
+              <p>잘못된 비밀번호 입니다.</p>
+            )}
+          {errors.password_confirm &&
+            errors.password_confirm.type === 'validate' && (
+              <p>비밀번호가 일치하지 않습니다.</p>
+            )}
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock
@@ -119,10 +111,11 @@ const SignUpPage = () => {
           />
         </SortBlock>
 
-        <div>{errorFormSubmit && <>{errorFormSubmit}</>}</div>
-        <RegisterButton type="submit" disabled={loading}>
-          회원가입
-        </RegisterButton>
+        <SortBlock>
+          <RegisterButton type="submit" disabled={loading}>
+            회원가입
+          </RegisterButton>
+        </SortBlock>
         <MenuBar />
       </form>
     </>

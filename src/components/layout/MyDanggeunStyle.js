@@ -13,6 +13,8 @@ export const ProfileImage = styled.div`
   width: 69px;
   height: 69px;
 
+  margin-left: 7%;
+
   background-image: url(${profile});
   background-size: cover;
 
@@ -20,21 +22,20 @@ export const ProfileImage = styled.div`
 `;
 
 export const ProfileName = styled.p`
-  margin-left: 15px;
+  margin-left: 8%;
   font-size: 16px;
   font-weight: 600;
 
   div {
     margin-top: 3px;
-    margin-left: 20px;
     font-size: 12px;
     font-weight: 400;
   }
 `;
 
 export const ProfileUrl = styled.button`
-  width: 92px;
-  height: 36px;
+  width: 100px;
+  height: 35px;
 
   margin-left: 70%;
 
@@ -42,7 +43,6 @@ export const ProfileUrl = styled.button`
   border-radius: 5px;
 
   text-align: center;
-  line-height: 33px;
 
   font-size: 14px;
   font-weight: 500;
@@ -76,16 +76,19 @@ export const DefaultBlock = styled.div`
 `;
 
 export const SaleBlock = styled.div`
+  width: 61px;
   background-image: url(${sale});
   background-size: cover;
 `;
 
 export const PurchaseBlock = styled.div`
+  width: 61px;
   background-image: url(${purchase});
   background-size: cover;
 `;
 
 export const WatchBlock = styled.div`
+  width: 61px;
   background-image: url(${watch});
   background-size: cover;
 `;
@@ -110,6 +113,9 @@ export const Ptag = styled.p`
 
 export const TownBlock = styled.div`
   display: flex;
+
+  margin-top: 20px;
+  margin-bottom: 30px;
   cursor: pointer;
 `;
 
@@ -125,13 +131,10 @@ export const Line = styled.div`
 export const LogOut = styled.div`
   display: flex;
 
+  margin-top: 20px;
+
   border: none;
   background: white;
 
   cursor: pointer;
-`;
-
-export const EmptyBlock = styled.div`
-  display: flex;
-  height: 60px;
 `;

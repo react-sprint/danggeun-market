@@ -12,12 +12,18 @@ export const ProfileImage = styled.div`
   background-size: cover;
 `;
 
+export const TopDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 30px;
+`;
+
 export const BackArrow = styled.div`
   width: 17px;
   height: 17px;
 
-  margin-left: 30px;
-  margin-top: 30px;
+  margin-left: 40px;
 
   cursor: pointer;
 
@@ -26,13 +32,15 @@ export const BackArrow = styled.div`
 `;
 
 export const TextBlock = styled.div`
-  margin-left: 30px;
-  margin-top: 25px;
   font-weight: 500;
   font-size: 18px;
+
+  margin-right: 20px;
+  margin-bottom: 100px;
 `;
 
 export const EndText = styled.p`
+  margin-right: 10px;
   font-weight: 500;
   font-size: 16px;
 `;

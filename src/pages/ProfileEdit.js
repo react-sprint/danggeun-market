@@ -7,9 +7,9 @@ import {
   EndText,
   TextBlock,
   BackArrow,
+  TopDiv,
 } from '../components/layout/ProfileEditStyle';
 import { changeName } from '../modules/profile';
-import { TopBlock } from '../components/layout/LoginLayout';
 import { SortBlock } from '../components/common/SortBlock';
 
 const ProfileEdit = () => {
@@ -27,7 +27,7 @@ const ProfileEdit = () => {
 
   return (
     <>
-      <TopBlock>
+      <TopDiv>
         <Link to="/profile">
           <BackArrow />
         </Link>
@@ -36,7 +36,7 @@ const ProfileEdit = () => {
         <Link to="/profile">
           <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
         </Link>
-      </TopBlock>
+      </TopDiv>
 
       <SortBlock>
         <ProfileImage />

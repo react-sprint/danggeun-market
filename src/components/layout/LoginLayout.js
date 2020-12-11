@@ -3,13 +3,10 @@ import x from '../../images/ico/ic_window_close_outline_18.png';
 
 export const TopBlock = styled.div`
   display: flex;
+  justify-content: center;
+  width: 100%;
 
   p {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    width: 100%;
     color: #000000;
 
     font-size: 18px;
@@ -23,12 +20,11 @@ export const TopBlock = styled.div`
 `;
 
 export const BackImage = styled.div`
-  display: flex;
-
   width: 14.58px;
   height: 14.58px;
 
   margin-top: 20px;
+  margin-left: 40px;
 
   background-image: url(${x});
   background-size: cover;
@@ -64,7 +60,6 @@ export const LoginButton = styled.button`
   width: 80%;
   height: 53px;
 
-  margin-left: 40px;
   margin-top: 120px;
 
   border: none;
@@ -83,8 +78,7 @@ export const RegisterButton = styled.button`
   width: 80%;
   height: 53px;
 
-  margin-left: 40px;
-  margin-top: 50px;
+  margin-top: 80px;
 
   border: none;
   border-radius: 6px;

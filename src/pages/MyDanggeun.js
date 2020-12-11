@@ -9,7 +9,6 @@ import {
   ProfileUrl,
   SaleBlock,
   PurchaseBlock,
-  EmptyBlock,
   LogOut,
   WatchBlock,
   TextBlock,
@@ -23,6 +22,8 @@ import {
 } from '../components/layout/MyDanggeunStyle';
 import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
+import { EmptyBox } from '../components/common/EmptyBox';
+import { SortBlock } from '../components/common/SortBlock';
 
 const MyDanggeun = () => {
   const { name } = useSelector(({ profilename }) => ({
@@ -40,7 +41,9 @@ const MyDanggeun = () => {
   return (
     <>
       <TopBlock />
-      <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
+      <SortBlock>
+        <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
+      </SortBlock>
 
       <ProfileImage />
 
@@ -138,7 +141,7 @@ const MyDanggeun = () => {
             <Ptag>로그아웃</Ptag>
           </LogOut>
         </Link>
-        <EmptyBlock />
+        <EmptyBox />
       </ListBlock>
 
       <MenuBar />
