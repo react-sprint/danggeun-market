@@ -56,7 +56,7 @@
     "rules": {
       "prefer-const": 0,
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
+      "react-hooks/exhaustive-deps": "off",
       "react/prop-types": 0,
       "react/prefer-stateless-function": 0,
       "react/jsx-filename-extension": 0,

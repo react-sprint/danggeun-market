@@ -89,7 +89,7 @@ const WritingStuff = () => {
         // load가 끝나면 setState 시키게 변경
         setAttachment(fileUrl);
       };
-      reader && reader.readAsDataURL(file);
+      return reader && reader.readAsDataURL(file);
     });
   };
 

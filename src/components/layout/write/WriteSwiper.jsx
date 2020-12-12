@@ -1,25 +1,42 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
-import SwiperCore from 'swiper';
+import styled from 'styled-components';
+import SwiperCore, { Pagination } from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import queryString from 'query-string';
 
 import 'swiper/swiper-bundle.css';
 import 'swiper/swiper.scss';
 
-function WriteSwiper() {
-  const history = useHistory();
-  const { search } = history.location;
-  const query = queryString.parse(search);
+SwiperCore.use([Pagination]);
 
-  console.log(query);
+const SwiperWrap = styled.div`
+  .swiper-slide {
+    height: 100vw;
+    background: url(${({ imgLink }) => imgLink}) center center/cover no-repeat;
+  }
+
+  .swiper-pagination-bullet,
+  .swiper-pagination-bullet-active {
+    background-color: #fff;
+  }
+`;
+
+function WriteSwiper({ carouselImg }) {
   return (
-    <Swiper spaceBetween={0}>
-      <SwiperSlide>Slide 1</SwiperSlide>
-      <SwiperSlide>Slide 2</SwiperSlide>
-      <SwiperSlide>Slide 3</SwiperSlide>
-      <SwiperSlide>Slide 4</SwiperSlide>
-    </Swiper>
+    <SwiperWrap>
+      <Swiper spaceBetween={0} pagination>
+        {carouselImg.map((img, idx) => {
+          return (
+            <SwiperSlide
+              // eslint-disable-next-line react/no-array-index-key
+              key={idx}
+              style={{
+                background: `url(${img}) center center/cover no-repeat`,
+              }}
+            />
+          );
+        })}
+      </Swiper>
+    </SwiperWrap>
   );
 }
 

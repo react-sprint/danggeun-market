@@ -64,7 +64,15 @@ const PriceTag = styled.span`
 
 function Stuff({ thumb, matter, time, creatorId }) {
   const { price, title } = matter;
-  const queryElement = { ...matter, creatorId };
+  let queryElement = { ...matter, creatorId };
+
+  if (typeof thumb === 'object') {
+    thumb?.map((img, idx) => {
+      const keyName = (idx) => `thumb${idx}`;
+      queryElement = { ...queryElement, [keyName(idx)]: img };
+      return queryElement;
+    });
+  } else queryElement = { ...matter, creatorId, thumb0: thumb };
 
   // eslint-disable-next-line consistent-return
   const returnTime = () => {

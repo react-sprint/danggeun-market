@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import { dbService } from '../utils/api/fbInstance';
@@ -25,7 +24,6 @@ const MainList = () => {
 
   useEffect(() => {
     listView();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (
