@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import getLocation from './actions';
+import getLocation from './getLocation';
 import { StyledUnderline } from './Header';
 
 const StyledLongUnderline = styled(StyledUnderline)`
   width: 379px;
 `;
 
-const StyledAddressList = styled.div`
+const StyledNeighborList = styled.div`
   display: flex;
   align-items: center;
   height: 47px;
@@ -17,12 +17,14 @@ const StyledButton = styled.button`
   font-size: 18px;
 `;
 
-const Address = ({ address }) => {
+const Neighbor = ({ neighbor }) => {
   return (
     <>
-      <StyledAddressList>
-        <StyledButton type="submit">{address.value}</StyledButton>
-      </StyledAddressList>
+      <StyledNeighborList>
+        <StyledButton type="submit" onClick={console.log(neighbor.key)}>
+          {neighbor.value}
+        </StyledButton>
+      </StyledNeighborList>
       <StyledLongUnderline />
     </>
   );
@@ -41,7 +43,7 @@ const AddressArray = ({ address }) => {
   return (
     <div>
       {addressObjectArray.map((address) => (
-        <Address address={address} key={address.key} />
+        <Neighbor neighbor={address} key={address.key} />
       ))}
     </div>
   );
