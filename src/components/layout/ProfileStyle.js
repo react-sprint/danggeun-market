@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import danggeun from '../images/ico/ico_logo_48x48.png';
-import profile from '../images/ico/ico_profile_placeholder.png';
-import back from '../images/ico/ico_back_home_arrow.png';
-import menu from '../images/ico/ico_more.png';
+import danggeun from '../../images/ico/ico_logo_48x48.png';
+import profile from '../../images/ico/ico_profile_placeholder.png';
+import back from '../../images/ico/ico_back_home_arrow.png';
+import menu from '../../images/ico/ico_more.png';
 
 export const BackArrow = styled.div`
   width: 17px;
@@ -52,7 +52,7 @@ export const ProfileImage = styled.div`
 
 export const ProfileName = styled.p`
   display: flex;
-  margin-left: 60px;
+  margin-left: 40px;
 
   font-size: 16px;
   font-weight: 600;
@@ -68,6 +68,8 @@ export const MannerBlock = styled.p`
   cursor: pointer;
 `;
 
+// 수정 필요
+// ProfilePage 48Line ~ 53Line
 export const Temperature = styled.div`
   display: flex;
   justify-content: center;
@@ -140,7 +142,7 @@ export const ListLine = styled.div`
 export const ListBlock = styled.div`
   display: flex;
 
-  height: 40px;
+  height: 50px;
 
   margin-top: 30px;
   margin-left: 40px;
@@ -152,4 +154,9 @@ export const ListBlock = styled.div`
   p {
     font-size: 14px;
   }
+`;
+
+export const EmptyBlock = styled.div`
+  width: 100%;
+  height: 60px;
 `;

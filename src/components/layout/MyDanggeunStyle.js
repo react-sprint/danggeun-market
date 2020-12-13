@@ -4,7 +4,15 @@ import sale from '../../images/ico/ico_sales.png';
 import purchase from '../../images/ico/ico_purchase.png';
 import watch from '../../images/ico/ico_watch.png';
 
+export const TopDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
 export const MyDanggeunBlock = styled.p`
+  margin-top: 30px;
+  margin-left: 10px;
+
   font-weight: 500;
   font-size: 18px;
 `;
@@ -13,7 +21,8 @@ export const ProfileImage = styled.div`
   width: 69px;
   height: 69px;
 
-  margin-left: 7%;
+  margin-top: 60px;
+  margin-left: 40px;
 
   background-image: url(${profile});
   background-size: cover;
@@ -22,7 +31,7 @@ export const ProfileImage = styled.div`
 `;
 
 export const ProfileName = styled.p`
-  margin-left: 8%;
+  margin-left: 60px;
   font-size: 16px;
   font-weight: 600;
 
@@ -37,7 +46,7 @@ export const ProfileUrl = styled.button`
   width: 100px;
   height: 35px;
 
-  margin-left: 70%;
+  margin-top: 40px;
 
   border: 2px solid #f0f0f0;
   border-radius: 5px;

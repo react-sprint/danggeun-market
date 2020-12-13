@@ -20,9 +20,9 @@ import {
   Response,
   ListBlock,
   TopDiv,
-} from '../styles/ProfileStyle';
+  EmptyBlock,
+} from '../components/layout/ProfileStyle';
 import { SortBlock } from '../components/common/SortBlock';
-import { EmptyBox } from '../components/common/EmptyBox';
 
 const ProfilePage = () => {
   const { name } = useSelector(({ profilename }) => ({
@@ -92,7 +92,7 @@ const ProfilePage = () => {
       <ListBlock>
         <p>받은 거래 후기(0)</p>
       </ListBlock>
-      <EmptyBox />
+      <EmptyBlock />
       <MenuBar />
     </>
   );

@@ -19,6 +19,7 @@ import {
   Ptag,
   TownBlock,
   DefaultBlock,
+  TopDiv,
 } from '../components/layout/MyDanggeunStyle';
 import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
@@ -40,16 +41,14 @@ const MyDanggeun = () => {
 
   return (
     <>
-      <TopBlock />
-      <SortBlock>
+      <TopDiv>
+        <ProfileImage />
         <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
-      </SortBlock>
 
-      <ProfileImage />
-
-      <Link to="/profile">
-        <ProfileUrl>프로필 보기</ProfileUrl>
-      </Link>
+        <Link to="/profile">
+          <ProfileUrl>프로필 보기</ProfileUrl>
+        </Link>
+      </TopDiv>
       <ProfileName>
         {name}
         <div>안양6동</div>
