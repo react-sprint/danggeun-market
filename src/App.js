@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
@@ -15,11 +15,11 @@ import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
+import StuffDetail from './pages/StuffDetail';
 
 const App = () => {
   const history = useHistory();
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.user.isLoading);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -28,19 +28,17 @@ const App = () => {
         history.push('/');
         dispatch(setUser(user));
       } else {
-        history.push('/login');
+        // history.push('/login');
       }
     });
   });
 
-  if (!isLoading) {
-    return <div>...loading</div>;
-  }
   return (
     <Switch>
+      <Route path="/write-new-stuff" component={WritingStuff} />
+      <Route exact path="/" component={MainList} />
+      <Route path="/stuff-detail" component={StuffDetail} />
       <Layout>
-        <Route exact path="/" component={MainList} />
-        <Route path="/write-new-stuff" component={WritingStuff} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/sale" component={SalePage} />
@@ -49,7 +47,6 @@ const App = () => {
         <Route exact path="/mydanggeun" component={MyDanggeun} />
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/profileedit" component={ProfileEdit} />
-
         <MenuBar />
       </Layout>
     </Switch>

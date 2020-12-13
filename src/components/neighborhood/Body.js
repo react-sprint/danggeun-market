@@ -1,9 +1,5 @@
 import React from 'react';
-import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { StyledUnderline } from './Header';
-import List from './List';
-import getLocation from './actions';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -19,32 +15,21 @@ const StyledButton = styled.button`
   background-color: #ff8a3d;
 `;
 
-const StyledSpan = styled.span`
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  height: 65px;
   font-size: 13px;
   font-weight: bold;
 `;
 
-const StyledLongUnderline = styled(StyledUnderline)`
-  width: 379px;
-`;
-
-const Body = (props) => {
-  const { load } = props;
+const Body = () => {
   return (
     <StyledWrapper>
-      <StyledButton onClick={getLocation}>현재위치로 찾기</StyledButton>
-      <StyledSpan>근처 동네</StyledSpan>
-      <StyledLongUnderline />
+      <StyledButton>현재위치로 찾기</StyledButton>
+      <StyledDiv>근처 동네</StyledDiv>
     </StyledWrapper>
   );
 };
 
-function mapStateToProps(state) {
-  return state;
-}
-
-const mapDispatchToProps = (dispatch) => ({
-  load: () => dispatch({ type: 'LOAD', mode: 'LOAD' }),
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(Body);
+export default Body;

@@ -1,27 +1,51 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useHistory } from 'react-router-dom';
 import { dbService, storageService } from '../utils/api/fbInstance';
-import MenuBar from '../components/common/MenuBar';
+import WritingHeader from '../components/layout/write/WritingHeader';
+import { Inner } from '../components/layout/Inner';
+import SelectPhoto from '../components/layout/write/SelectPhoto';
+import StuffTitle from '../components/layout/write/StuffTitle';
+import SelectCategory from '../components/layout/write/SelectCategory';
+import WriteContents from '../components/layout/write/WriteContents';
+import WritePrice from '../components/layout/write/WritePrice';
 
 const WritingStuff = () => {
   const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
+  const [category, setCategory] = useState(1);
   const [attachment, setAttachment] = useState(null);
+  const history = useHistory();
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
-    const response = await fileRef.putString(attachment, 'data_url');
-    const attachmentUrl = await response.ref.getDownloadURL();
-    const stuff = {
-      input: inputs,
-      createAt: Date.now(),
-      creatorId: 'userid',
-      attachmentUrl,
-    };
+    let stuffAttchmentUrl = [];
+    let stuff = null;
+    if (attachment) {
+      for (const dataUrl of attachment) {
+        const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
+        // eslint-disable-next-line no-await-in-loop
+        const response = await fileRef.putString(dataUrl, 'data_url');
+        // eslint-disable-next-line no-await-in-loop
+        const attachmentUrl = await response.ref.getDownloadURL();
 
+        stuffAttchmentUrl.push(attachmentUrl);
+
+        stuff = {
+          input: inputs,
+          category,
+          createAt: Date.now(),
+          creatorId: 'userid',
+          attachmentUrl: stuffAttchmentUrl,
+        };
+      }
+    }
+    console.log(stuff);
     dbService.collection('stuffList').add(stuff);
     setInputs({ title: '', price: '', contents: '' });
     setAttachment(null);
+    // eslint-disable-next-line no-alert
+    alert('상품이 성공적으로 등록되었습니다.');
+    history.push('/');
   };
 
   const onChange = (event) => {
@@ -32,77 +56,72 @@ const WritingStuff = () => {
     setInputs({ ...inputs, [name]: value });
   };
 
+  const onPrice = (event) => {
+    const regex = /[^0-9]/g;
+    const price = event.target.value.replace(regex, '');
+    let NumberPrice = Number(price);
+    if (NumberPrice >= 99999999) NumberPrice = 99999999;
+    let priceComma = NumberPrice.toString().replace(
+      /\B(?=(\d{3})+(?!\d))/g,
+      ',',
+    );
+    if (priceComma === '0') priceComma = '';
+
+    setInputs({ ...inputs, price: priceComma });
+  };
+
   const onFileChange = (event) => {
     const {
       target: { files },
     } = event;
-    const theFile = files[0];
-    const reader = new FileReader();
-    reader.onloadend = (finishedEvent) => {
-      console.log(finishedEvent);
-      const {
-        currentTarget: { result },
-      } = finishedEvent;
 
-      setAttachment(result);
-    };
-    reader.readAsDataURL(theFile);
+    let fileUrl = [];
+
+    const fileArr = Array.from(files);
+
+    fileArr.map((file) => {
+      const reader = new FileReader();
+      reader.onloadend = (event) => {
+        const {
+          currentTarget: { result },
+        } = event;
+        fileUrl.push(result);
+        // load가 끝나면 setState 시키게 변경
+        setAttachment(fileUrl);
+      };
+      return reader && reader.readAsDataURL(file);
+    });
   };
 
   const onClearPhoto = () => {
     setAttachment(null);
   };
+
+  const onCategory = (event) => {
+    const {
+      target: { value },
+    } = event;
+
+    setCategory(value);
+  };
+
+  const { title, price, contents } = inputs;
   return (
     <div>
-      <form onSubmit={onSubmit}>
-        <div>
-          <input type="file" accept="image/*" onChange={onFileChange} />
-          {attachment && (
-            <div>
-              <img src={attachment} width="50px" height="50px" alt="preview" />
-              <button type="button" onClick={onClearPhoto}>
-                이미지 삭제
-              </button>
-            </div>
-          )}
-        </div>
-        <div>
-          <input
-            type="text"
-            name="title"
-            placeholder="글 제목"
-            onChange={onChange}
-            value={inputs.title}
+      <WritingHeader onClick={onSubmit} />
+      <Inner>
+        <form>
+          <SelectPhoto
+            onChange={onFileChange}
+            attachment={attachment}
+            onClearPhoto={onClearPhoto}
           />
-        </div>
-        <div>
-          <select>
-            <option>디지털/가전</option>
-            <option>가구/인테리어</option>
-          </select>
-        </div>
-        <div>
-          <input
-            type="text"
-            name="price"
-            placeholder="￦ 가격 입력 (선택사항)"
-            onChange={onChange}
-            value={inputs.price}
-          />
-        </div>
-        <div>
-          <textarea
-            name="contents"
-            placeholder="브랜드, 사이즈, 색상, 소재 등 물품에 대한 자세한 정보를 작성하면 구매자에게 도움이 돼요."
-            onChange={onChange}
-            value={inputs.contents}
-          />
-        </div>
-        <div>
-          <button type="button">작성</button>
-        </div>
-      </form>
-      <MenuBar />
+          <StuffTitle onChange={onChange} title={title} />
+          <SelectCategory onCategory={onCategory} />
+          <WritePrice onChange={onPrice} price={price} />
+          <WriteContents onChange={onChange} contents={contents} />
+        </form>
+      </Inner>
     </div>
   );
 };
