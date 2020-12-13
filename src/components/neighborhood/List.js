@@ -1,31 +1,16 @@
 import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
 import getLocation from './getLocation';
-import { StyledUnderline } from './Header';
-
-const StyledLongUnderline = styled(StyledUnderline)`
-  width: 379px;
-`;
-
-const StyledNeighborList = styled.div`
-  display: flex;
-  align-items: center;
-  height: 47px;
-`;
-
-const StyledButton = styled.button`
-  font-size: 18px;
-`;
+import * as Styled from '../common/neighbor/List';
 
 const Neighbor = ({ neighbor }) => {
   return (
     <>
-      <StyledNeighborList>
-        <StyledButton type="submit" onClick={console.log(neighbor.key)}>
+      <Styled.NeighborList>
+        <Styled.Button type="submit" onClick={() => console.log(neighbor.key)}>
           {neighbor.value}
-        </StyledButton>
-      </StyledNeighborList>
-      <StyledLongUnderline />
+        </Styled.Button>
+      </Styled.NeighborList>
+      <Styled.LongUnderline />
     </>
   );
 };
