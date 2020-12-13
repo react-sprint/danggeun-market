@@ -20,6 +20,7 @@ import {
   Response,
   ListBlock,
   TopDiv,
+  Line,
   EmptyBlock,
 } from '../components/layout/ProfileStyle';
 import { SortBlock } from '../components/common/SortBlock';
@@ -76,22 +77,28 @@ const ProfilePage = () => {
       <ListBlock>
         <p>활동 배지2개</p>
       </ListBlock>
+      <Line />
 
       <ListBlock>
         <p>판매상품1개</p>
       </ListBlock>
+      <Line />
 
       <ListBlock>
         <p>동네생활</p>
       </ListBlock>
+      <Line />
 
       <ListBlock>
         <p>받은 매너 평가</p>
       </ListBlock>
+      <Line />
 
       <ListBlock>
         <p>받은 거래 후기(0)</p>
       </ListBlock>
+      <Line />
+
       <EmptyBlock />
       <MenuBar />
     </>

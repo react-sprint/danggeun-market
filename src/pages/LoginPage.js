@@ -39,11 +39,11 @@ const LoginPage = () => {
   return (
     <>
       <TopBlock>
+        <Link to="/">
+          <BackImage />
+        </Link>
         <p>로그인</p>
       </TopBlock>
-      <Link to="/">
-        <BackImage />
-      </Link>
       <form onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
           Email
@@ -85,9 +85,8 @@ const LoginPage = () => {
             <RegisterButton>회원가입</RegisterButton>
           </SortBlock>
         </Link>
-
-        <MenuBar />
       </form>
+      <MenuBar />
     </>
   );
 };

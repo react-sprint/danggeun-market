@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { TopBlock } from '../components/layout/LoginLayout';
 import {
   MyDanggeunBlock,
   ProfileLine,
@@ -23,8 +22,7 @@ import {
 } from '../components/layout/MyDanggeunStyle';
 import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
-import { EmptyBox } from '../components/common/EmptyBox';
-import { SortBlock } from '../components/common/SortBlock';
+import { EmptyBlock } from '../components/common/EmptyBlock';
 
 const MyDanggeun = () => {
   const { name } = useSelector(({ profilename }) => ({
@@ -140,7 +138,7 @@ const MyDanggeun = () => {
             <Ptag>로그아웃</Ptag>
           </LogOut>
         </Link>
-        <EmptyBox />
+        <EmptyBlock />
       </ListBlock>
 
       <MenuBar />

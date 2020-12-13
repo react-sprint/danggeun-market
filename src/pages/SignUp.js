@@ -55,11 +55,11 @@ const SignUpPage = () => {
   return (
     <>
       <TopBlock>
+        <Link to="/">
+          <BackImage />
+        </Link>
         <p>회원가입</p>
       </TopBlock>
-      <Link to="/">
-        <BackImage />
-      </Link>
 
       <form onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
@@ -116,8 +116,8 @@ const SignUpPage = () => {
             회원가입
           </RegisterButton>
         </SortBlock>
-        <MenuBar />
       </form>
+      <MenuBar />
     </>
   );
 };

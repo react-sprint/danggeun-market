@@ -3,12 +3,17 @@ import x from '../../images/ico/ic_window_close_outline_18.png';
 
 export const TopBlock = styled.div`
   display: flex;
-  justify-content: center;
-  width: 100%;
 
   p {
-    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 
+    width: 90%;
+    margin-top: 15px;
+    margin-right: 30px;
+
+    color: #000000;
     font-size: 18px;
     font-weight: 500;
   }

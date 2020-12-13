@@ -147,8 +147,6 @@ export const ListBlock = styled.div`
   margin-top: 30px;
   margin-left: 40px;
 
-  border-bottom: 1px solid #f0f0f0;
-
   cursor: pointer;
 
   p {
@@ -159,4 +157,8 @@ export const ListBlock = styled.div`
 export const EmptyBlock = styled.div`
   width: 100%;
   height: 60px;
+`;
+
+export const Line = styled.div`
+  border-bottom: 1px solid #f0f0f0;
 `;
