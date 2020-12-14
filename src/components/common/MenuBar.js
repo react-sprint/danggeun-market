@@ -24,7 +24,7 @@ const MenuBar = () => {
             </NavHomeBlock>
           </Link>
 
-          <Link to="/write">
+          <Link to="/write-new-stuff">
             <NavWrtieBlock>
               <DefaultBlock>
                 <p>글쓰기</p>

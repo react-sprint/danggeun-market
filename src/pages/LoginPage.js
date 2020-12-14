@@ -19,12 +19,11 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
+    const { email, password } = data;
     try {
       setLoading(true);
 
-      await firebase
-        .auth()
-        .signInWithEmailAndPassword(data.email, data.password);
+      await firebase.auth().signInWithEmailAndPassword(email, password);
 
       setLoading(false);
     } catch (error) {
@@ -36,6 +35,7 @@ const LoginPage = () => {
     }
   };
 
+  const { password, email } = errors;
   return (
     <>
       <TopBlock>
@@ -47,7 +47,7 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
           Email
-          {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
+          {email && <p>이메일 형식이 맞지 않습니다.</p>}
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock
@@ -59,10 +59,10 @@ const LoginPage = () => {
 
         <EmailandPasswordText>
           Password
-          {errors.password && errors.password.type === 'required' && (
+          {password && password.type === 'required' && (
             <p>올바른 비밀번호가 아닙니다.</p>
           )}
-          {errors.password && errors.password.type === 'minLength' && (
+          {password && password.type === 'minLength' && (
             <p>비밀번호의 길이가 밎지 않습니다.</p>
           )}
         </EmailandPasswordText>

@@ -7,7 +7,6 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './App';
 import ResetStyles from './resetStyle/ResetStyles';
 import rootReducer from './modules';
-import ResetStyles from './resetStyle/ResetStyles';
 
 const store = createStore(rootReducer, composeWithDevTools());
 

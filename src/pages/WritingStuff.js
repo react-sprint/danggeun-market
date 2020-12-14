@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import MenuBar from '../components/common/MenuBar';
 import { dbService, storageService } from '../utils/api/fbInstance';
 
 const WritingStuff = () => {
@@ -101,6 +102,7 @@ const WritingStuff = () => {
           <button type="button">작성</button>
         </div>
       </form>
+      <MenuBar />
     </div>
   );
 };

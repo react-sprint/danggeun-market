@@ -13,6 +13,7 @@ import MenuBar from './components/common/MenuBar';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
+import Gps from './pages/Gps';
 
 const App = () => {
   const history = useHistory();
@@ -35,6 +36,7 @@ const App = () => {
       <Route exact path="/" component={MainList} />
       <Route path="/write-new-stuff" component={WritingStuff} />
       <Route exact path="/login" component={LoginPage} />
+      <Route exact path="/gps" component={Gps} />
       <Route exact path="/signup" component={SignUpPage} />
       <Route exact path="/sale" component={SalePage} />
       <Route exact path="/attention" component={AttentionPage} />

@@ -31,7 +31,7 @@ export const ProfileImage = styled.div`
 `;
 
 export const ProfileName = styled.p`
-  margin-left: 60px;
+  margin-left: 40px;
   font-size: 16px;
   font-weight: 600;
 

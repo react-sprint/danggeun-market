@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Header from '../components/neighborhood/Header';
 import Body from '../components/neighborhood/Body';
 import List from '../components/neighborhood/List';
+import MenuBar from '../components/common/MenuBar';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -12,11 +13,14 @@ const StyledWrapper = styled.div`
 
 const Gps = () => {
   return (
-    <StyledWrapper>
-      <Header />
-      <Body />
-      <List />
-    </StyledWrapper>
+    <>
+      <StyledWrapper>
+        <Header />
+        <Body />
+        <List />
+      </StyledWrapper>
+      <MenuBar />
+    </>
   );
 };
 

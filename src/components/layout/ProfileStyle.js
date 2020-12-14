@@ -63,7 +63,10 @@ export const ProfileName = styled.p`
 export const MannerBlock = styled.p`
   display: flex;
 
+  padding-right: 30px;
+
   text-decoration: underline;
+  font-size: 12px;
 
   cursor: pointer;
 `;
