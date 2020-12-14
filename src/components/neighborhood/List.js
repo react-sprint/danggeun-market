@@ -1,28 +1,26 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import getLocation from './getLocation';
-import * as Styled from '../common/neighbor/List';
+import * as StyledList from '../common/neighbor/List';
+import * as StyledBody from '../common/neighbor/Body';
 import { setNeighbor } from '../../modules/neighbor';
+// import { Search } from './Header';
 
 const Neighbor = ({ neighbor }) => {
-  useSelector((state) => ({
-    neighbor: state.neighbor,
-  }));
-
   const dispatch = useDispatch();
   const onSetNeighbor = (address) => dispatch(setNeighbor(address));
 
   return (
     <>
-      <Styled.NeighborList>
-        <Styled.Button
+      <StyledList.NeighborList>
+        <StyledList.Button
           type="submit"
           onClick={() => onSetNeighbor(neighbor.value)}
         >
           {neighbor.value}
-        </Styled.Button>
-      </Styled.NeighborList>
-      <Styled.LongUnderline />
+        </StyledList.Button>
+      </StyledList.NeighborList>
+      <StyledList.LongUnderline />
     </>
   );
 };
@@ -48,6 +46,7 @@ const AddressArray = ({ addressObj }) => {
 
 const AddressObject = () => {
   const [addressObj, setAddressObj] = useState([]);
+
   useEffect(() => {
     getLocation().then((passedAddressSet) => {
       setAddressObj(Array.from(passedAddressSet));
@@ -62,7 +61,13 @@ const AddressObject = () => {
 };
 
 const List = () => {
-  return <AddressObject />;
+  return (
+    <>
+      <StyledBody.Button>현재위치로 찾기</StyledBody.Button>
+      <StyledBody.Span>근처 동네</StyledBody.Span>
+      <AddressObject />
+    </>
+  );
 };
 
 export default List;
