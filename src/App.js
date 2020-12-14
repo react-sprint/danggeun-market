@@ -15,6 +15,7 @@ import { Layout } from './styles/Layout';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
+import StuffDetail from './pages/StuffDetail';
 
 const App = () => {
   const history = useHistory();
@@ -27,16 +28,17 @@ const App = () => {
         history.push('/');
         dispatch(setUser(user));
       } else {
-        history.push('/login');
+        // history.push('/login');
       }
     });
   });
 
   return (
     <Switch>
+      <Route path="/write-new-stuff" component={WritingStuff} />
+      <Route exact path="/" component={MainList} />
+      <Route path="/stuff-detail" component={StuffDetail} />
       <Layout>
-        <Route exact path="/" component={MainList} />
-        <Route path="/write-new-stuff" component={WritingStuff} />
         <Route exact path="/login" component={LoginPage} />
         <Route exact path="/signup" component={SignUpPage} />
         <Route exact path="/sale" component={SalePage} />
@@ -45,7 +47,6 @@ const App = () => {
         <Route exact path="/mydanggeun" component={MyDanggeun} />
         <Route exact path="/profile" component={ProfilePage} />
         <Route exact path="/profileedit" component={ProfileEdit} />
-
         <MenuBar />
       </Layout>
     </Switch>
