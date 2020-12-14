@@ -62,19 +62,9 @@ const PriceTag = styled.span`
   color: #333;
 `;
 
-function Stuff({ thumb, matter, time, creatorId }) {
+function Stuff({ thumb, matter, time, creatorId, category }) {
   const { price, title } = matter;
-  let queryElement = { ...matter, creatorId };
 
-  if (typeof thumb === 'object') {
-    thumb?.map((img, idx) => {
-      const keyName = (idx) => `thumb${idx}`;
-      queryElement = { ...queryElement, [keyName(idx)]: img };
-      return queryElement;
-    });
-  } else queryElement = { ...matter, creatorId, thumb0: thumb };
-
-  // eslint-disable-next-line consistent-return
   const returnTime = () => {
     const rightNow = Date.now();
     const gap = rightNow - time;
@@ -88,6 +78,23 @@ function Stuff({ thumb, matter, time, creatorId }) {
     if (gapHour < 24) return `${gapHour}시간`;
     return `${gapDay}일`;
   };
+
+  let queryElement = { ...matter, creatorId, category, time: returnTime() };
+
+  if (typeof thumb === 'object') {
+    thumb?.map((img, idx) => {
+      const keyName = (idx) => `thumb${idx}`;
+      queryElement = { ...queryElement, [keyName(idx)]: img };
+      return queryElement;
+    });
+  } else
+    queryElement = {
+      ...matter,
+      creatorId,
+      category,
+      time: returnTime(),
+      thumb0: thumb,
+    };
 
   const queryMatter = Object.entries(queryElement)
     .map((e) => e.join('='))

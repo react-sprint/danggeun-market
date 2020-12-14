@@ -43,7 +43,7 @@ const MoreDot = styled.div`
 `;
 
 function OneDepthHeader() {
-  const [headerOn, setHeaderOn] = useState(false);
+  const [headerOn, setHeaderOn] = useState(false); //
   return (
     <DepthHeader status={headerOn}>
       <DepthInner>

@@ -1,17 +1,29 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
 import queryString from 'query-string';
+import styled from 'styled-components';
 import { Inner } from '../components/layout/Inner';
 import WriteSwiper from '../components/layout/write/WriteSwiper';
 import OneDepthHeader from '../components/layout/OneDepthHeader';
 import DetailUserData from '../components/layout/write/DetailUserData';
+import DetailContents from '../components/layout/write/DetailContents';
+import { categoryList } from '../components/layout/write/commonFunc';
+import OneDepthFooter from '../components/layout/write/OneDepthFooter';
 
 function StuffDetail() {
   const history = useHistory();
   const { search } = history.location;
   const query = queryString.parse(search);
-
-  const { contents, creatorId, price, title, token, thumb0 } = query;
+  const {
+    contents,
+    creatorId,
+    category,
+    price,
+    title,
+    token,
+    time,
+    thumb0,
+  } = query;
 
   let withoutToken = [];
   Object.entries(query).forEach(([key]) => {
@@ -33,6 +45,7 @@ function StuffDetail() {
 
   let stuffCarousel = [];
   let getToken = [];
+
   if (typeof token !== 'string') {
     token.map((tokenEl, idx) => parseToken(tokenEl, idx, withoutToken));
   } else {
@@ -40,15 +53,28 @@ function StuffDetail() {
     getToken.map((tokenEl, idx) => parseToken(tokenEl, idx));
   }
 
+  const categoryItem = categoryList();
+  const categoryName = categoryItem[category - 1].listName;
+
+  const StuffDetailWrap = styled.div`
+    position: relative;
+  `;
+
   return (
-    <div>
+    <StuffDetailWrap>
       <OneDepthHeader />
       <WriteSwiper carouselImg={stuffCarousel} />
       <Inner>
         <DetailUserData username={creatorId} />
-        <div>컨텐츠</div>
+        <DetailContents
+          title={title}
+          contents={contents}
+          category={categoryName}
+          time={time}
+        />
       </Inner>
-    </div>
+      <OneDepthFooter price={price} />
+    </StuffDetailWrap>
   );
 }
 

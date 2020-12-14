@@ -39,7 +39,6 @@ const WritingStuff = () => {
         };
       }
     }
-    console.log(stuff);
     dbService.collection('stuffList').add(stuff);
     setInputs({ title: '', price: '', contents: '' });
     setAttachment(null);

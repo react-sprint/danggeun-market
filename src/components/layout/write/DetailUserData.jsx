@@ -11,6 +11,8 @@ import temperLevel6 from '../../../images/ico/ico_manner_06.png';
 const UserDataWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f0f0;
 `;
 
 const UserData = styled.div`
@@ -41,15 +43,29 @@ const Temperature = styled.div``;
 
 const TemperTop = styled.div`
   display: flex;
+  align-items: center;
 `;
-const TemperBot = styled.div``;
+const TemperBot = styled.div`
+  margin-top: 5px;
+  text-align: right;
+  & span {
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+`;
 
 const TemperTopLeft = styled.div``;
-const TemperText = styled.span``;
+const TemperText = styled.span`
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  font-weight: 900;
+  color: ${({ color }) => color};
+`;
 const TemperProgress = styled.div`
   position: relative;
   width: 55px;
   height: 4px;
+  margin: 7px 0 0 4px;
   border-radius: 7px;
   background-color: #e8ece8;
 
@@ -76,7 +92,10 @@ const TemperProgress = styled.div`
     }
   }
 `;
-const TemperIcon = styled.div``;
+const TemperIcon = styled.div`
+  width: 26px;
+  margin-left: 10px;
+`;
 
 function DetailUserData({ username }) {
   const temper = Number((Math.random() * 100).toFixed(1));
@@ -131,7 +150,7 @@ function DetailUserData({ username }) {
       <Temperature>
         <TemperTop>
           <TemperTopLeft>
-            <TemperText>{`${temper}°C`}</TemperText>
+            <TemperText color={temperColor}>{`${temper}°C`}</TemperText>
             <TemperProgress temper={temper} progress={temperColor} />
           </TemperTopLeft>
           <TemperIcon>
