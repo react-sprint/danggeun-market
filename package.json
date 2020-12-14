@@ -9,7 +9,6 @@
     "axios": "^0.21.0",
     "babel-eslint": "^10.1.0",
     "eslint-config-airbnb": "^18.2.1",
-    "firebase": "^8.1.1",
     "eslint-config-prettier": "^6.15.0",
     "eslint-plugin-import": "^2.22.1",
     "eslint-plugin-node": "^11.1.0",
@@ -20,6 +19,8 @@
     "install": "^0.13.0",
     "md5": "^2.3.0",
     "moment-timezone": "^0.5.32",
+    "node-sass": "^4.0.0",
+    "query-string": "^6.13.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "react-hook-form": "^6.12.2",
@@ -29,13 +30,13 @@
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.1",
     "redux": "^4.0.5",
-    "redux-devtools": "^3.7.0",
     "redux-actions": "^2.6.5",
     "redux-devtools": "^3.7.0",
     "redux-devtools-extension": "^2.13.8",
     "redux-thunk": "^2.3.0",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.1",
+    "swiper": "^6.4.1",
     "uuid": "^8.3.1",
     "web-vitals": "^0.2.4"
   },
@@ -55,7 +56,7 @@
     "rules": {
       "prefer-const": 0,
       "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
+      "react-hooks/exhaustive-deps": "off",
       "react/prop-types": 0,
       "react/prefer-stateless-function": 0,
       "react/jsx-filename-extension": 0,
@@ -77,13 +78,14 @@
       "no-shadow": "off",
       "object-curly-newline": "off",
       "object-shorthand": 0,
+      "no-plusplus": "off",
+      "react/button-has-type": "off",
+      "no-case-declarations": "off",
       "import/no-anonymous-default-export": "off",
       "func-names": [
         "error",
         "never"
-      ],
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn"
+      ]
     },
     "env": {
       "browser": true
