@@ -2,16 +2,16 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import firebase from '../utils/api/fbInstance';
-import { LoginButton, RegisterButton } from '../styles/LoginStyle';
 import MenuBar from '../components/common/MenuBar';
 import {
   TopBlock,
   BackImage,
-  EmailBlock,
-  EmailText,
-  PasswordBlock,
-  PasswordText,
+  EmailandPasswordBlock,
+  EmailandPasswordText,
+  RegisterButton,
+  LoginButton,
 } from '../components/layout/LoginLayout';
+import { SortBlock } from '../components/common/SortBlock';
 
 const LoginPage = () => {
   const { register, errors, handleSubmit } = useForm();
@@ -19,12 +19,11 @@ const LoginPage = () => {
   const [loading, setLoading] = useState(false);
 
   const onSubmit = async (data) => {
+    const { email, password } = data;
     try {
       setLoading(true);
 
-      await firebase
-        .auth()
-        .signInWithEmailAndPassword(data.email, data.password);
+      await firebase.auth().signInWithEmailAndPassword(email, password);
 
       setLoading(false);
     } catch (error) {
@@ -36,6 +35,7 @@ const LoginPage = () => {
     }
   };
 
+  const { password, email } = errors;
   return (
     <>
       <TopBlock>
@@ -45,46 +45,48 @@ const LoginPage = () => {
         <p>로그인</p>
       </TopBlock>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <EmailText>
+        <EmailandPasswordText>
           Email
-          <div>{errors.email && <>이메일 형식이 맞지 않습니다.</>}</div>
-        </EmailText>
-        <EmailBlock
-          name="email"
-          type="email"
-          ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-        />
+          {email && <p>이메일 형식이 맞지 않습니다.</p>}
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="email"
+            type="email"
+            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
+          />
+        </SortBlock>
 
-        <PasswordText>
+        <EmailandPasswordText>
           Password
-          <div>
-            {errors.password && errors.password.type === 'required' && (
-              <>올바른 비밀번호가 아닙니다.</>
-            )}
-          </div>
-          <div>
-            {errors.password && errors.password.type === 'minLength' && (
-              <>비밀번호의 길이가 밎지 않습니다.</>
-            )}
-          </div>
-        </PasswordText>
-        <PasswordBlock
-          name="password"
-          type="password"
-          ref={register({ required: true, minLength: 6 })}
-        />
+          {password && password.type === 'required' && (
+            <p>올바른 비밀번호가 아닙니다.</p>
+          )}
+          {password && password.type === 'minLength' && (
+            <p>비밀번호의 길이가 밎지 않습니다.</p>
+          )}
+        </EmailandPasswordText>
+        <SortBlock>
+          <EmailandPasswordBlock
+            name="password"
+            type="password"
+            ref={register({ required: true, minLength: 6 })}
+          />
+        </SortBlock>
 
-        {errorFromSubmit && <p>로그인 실패</p>}
-
-        <LoginButton type="submit" disabled={loading}>
-          로그인
-        </LoginButton>
+        <SortBlock>
+          <LoginButton type="submit" disabled={loading}>
+            로그인
+          </LoginButton>
+        </SortBlock>
 
         <Link to="/signup">
-          <RegisterButton>회원가입</RegisterButton>
+          <SortBlock>
+            <RegisterButton>회원가입</RegisterButton>
+          </SortBlock>
         </Link>
-        <MenuBar />
       </form>
+      <MenuBar />
     </>
   );
 };

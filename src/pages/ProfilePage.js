@@ -8,33 +8,22 @@ import {
   ProfileImage,
   BackArrow,
   Profile,
-  ShareBlock,
   MenuBlock,
   ProfileName,
   MannerBlock,
-  MannerImage,
   ListLine,
-  BadgeBlock,
-  BadgeArrow,
-  SaleBlock,
-  SaleArrow,
-  TownBlock,
-  TownArrow,
-  Manner,
-  MannerArrow,
-  MannerText,
+  GrayHr,
   Temperature,
-  TemperatureImage,
-  BlueHr,
   Heart,
-  ReviewBlock,
-  ReviewArrow,
-  ReviewText,
-  HeartText,
+  TextMargintop,
   ChatBlock,
-  ChatText,
-} from '../styles/ProfileStyle';
-import { TopBlock } from '../components/layout/LoginLayout';
+  Response,
+  ListBlock,
+  TopDiv,
+  Line,
+  EmptyBlock,
+} from '../components/layout/ProfileStyle';
+import { SortBlock } from '../components/common/SortBlock';
 
 const ProfilePage = () => {
   const { name } = useSelector(({ profilename }) => ({
@@ -43,38 +32,38 @@ const ProfilePage = () => {
 
   return (
     <>
-      <Link to="/mydanggeun">
-        <BackArrow />
-      </Link>
-      <TopBlock />
-      <Profile>프로필</Profile>
-      <ShareBlock />
-      <Link to="/profileedit">
-        <MenuBlock />
-      </Link>
+      <TopDiv>
+        <Link to="/mydanggeun">
+          <BackArrow />
+        </Link>
+
+        <Profile>프로필</Profile>
+        <Link to="/profileedit">
+          <MenuBlock />
+        </Link>
+      </TopDiv>
 
       <ProfileImage />
       <ProfileName>{name}</ProfileName>
-      <MannerBlock>매너온도</MannerBlock>
-      <MannerImage />
 
       <Temperature>
-        <p>첫 온도 36.5 C</p>
-        <hr />
-      </Temperature>
-      <BlueHr />
-      <TemperatureImage>
-        <p>36.5 C</p>
-      </TemperatureImage>
-      <Heart>
-        <p>재거래희망률 -%</p>
-      </Heart>
-      <HeartText>표시될 만큼 충분히 대화하지 않았어요</HeartText>
+        <MannerBlock>매너온도</MannerBlock>
+        <p>첫 온도 0.0 C</p>
 
-      <ChatBlock>
-        <p>응답률 33%</p>
-      </ChatBlock>
-      <ChatText>보통 1시간 내에 응답</ChatText>
+        <GrayHr />
+      </Temperature>
+
+      <SortBlock>
+        <Heart>
+          <Response>재거래희망률 -%</Response>
+        </Heart>
+        <TextMargintop>표시될 만큼 충분히 대화하지 않았어요</TextMargintop>
+
+        <ChatBlock>
+          <Response>응답률 33%</Response>
+        </ChatBlock>
+        <TextMargintop>보통 1시간 내에 응답</TextMargintop>
+      </SortBlock>
 
       <ListLine>
         <p>
@@ -85,32 +74,32 @@ const ProfilePage = () => {
         </p>
       </ListLine>
 
-      <BadgeBlock>
+      <ListBlock>
         <p>활동 배지2개</p>
-        <BadgeArrow />
-      </BadgeBlock>
+      </ListBlock>
+      <Line />
 
-      <SaleBlock>
+      <ListBlock>
         <p>판매상품1개</p>
-        <SaleArrow />
-      </SaleBlock>
+      </ListBlock>
+      <Line />
 
-      <TownBlock>
+      <ListBlock>
         <p>동네생활</p>
-        <TownArrow />
-      </TownBlock>
+      </ListBlock>
+      <Line />
 
-      <Manner>
+      <ListBlock>
         <p>받은 매너 평가</p>
-        <MannerArrow />
-      </Manner>
-      <MannerText>받은 매너 칭찬이 없습니다</MannerText>
+      </ListBlock>
+      <Line />
 
-      <ReviewBlock>
+      <ListBlock>
         <p>받은 거래 후기(0)</p>
-        <ReviewArrow />
-      </ReviewBlock>
-      <ReviewText>받은 후기가 없습니다.</ReviewText>
+      </ListBlock>
+      <Line />
+
+      <EmptyBlock />
       <MenuBar />
     </>
   );
