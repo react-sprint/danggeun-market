@@ -6,7 +6,7 @@ const ResetStyles = createGlobalStyle`
     * {margin:0px; padding:0px; -webkit-box-sizing:border-box; -moz-box-sizing:border-box; box-sizing:border-box}
     article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section,main{display:block;}
     html{height:100%;}
-    html,body {font-size:16px;-webkit-overflow-scrolling: touch; overflow-x:hidden;}
+    html,body {font-size:16px;font-family: 'Noto Sans KR', sans-serif;-webkit-overflow-scrolling: touch; overflow-x:hidden; color:#202020;}
     body{
         color: #333333;
         line-height:1.5; font-weight:400; -webkit-text-size-adjust: none;
@@ -38,6 +38,7 @@ const ResetStyles = createGlobalStyle`
         background: none;
         cursor: pointer; /*outline:none;*/
         overflow:hidden;
+        font-family: 'Noto Sans KR', sans-serif
     }
     button:disabled {
         cursor: default
