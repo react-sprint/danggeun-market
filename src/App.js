@@ -41,7 +41,6 @@ const App = () => {
       <Route exact path="/mydanggeun" component={MyDanggeun} />
       <Route exact path="/profile" component={ProfilePage} />
       <Route exact path="/profileedit" component={ProfileEdit} />
-
       <MenuBar />
     </Switch>
   );
