@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import App from './App';
+import ResetStyles from './resetStyle/ResetStyles';
 import rootReducer from './modules';
 import ResetStyles from './resetStyle/ResetStyles';
 

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { StyledUnderline } from './Header';
 
 const StyledWrapper = styled.div`
   display: flex;
@@ -16,21 +15,21 @@ const StyledButton = styled.button`
   background-color: #ff8a3d;
 `;
 
-const StyledSpan = styled.span`
+const StyledDiv = styled.div`
+  display: flex;
+  align-items: center;
+  height: 65px;
   font-size: 13px;
   font-weight: bold;
 `;
 
-const StyledLongUnderline = styled(StyledUnderline)`
-  width: 379px;
-`;
-
 const Body = () => {
-  <StyledWrapper>
-    <StyledButton>현재위치로 찾기</StyledButton>
-    <StyledSpan>근처 동네</StyledSpan>
-    <StyledLongUnderline />
-  </StyledWrapper>;
+  return (
+    <StyledWrapper>
+      <StyledButton>현재위치로 찾기</StyledButton>
+      <StyledDiv>근처 동네</StyledDiv>
+    </StyledWrapper>
+  );
 };
 
 export default Body;

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import x from '../../images/ico/ic_window_close_outline_18.png';
+import x from '../../images/ico/ico_window_close_outline_18.png';
 
 export const TopBlock = styled.div`
   display: flex;
