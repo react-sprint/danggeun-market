@@ -1,15 +1,10 @@
 import styled from 'styled-components';
-import back from '../images/ico/ico_back_home_arrow.png';
-import profile from '../images/ico/ico_profile_placeholder.png';
-import camera from '../images/ico/ico_profile_camera.png';
+import back from '../../images/ico/ico_back_home_arrow.png';
+import profile from '../../images/ico/ico_profile_placeholder.png';
 
 export const ProfileImage = styled.div`
-  display: flex;
   width: 129px;
   height: 129px;
-
-  margin-left: 32%;
-  margin-top: 50px;
 
   cursor: pointer;
 
@@ -17,12 +12,18 @@ export const ProfileImage = styled.div`
   background-size: cover;
 `;
 
+export const TopDiv = styled.div`
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 30px;
+`;
+
 export const BackArrow = styled.div`
   width: 17px;
   height: 17px;
 
-  margin-left: 10px;
-  margin-top: 20px;
+  margin-left: 40px;
 
   cursor: pointer;
 
@@ -31,41 +32,20 @@ export const BackArrow = styled.div`
 `;
 
 export const TextBlock = styled.div`
-  margin-left: 20px;
-  margin-top: 20px;
   font-weight: 500;
   font-size: 18px;
-`;
 
-export const EditText = styled.div`
-  font-size: 18px;
+  margin-right: 20px;
+  margin-bottom: 100px;
 `;
 
 export const EndText = styled.p`
-  margin-left: 100px;
-  margin-top: 20px;
-
+  margin-right: 20px;
   font-weight: 500;
   font-size: 16px;
 `;
 
-export const EndBlock = styled.div`
-  a {
-    text-decoration: none;
-    color: black;
-  }
-`;
-
 export const NameEdit = styled.input`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-left: 80px;
-
-  width: 200px;
-  height: 50px;
-
   border-bottom: 2px solid #ff8a3d;
   border-top: none;
   border-left: none;
