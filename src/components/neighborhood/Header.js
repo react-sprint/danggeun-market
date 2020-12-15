@@ -25,7 +25,7 @@ const Header = () => {
   });
 
   const onChangeAddress = (e) => {
-    if (e.target.value === '') {
+    if (e.target.value.trim() === '') {
       setSearchAddress('empty');
       onSearchAddress('', false);
     } else setSearchAddress(e.target.value);
