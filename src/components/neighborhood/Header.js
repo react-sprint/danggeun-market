@@ -24,11 +24,11 @@ const Header = () => {
     });
   });
 
-  const onChangeAddress = (e) => {
-    if (e.target.value === '') {
+  const onChangeAddress = (event) => {
+    if (event.target.value.trim() === '') {
       setSearchAddress('empty');
       onSearchAddress('', false);
-    } else setSearchAddress(e.target.value);
+    } else setSearchAddress(event.target.value);
   };
 
   return (
