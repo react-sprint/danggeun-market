@@ -1,34 +1,32 @@
 import React from 'react';
-import styled from 'styled-components';
+import { useSelector } from 'react-redux';
+import * as Styled from '../common/neighbor/Body';
+import NeighborList from './List';
 
-const StyledWrapper = styled.div`
-  display: flex;
-  flex-direction: column;
-`;
+const AddressSearched = () => {
+  let { searchAddress } = useSelector((state) => ({
+    searchAddress: state.neighbor.searchAddress,
+  }));
 
-const StyledButton = styled.button`
-  width: 379px;
-  height: 40px;
-  border-radius: 4px;
-  outline: none;
-  color: white;
-  background-color: #ff8a3d;
-`;
+  return <h1>{searchAddress}</h1>;
+};
 
-const StyledDiv = styled.div`
-  display: flex;
-  align-items: center;
-  height: 65px;
-  font-size: 13px;
-  font-weight: bold;
-`;
+const List = () => {
+  let { isTyped } = useSelector((state) => ({
+    isTyped: state.neighbor.isTyped,
+  }));
+
+  if (isTyped) {
+    return <AddressSearched />;
+  }
+  return <NeighborList />;
+};
 
 const Body = () => {
   return (
-    <StyledWrapper>
-      <StyledButton>현재위치로 찾기</StyledButton>
-      <StyledDiv>근처 동네</StyledDiv>
-    </StyledWrapper>
+    <Styled.Wrapper>
+      <List />
+    </Styled.Wrapper>
   );
 };
 

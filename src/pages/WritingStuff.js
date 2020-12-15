@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useHistory } from 'react-router-dom';
+import MenuBar from '../components/common/MenuBar';
 import { dbService, storageService } from '../utils/api/fbInstance';
 import WritingHeader from '../components/layout/write/WritingHeader';
 import { Inner } from '../components/layout/Inner';
@@ -121,6 +122,7 @@ const WritingStuff = () => {
           <WriteContents onChange={onChange} contents={contents} />
         </form>
       </Inner>
+      <MenuBar />
     </div>
   );
 };
