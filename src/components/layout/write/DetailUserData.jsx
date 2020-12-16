@@ -23,6 +23,7 @@ const UserData = styled.div`
 const UserThumbnail = styled.div`
   & img {
     width: 45px;
+    border-radius: 50%;
   }
 `;
 const UserProfile = styled.div`
@@ -97,7 +98,7 @@ const TemperIcon = styled.div`
   margin-left: 10px;
 `;
 
-function DetailUserData({ username }) {
+function DetailUserData({ username, region }) {
   const temper = Number((Math.random() * 100).toFixed(1));
 
   const temperFunc = ([props1, props2, props3, props4, props5, props6]) => {
@@ -118,23 +119,9 @@ function DetailUserData({ username }) {
         throw new Error('Unhandeld Error Temperature');
     }
   };
-  const temperIco = temperFunc([
-    temperLevel1,
-    temperLevel2,
-    temperLevel3,
-    temperLevel4,
-    temperLevel5,
-    temperLevel6,
-  ]);
+  const temperIco = temperFunc([temperLevel1, temperLevel2, temperLevel3, temperLevel4, temperLevel5, temperLevel6]);
 
-  const temperColor = temperFunc([
-    '#222',
-    '#0d3a65',
-    '#0b5aa5',
-    '#319e45',
-    '#df9100',
-    '#de5d06',
-  ]);
+  const temperColor = temperFunc(['#222', '#0d3a65', '#0b5aa5', '#319e45', '#df9100', '#de5d06']);
 
   return (
     <UserDataWrap>
@@ -144,7 +131,7 @@ function DetailUserData({ username }) {
         </UserThumbnail>
         <UserProfile>
           <UserId>{username}</UserId>
-          <UserLocation>행복동</UserLocation>
+          <UserLocation>{region || '행복동'}</UserLocation>
         </UserProfile>
       </UserData>
       <Temperature>

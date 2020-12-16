@@ -85,7 +85,8 @@
       "func-names": [
         "error",
         "never"
-      ]
+      ],
+      "no-alert":"off"
     },
     "env": {
       "browser": true

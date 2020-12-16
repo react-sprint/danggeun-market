@@ -24,7 +24,7 @@ const App = () => {
     firebase.auth().onAuthStateChanged((user) => {
       // 로그인이 된 상태
       if (user) {
-        history.push('/');
+        // history.push('/');
         dispatch(setUser(user));
       } else {
         // history.push('/login');

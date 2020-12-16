@@ -62,7 +62,7 @@ const PriceTag = styled.span`
   color: #333;
 `;
 
-function Stuff({ thumb, matter, time, creatorId, category }) {
+function Stuff({ thumb, matter, time, creatorId, category, region }) {
   const { price, title } = matter;
 
   const returnTime = () => {
@@ -79,7 +79,7 @@ function Stuff({ thumb, matter, time, creatorId, category }) {
     return `${gapDay}일`;
   };
 
-  let queryElement = { ...matter, creatorId, category, time: returnTime() };
+  let queryElement = { ...matter, creatorId, category, time: returnTime(), region };
 
   if (typeof thumb === 'object') {
     thumb?.map((img, idx) => {
@@ -108,7 +108,9 @@ function Stuff({ thumb, matter, time, creatorId, category }) {
         </Thumbnail>
         <StuffContent>
           <strong>{title}</strong>
-          <DateLocation>행복동 · {returnTime()} 전</DateLocation>
+          <DateLocation>
+            {region || '행복동'} · {returnTime()} 전
+          </DateLocation>
           <PriceTag>{price && `${price}원`}</PriceTag>
         </StuffContent>
       </Link>

@@ -11,7 +11,7 @@ function StuffList({ data }) {
   return (
     <StuffContentsList>
       {data?.map((stuff) => {
-        const { attachmentUrl, category, createAt, creatorId, input } = stuff;
+        const { region, attachmentUrl, category, createAt, creatorId, input } = stuff;
         return (
           <Stuff
             thumb={attachmentUrl}
@@ -19,6 +19,7 @@ function StuffList({ data }) {
             time={createAt}
             creatorId={creatorId}
             category={category}
+            region={region}
             key={createAt}
           />
         );
