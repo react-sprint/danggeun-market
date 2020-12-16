@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import getLocation from './getLocation';
-import * as StyledList from '../common/neighbor/List';
-import * as StyledBody from '../common/neighbor/Body';
+import * as Styled from '../common/neighbor/Body';
 import { setNeighbor } from '../../modules/neighbor';
-// import { Search } from './Header';
 
 const Neighbor = ({ neighbor }) => {
   const dispatch = useDispatch();
@@ -12,15 +10,15 @@ const Neighbor = ({ neighbor }) => {
 
   return (
     <>
-      <StyledList.NeighborList>
-        <StyledList.Button
+      <Styled.NeighborList>
+        <Styled.SpanButton
           type="submit"
           onClick={() => onSetNeighbor(neighbor.value)}
         >
           {neighbor.value}
-        </StyledList.Button>
-      </StyledList.NeighborList>
-      <StyledList.LongUnderline />
+        </Styled.SpanButton>
+      </Styled.NeighborList>
+      <Styled.LongUnderline />
     </>
   );
 };
@@ -63,8 +61,8 @@ const AddressObject = () => {
 const List = () => {
   return (
     <>
-      <StyledBody.Button>현재위치로 찾기</StyledBody.Button>
-      <StyledBody.Span>근처 동네</StyledBody.Span>
+      <Styled.Button>현재위치로 찾기</Styled.Button>
+      <Styled.Span>근처 동네</Styled.Span>
       <AddressObject />
     </>
   );
