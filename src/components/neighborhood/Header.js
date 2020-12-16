@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import * as Styled from '../common/neighbor/Header';
 import searchLocation from './searchLocation';
-import { inputAddress } from '../../modules/neighbor';
+import { inputAddress, keepAddress } from '../../modules/neighbor';
 
 const Header = () => {
   const [inputText, setInputText] = useState('');
@@ -38,10 +38,19 @@ const Header = () => {
     onSearchAddress('', false);
   };
 
+  const history = useHistory();
+  const mainPage = () => history.push('/');
+
   return (
     <Styled.Wrapper>
       <Link to="/">
-        <Styled.ArrowBackIcon />
+        <Styled.ArrowBackIcon
+          onClick={() => {
+            mainPage();
+            keepAddress();
+            onReset();
+          }}
+        />
       </Link>
       <Styled.SearchBarWrapper>
         <Styled.SearchIcon />
