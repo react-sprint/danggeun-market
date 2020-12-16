@@ -25,17 +25,17 @@ const Neighbor = ({ neighbor }) => {
 
 const AddressArray = ({ addressObj }) => {
   let addressObjElements = { ...addressObj };
-  let addressObjectArray = [];
+  let addressObjArray = [];
   const keys = Object.keys(addressObjElements);
 
   for (let i = 0; i < keys.length; i += 1) {
     const obj = { key: i, value: addressObjElements[i] };
-    addressObjectArray.push(obj);
+    addressObjArray.push(obj);
   }
 
   return (
     <div>
-      {addressObjectArray.map((neighbor) => (
+      {addressObjArray.map((neighbor) => (
         <Neighbor neighbor={neighbor} key={neighbor.key} />
       ))}
     </div>

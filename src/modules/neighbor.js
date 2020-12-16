@@ -1,5 +1,6 @@
 const SET_NEIGHBOR = 'neighbor/SET_NEIGHBOR';
 const SEARCH_ADDRESS = 'neighbor/SEARCH_ADDRESS';
+const SET_SEARCH_ADDRESS = 'neighbor/SET_SEARCH_ADDRESS';
 
 export const setNeighbor = (address) => ({
   type: SET_NEIGHBOR,
@@ -10,6 +11,11 @@ export const inputAddress = (address, isTyped) => ({
   type: SEARCH_ADDRESS,
   searchAddress: address,
   isTyped: isTyped,
+});
+
+export const setSearchAddress = (address) => ({
+  type: SET_SEARCH_ADDRESS,
+  address: address,
 });
 
 const initialState = {
@@ -29,6 +35,11 @@ const neighbor = (state = initialState, action) => {
       return {
         searchAddress: action.searchAddress,
         isTyped: action.isTyped,
+      };
+    case SET_SEARCH_ADDRESS:
+      return {
+        ...state,
+        address: action.address,
       };
     default:
       return state;

@@ -1,14 +1,49 @@
 import React from 'react';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
 import * as Styled from '../common/neighbor/Body';
 import NeighborList from './List';
+import { setSearchAddress } from '../../modules/neighbor';
 
-const AddressSearched = () => {
-  let { searchAddress } = useSelector((state) => ({
+const SearchListLoop = ({ address }) => {
+  const dispatch = useDispatch();
+  const onSetSearchAddress = (address) => dispatch(setSearchAddress(address));
+
+  return (
+    <>
+      <Styled.NeighborList>
+        <Styled.SpanButton
+          type="submit"
+          onClick={() => onSetSearchAddress(address.value)}
+        >
+          {address.value}
+        </Styled.SpanButton>
+      </Styled.NeighborList>
+      <Styled.LongUnderline />
+    </>
+  );
+};
+
+const SearchList = () => {
+  const { searchAddress } = useSelector((state) => ({
     searchAddress: state.neighbor.searchAddress,
   }));
 
-  return <h1>{searchAddress}</h1>;
+  const keys = Object.keys(searchAddress);
+
+  let addressObjArray = [];
+
+  for (let i = 0; i < keys.length; i += 1) {
+    const obj = { key: i, value: searchAddress[i] };
+    addressObjArray.push(obj);
+  }
+
+  return (
+    <div>
+      {addressObjArray.map((address) => (
+        <SearchListLoop address={address} key={address.key} />
+      ))}
+    </div>
+  );
 };
 
 const List = () => {
@@ -17,7 +52,7 @@ const List = () => {
   }));
 
   if (isTyped) {
-    return <AddressSearched />;
+    return <SearchList />;
   }
   return <NeighborList />;
 };

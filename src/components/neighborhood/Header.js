@@ -14,12 +14,11 @@ const Header = () => {
 
   useEffect(() => {
     searchLocation(searchAddress).then((passedAddress) => {
-      let address = passedAddress.documents;
+      const address = passedAddress.documents;
       if (address.length > 0) {
-        onSearchAddress(address[0].address_name, true);
-        let searchAddressArray = [];
-        address.forEach((i) => searchAddressArray.push(i.address_name));
-        onSearchAddress(searchAddressArray, true);
+        const addressArray = address.map((address) => address.address_name);
+        const addressObj = { ...addressArray };
+        onSearchAddress(addressObj, true);
       }
     });
   });
