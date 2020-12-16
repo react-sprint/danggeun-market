@@ -13,9 +13,10 @@ export const inputAddress = (address, isTyped) => ({
   isTyped: isTyped,
 });
 
-export const setSearchAddress = (address) => ({
+export const setSearchAddress = (address, isTyped) => ({
   type: SET_SEARCH_ADDRESS,
   address: address,
+  isTyped: isTyped,
 });
 
 const initialState = {
@@ -40,6 +41,7 @@ const neighbor = (state = initialState, action) => {
       return {
         ...state,
         address: action.address,
+        isTyped: action.isTyped,
       };
     default:
       return state;

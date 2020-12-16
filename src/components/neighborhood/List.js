@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import getLocation from './getLocation';
 import * as Styled from '../common/neighbor/Body';
@@ -8,12 +9,18 @@ const Neighbor = ({ neighbor }) => {
   const dispatch = useDispatch();
   const onSetNeighbor = (address) => dispatch(setNeighbor(address));
 
+  const history = useHistory();
+  const mainPage = () => history.push('/');
+
   return (
     <>
       <Styled.NeighborList>
         <Styled.SpanButton
           type="submit"
-          onClick={() => onSetNeighbor(neighbor.value)}
+          onClick={() => {
+            onSetNeighbor(neighbor.value);
+            mainPage();
+          }}
         >
           {neighbor.value}
         </Styled.SpanButton>

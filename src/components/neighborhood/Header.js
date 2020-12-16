@@ -6,6 +6,7 @@ import searchLocation from './searchLocation';
 import { inputAddress } from '../../modules/neighbor';
 
 const Header = () => {
+  const [inputText, setInputText] = useState('');
   const [searchAddress, setSearchAddress] = useState('empty');
 
   const dispatch = useDispatch();
@@ -24,10 +25,17 @@ const Header = () => {
   });
 
   const onChangeAddress = (event) => {
+    setInputText(event.target.value);
     if (event.target.value.trim() === '') {
       setSearchAddress('empty');
       onSearchAddress('', false);
     } else setSearchAddress(event.target.value);
+  };
+
+  const onReset = () => {
+    setInputText('');
+    setSearchAddress('empty');
+    onSearchAddress('', false);
   };
 
   return (
@@ -38,10 +46,11 @@ const Header = () => {
       <Styled.SearchBarWrapper>
         <Styled.SearchIcon />
         <Styled.Input
+          value={inputText}
           placeholder="동명(읍, 면)으로 검색 (ex. 서초동)"
           onChange={onChangeAddress}
         />
-        <Styled.CloseIcon />
+        <Styled.CloseIcon onClick={onReset} />
         <Styled.Underline />
       </Styled.SearchBarWrapper>
     </Styled.Wrapper>
