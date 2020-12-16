@@ -13,9 +13,6 @@ export const NavBottomBlock = styled.div`
   height: 60px;
 
   border-top: 1px solid #ff8a3d;
-  border-left: none;
-  border-right: none;
-  border-bottom: none;
 
   font-size: 10px;
   font-weight: 400;
@@ -32,7 +29,7 @@ export const LayOutBlock = styled.div`
 `;
 
 export const DefaultBlock = styled.div`
-  width: 35px;
+  width: 36.8px;
   height: 35px;
 
   p {
