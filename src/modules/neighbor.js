@@ -1,6 +1,7 @@
 const SET_NEIGHBOR = 'neighbor/SET_NEIGHBOR';
 const SEARCH_ADDRESS = 'neighbor/SEARCH_ADDRESS';
 const SET_SEARCH_ADDRESS = 'neighbor/SET_SEARCH_ADDRESS';
+const KEEP_ADDRESS = 'neighbor/KEEP_ADDRESS';
 
 export const setNeighbor = (address) => ({
   type: SET_NEIGHBOR,
@@ -19,6 +20,10 @@ export const setSearchAddress = (address, isTyped) => ({
   isTyped: isTyped,
 });
 
+export const keepAddress = () => ({
+  type: KEEP_ADDRESS,
+});
+
 const initialState = {
   address: 'notMyNeighbor',
   searchAddress: 'notSearched',
@@ -34,6 +39,7 @@ const neighbor = (state = initialState, action) => {
       };
     case SEARCH_ADDRESS:
       return {
+        ...state,
         searchAddress: action.searchAddress,
         isTyped: action.isTyped,
       };
@@ -42,6 +48,10 @@ const neighbor = (state = initialState, action) => {
         ...state,
         address: action.address,
         isTyped: action.isTyped,
+      };
+    case KEEP_ADDRESS:
+      return {
+        ...state,
       };
     default:
       return state;
