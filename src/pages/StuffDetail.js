@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import queryString from 'query-string';
@@ -16,6 +16,7 @@ import DetailSale from '../components/layout/write/DetailSale';
 function StuffDetail() {
   const history = useHistory();
   const stuffs = useSelector((state) => state.stuffs.data);
+  const detailHead = useRef();
   const { search } = history.location;
   const query = queryString.parse(search);
   const { contents, creatorId, category, price, title, token, time, thumb0, region } = query;
@@ -57,6 +58,13 @@ function StuffDetail() {
 
   useCallList();
 
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      console.log(window.scrollY);
+      console.log(detailHead);
+    });
+  });
+
   const StuffDetailWrap = styled.div`
     position: relative;
   `;
@@ -66,7 +74,7 @@ function StuffDetail() {
       <OneDepthHeader />
       <WriteSwiper carouselImg={stuffCarousel} />
       <Inner>
-        <DetailUserData username={creatorId} region={region} />
+        <DetailUserData username={creatorId} region={region} ref={detailHead} />
         <DetailContents title={title} contents={contents} category={categoryName} time={time} />
         <DetailSale username={creatorId} stuff={stuffs} />
       </Inner>

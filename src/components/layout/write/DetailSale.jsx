@@ -53,10 +53,11 @@ const SaleStuffPrice = styled.span`
 
 function DetailSale({ username, stuff }) {
   const [filter, setFilter] = useState([]);
-  const filteringArr = stuff.filter((saleItem) => saleItem.creatorId === username);
-  const previewArr = filteringArr.slice(0, 4);
+
   useEffect(() => {
     if (stuff) {
+      const filteringArr = stuff.filter((saleItem) => saleItem.creatorId === username);
+      const previewArr = filteringArr.slice(0, 4);
       setFilter(previewArr);
     }
   }, []);

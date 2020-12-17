@@ -12,7 +12,6 @@ import { Inner } from '../layout/Inner';
 const MenuBar = () => {
   const location = useLocation();
   const { pathname } = location;
-  console.log(location);
   return (
     <NavBottomBlock>
       <Inner>
