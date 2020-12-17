@@ -29,7 +29,6 @@ const MyDanggeun = () => {
     name: profilename.name,
   }));
   const Logout = async () => {
-    console.log('로그아웃 성공');
     try {
       await firebase.auth().signOut();
     } catch (error) {

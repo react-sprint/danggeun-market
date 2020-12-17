@@ -22,6 +22,7 @@ const SignUpPage = () => {
   password.current = watch('password');
 
   const onSubmit = async (data) => {
+    const { email, password } = data;
     try {
       setLoading(true);
       const createdUser = await firebase

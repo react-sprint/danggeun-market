@@ -35,7 +35,6 @@ const LoginPage = () => {
     }
   };
 
-  const { password, email } = errors;
   return (
     <>
       <TopBlock>
@@ -47,7 +46,7 @@ const LoginPage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
           Email
-          {email && <p>이메일 형식이 맞지 않습니다.</p>}
+          {errors.email && <p>이메일 형식이 맞지 않습니다.</p>}
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock
@@ -59,10 +58,10 @@ const LoginPage = () => {
 
         <EmailandPasswordText>
           Password
-          {password && password.type === 'required' && (
+          {errors.password && errors.password.type === 'required' && (
             <p>올바른 비밀번호가 아닙니다.</p>
           )}
-          {password && password.type === 'minLength' && (
+          {errors.password && errors.password.type === 'minLength' && (
             <p>비밀번호의 길이가 밎지 않습니다.</p>
           )}
         </EmailandPasswordText>
@@ -74,11 +73,13 @@ const LoginPage = () => {
           />
         </SortBlock>
 
-        <SortBlock>
-          <LoginButton type="submit" disabled={loading}>
-            로그인
-          </LoginButton>
-        </SortBlock>
+        <Link to="/">
+          <SortBlock>
+            <LoginButton type="submit" disabled={loading}>
+              로그인
+            </LoginButton>
+          </SortBlock>
+        </Link>
 
         <Link to="/signup">
           <SortBlock>
