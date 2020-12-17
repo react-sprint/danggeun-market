@@ -1,5 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import queryString from 'query-string';
 import styled from 'styled-components';
 import { Inner } from '../components/layout/Inner';
@@ -14,6 +15,7 @@ import DetailSale from '../components/layout/write/DetailSale';
 
 function StuffDetail() {
   const history = useHistory();
+  const stuffs = useSelector((state) => state.stuffs.data);
   const { search } = history.location;
   const query = queryString.parse(search);
   const { contents, creatorId, category, price, title, token, time, thumb0, region } = query;
@@ -66,7 +68,7 @@ function StuffDetail() {
       <Inner>
         <DetailUserData username={creatorId} region={region} />
         <DetailContents title={title} contents={contents} category={categoryName} time={time} />
-        <DetailSale username={creatorId} />
+        <DetailSale username={creatorId} stuff={stuffs} />
       </Inner>
       <OneDepthFooter price={price} />
     </StuffDetailWrap>

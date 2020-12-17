@@ -1,24 +1,66 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const SaleWrap = styled.div`
-  padding-bottom: 120px;
+  padding: 25px 0 120px;
 `;
-const SaleTop = styled.div``;
-const SaleTitle = styled.strong``;
-const SaleLink = styled.div``;
-const SaleList = styled.ul``;
-const SaleItem = styled.li``;
-const SaleImgBx = styled.div``;
-const SaleStuffName = styled.span``;
-const SaleStuffPrice = styled.span``;
+const SaleTop = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+const SaleTitle = styled.strong`
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: #000;
+`;
+const SaleLink = styled.div`
+  font-size: 1.06rem;
+  font-weight: 500;
+  color: #888;
+`;
+const SaleList = styled.ul`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+`;
+const SaleItem = styled.li`
+  padding-top: 25px;
+  width: calc(50% - 15px);
+`;
+const SaleImgBx = styled.div`
+  ${({ attachmentUrl }) => attachmentUrl && `background:url(${attachmentUrl[0]}) center center/cover no-repeat;`}
+  height:135px;
+  border-radius: 10px;
+`;
+const SaleStuffName = styled.span`
+  display: block;
+  padding-top: 15px;
+  font-size: 0.93rem;
+  font-weight: 500;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+  overflow: hidden;
+`;
+const SaleStuffPrice = styled.span`
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #222;
+`;
 
-function DetailSale({ username }) {
-  const stuff = useSelector((state) => state.stuffs.data);
-  const filteringStuff = stuff.filter((saleItem) => saleItem.creatorId === username);
-  console.log(filteringStuff);
+function DetailSale({ username, stuff }) {
+  const [filter, setFilter] = useState([]);
+  const filteringArr = stuff.filter((saleItem) => saleItem.creatorId === username);
+  const previewArr = filteringArr.slice(0, 4);
+  useEffect(() => {
+    if (stuff) {
+      setFilter(previewArr);
+    }
+  }, []);
+
   return (
     <SaleWrap>
       <SaleTop>
@@ -28,14 +70,16 @@ function DetailSale({ username }) {
         </SaleLink>
       </SaleTop>
       <SaleList>
-        {filteringStuff.map((filterItem) => {
+        {filter.map((filterItem, idx) => {
           const { id, input, attachmentUrl } = filterItem;
           const { title, price } = input;
+          if (idx > 4) return;
+          // eslint-disable-next-line consistent-return
           return (
             <SaleItem key={id}>
               <SaleImgBx attachmentUrl={attachmentUrl} />
               <SaleStuffName>{title}</SaleStuffName>
-              <SaleStuffPrice>{price}</SaleStuffPrice>
+              <SaleStuffPrice>{price}원</SaleStuffPrice>
             </SaleItem>
           );
         })}
