@@ -21,7 +21,6 @@ const SwiperWrap = styled.div`
 `;
 
 function WriteSwiper({ carouselImg }) {
-  console.log(carouselImg);
   return (
     <SwiperWrap>
       <Swiper spaceBetween={0} pagination>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import styled from 'styled-components';
 import { Inner } from './Inner';
 import { ReactComponent as ArrowWhite } from '../../icon/arrow_back_white.svg';
@@ -37,11 +37,18 @@ const MoreDot = styled.div`
 `;
 
 function OneDepthHeader({ trigger }) {
+  const history = useHistory();
   return (
     <DepthInHeader status={trigger}>
       <DepthInner>
         <BackLink status={trigger}>
-          <Link to="/">
+          <Link
+            to="/"
+            onClick={(e) => {
+              e.preventDefault();
+              history.goBack();
+            }}
+          >
             <ArrowWhite />
           </Link>
         </BackLink>

@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { ReactComponent as ArrowBlack } from '../../../icon/arrow_back_black.svg';
 import { BackArrow } from '../../common/BackArrow';
 import { DepthHeader } from '../../common/DepthHeader';
