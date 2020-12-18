@@ -26,7 +26,7 @@ const SearchListLoop = ({ address }) => {
           {address.value}
         </Styled.SpanButton>
       </Styled.NeighborList>
-      <Styled.LongUnderline />
+      <Styled.Border />
     </>
   );
 };

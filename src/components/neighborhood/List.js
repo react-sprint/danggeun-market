@@ -25,7 +25,7 @@ const Neighbor = ({ neighbor }) => {
           {neighbor.value}
         </Styled.SpanButton>
       </Styled.NeighborList>
-      <Styled.LongUnderline />
+      <Styled.Border />
     </>
   );
 };

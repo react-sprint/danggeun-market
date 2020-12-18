@@ -23,7 +23,7 @@ export const Span = styled.span`
   font-weight: bold;
 `;
 
-export const LongUnderline = styled(Underline)`
+export const Border = styled(Underline)`
   width: 379px;
 `;
 
