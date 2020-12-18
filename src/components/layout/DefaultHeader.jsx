@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { DefaultHeaderTitle } from '../common/DefaultHeaderTitle';
 import DefaultHeaderIcon from '../common/DefaultHeaderIcon';
 import { Inner } from './Inner';
@@ -38,7 +39,9 @@ function DefaultHeader() {
         <DefaultHeaderTitle>정자동</DefaultHeaderTitle>
         <IconWrap>
           <DefaultHeaderIcon icoLink={search} />
-          <DefaultHeaderIcon icoLink={filter} />
+          <Link to="/filter">
+            <DefaultHeaderIcon icoLink={filter}  />
+          </Link>
           <DefaultHeaderIcon icoLink={notice} />
         </IconWrap>
       </HeaderInner>

@@ -15,6 +15,7 @@ import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
 import Gps from './pages/Gps';
 import StuffDetail from './pages/StuffDetail';
+import Filter from './pages/Filter';
 
 const App = () => {
   const history = useHistory();
@@ -45,6 +46,7 @@ const App = () => {
       <Route exact path="/mydanggeun" component={MyDanggeun} />
       <Route exact path="/profile" component={ProfilePage} />
       <Route exact path="/profileedit" component={ProfileEdit} />
+      <Route exact path="/filter" component={Filter} />
       <MenuBar />
     </Switch>
   );
