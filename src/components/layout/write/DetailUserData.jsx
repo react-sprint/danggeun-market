@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import profile from '../../../images/ico/ico_profile_placeholder.png';
 import temperLevel1 from '../../../images/ico/ico_manner_01.png';
@@ -11,6 +11,8 @@ import temperLevel6 from '../../../images/ico/ico_manner_06.png';
 const UserDataWrap = styled.div`
   display: flex;
   justify-content: space-between;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f0f0;
 `;
 
 const UserData = styled.div`
@@ -21,6 +23,7 @@ const UserData = styled.div`
 const UserThumbnail = styled.div`
   & img {
     width: 45px;
+    border-radius: 50%;
   }
 `;
 const UserProfile = styled.div`
@@ -41,15 +44,29 @@ const Temperature = styled.div``;
 
 const TemperTop = styled.div`
   display: flex;
+  align-items: center;
 `;
-const TemperBot = styled.div``;
+const TemperBot = styled.div`
+  margin-top: 5px;
+  text-align: right;
+  & span {
+    font-size: 0.75rem;
+    color: #aaa;
+  }
+`;
 
 const TemperTopLeft = styled.div``;
-const TemperText = styled.span``;
+const TemperText = styled.span`
+  font-size: 1.125rem;
+  line-height: 1.125rem;
+  font-weight: 900;
+  color: ${({ color }) => color};
+`;
 const TemperProgress = styled.div`
   position: relative;
   width: 55px;
   height: 4px;
+  margin: 7px 0 0 4px;
   border-radius: 7px;
   background-color: #e8ece8;
 
@@ -76,9 +93,12 @@ const TemperProgress = styled.div`
     }
   }
 `;
-const TemperIcon = styled.div``;
+const TemperIcon = styled.div`
+  width: 26px;
+  margin-left: 10px;
+`;
 
-function DetailUserData({ username }) {
+const DetailUserData = forwardRef(({ username, region }, ref) => {
   const temper = Number((Math.random() * 100).toFixed(1));
 
   const temperFunc = ([props1, props2, props3, props4, props5, props6]) => {
@@ -99,39 +119,25 @@ function DetailUserData({ username }) {
         throw new Error('Unhandeld Error Temperature');
     }
   };
-  const temperIco = temperFunc([
-    temperLevel1,
-    temperLevel2,
-    temperLevel3,
-    temperLevel4,
-    temperLevel5,
-    temperLevel6,
-  ]);
+  const temperIco = temperFunc([temperLevel1, temperLevel2, temperLevel3, temperLevel4, temperLevel5, temperLevel6]);
 
-  const temperColor = temperFunc([
-    '#222',
-    '#0d3a65',
-    '#0b5aa5',
-    '#319e45',
-    '#df9100',
-    '#de5d06',
-  ]);
+  const temperColor = temperFunc(['#222', '#0d3a65', '#0b5aa5', '#319e45', '#df9100', '#de5d06']);
 
   return (
     <UserDataWrap>
-      <UserData>
+      <UserData ref={ref}>
         <UserThumbnail>
           <img src={profile} alt="profile" />
         </UserThumbnail>
         <UserProfile>
           <UserId>{username}</UserId>
-          <UserLocation>행복동</UserLocation>
+          <UserLocation>{region || '행복동'}</UserLocation>
         </UserProfile>
       </UserData>
       <Temperature>
         <TemperTop>
           <TemperTopLeft>
-            <TemperText>{`${temper}°C`}</TemperText>
+            <TemperText color={temperColor}>{`${temper}°C`}</TemperText>
             <TemperProgress temper={temper} progress={temperColor} />
           </TemperTopLeft>
           <TemperIcon>
@@ -144,6 +150,6 @@ function DetailUserData({ username }) {
       </Temperature>
     </UserDataWrap>
   );
-}
+});
 
-export default DetailUserData;
+export default React.memo(DetailUserData);

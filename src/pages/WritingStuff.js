@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { useHistory } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import { dbService, storageService } from '../utils/api/fbInstance';
 import WritingHeader from '../components/layout/write/WritingHeader';
@@ -15,12 +16,32 @@ const WritingStuff = () => {
   const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
   const [category, setCategory] = useState(1);
   const [attachment, setAttachment] = useState(null);
+  const region = useSelector((state) => state.neighbor.address);
+  const uid = useSelector((state) => state.user.currentUser?.email);
   const history = useHistory();
 
+  if (uid === undefined) {
+    alert('로그인을 하지않은 상태입니다. 로그인을 해주세요.');
+    history.push('/login');
+    return <p>로그인을 하지않은 상태입니다. 로그인을 해주세요.</p>;
+  }
+
+  if (region === 'notMyNeighbor') {
+    alert('위치 정보가 등록되어있지 않습니다. 위치를 입력해주세요.');
+    history.push('/gps');
+    return <p>위치 정보가 등록되어있지 않습니다. 위치를 입력해주세요.</p>;
+  }
+
+  const regionRegex = /...[동읍면리로]/g.exec(region)[0].replace(/ /gi, '');
+  const uidRegex = /(.*?)[@]/g.exec(uid)[0].replace(/@/gi, '');
+
+  // eslint-disable-next-line consistent-return
   const onSubmit = async (event) => {
     event.preventDefault();
+
     let stuffAttchmentUrl = [];
     let stuff = null;
+
     if (attachment) {
       for (const dataUrl of attachment) {
         const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
@@ -30,21 +51,39 @@ const WritingStuff = () => {
         const attachmentUrl = await response.ref.getDownloadURL();
 
         stuffAttchmentUrl.push(attachmentUrl);
-
         stuff = {
           input: inputs,
           category,
           createAt: Date.now(),
-          creatorId: 'userid',
+          creatorId: uidRegex,
           attachmentUrl: stuffAttchmentUrl,
+          region: regionRegex,
         };
       }
+    } else {
+      stuff = {
+        input: inputs,
+        category,
+        createAt: Date.now(),
+        creatorId: uidRegex,
+        attachmentUrl: 'default',
+        region: regionRegex,
+      };
     }
-    console.log(stuff);
+
+    const { title, contents } = stuff.input;
+
+    if (title.length < 3) {
+      return alert('글 제목을 최소 세 글자 이상 작성해 주세요');
+    }
+
+    if (contents.length < 3) {
+      return alert('글 내용을 최소 세 글자 이상 작성해 주세요');
+    }
+
     dbService.collection('stuffList').add(stuff);
     setInputs({ title: '', price: '', contents: '' });
     setAttachment(null);
-    // eslint-disable-next-line no-alert
     alert('상품이 성공적으로 등록되었습니다.');
     history.push('/');
   };
@@ -62,10 +101,7 @@ const WritingStuff = () => {
     const price = event.target.value.replace(regex, '');
     let NumberPrice = Number(price);
     if (NumberPrice >= 99999999) NumberPrice = 99999999;
-    let priceComma = NumberPrice.toString().replace(
-      /\B(?=(\d{3})+(?!\d))/g,
-      ',',
-    );
+    let priceComma = NumberPrice.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
     if (priceComma === '0') priceComma = '';
 
     setInputs({ ...inputs, price: priceComma });
@@ -112,11 +148,7 @@ const WritingStuff = () => {
       <WritingHeader onClick={onSubmit} />
       <Inner>
         <form>
-          <SelectPhoto
-            onChange={onFileChange}
-            attachment={attachment}
-            onClearPhoto={onClearPhoto}
-          />
+          <SelectPhoto onChange={onFileChange} attachment={attachment} onClearPhoto={onClearPhoto} />
           <StuffTitle onChange={onChange} title={title} />
           <SelectCategory onCategory={onCategory} />
           <WritePrice onChange={onPrice} price={price} />

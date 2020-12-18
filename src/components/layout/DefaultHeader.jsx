@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import { DefaultHeaderTitle } from '../common/DefaultHeaderTitle';
 import DefaultHeaderIcon from '../common/DefaultHeaderIcon';
 import { Inner } from './Inner';
@@ -13,7 +14,7 @@ const Header = styled.header`
   left: 0;
   width: 100%;
   height: 55px;
-  border-bottom: 2px solid #d7d7d7;
+  border-bottom: 1px solid #d7d7d7;
   background-color: #fff;
   z-index: 1;
 `;
@@ -37,8 +38,12 @@ function DefaultHeader() {
       <HeaderInner>
         <DefaultHeaderTitle>정자동</DefaultHeaderTitle>
         <IconWrap>
-          <DefaultHeaderIcon icoLink={search} />
-          <DefaultHeaderIcon icoLink={filter} />
+          <Link to="./search">
+            <DefaultHeaderIcon icoLink={search} />
+          </Link>
+          <Link to="/filter">
+            <DefaultHeaderIcon icoLink={filter}  />
+          </Link>
           <DefaultHeaderIcon icoLink={notice} />
         </IconWrap>
       </HeaderInner>
