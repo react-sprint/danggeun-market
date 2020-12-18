@@ -8,28 +8,8 @@ const filterArray = [
     value: 'furniture_interior',
   },
   {
-    text: '유아동/유아도서',
-    value: 'child_childrenBook',
-  },
-  {
     text: '생활/가공식품',
     value: 'living_processedFood',
-  },
-  {
-    text: '스포츠/레저',
-    value: 'sports_leisure',
-  },
-  {
-    text: '여성잡화',
-    value: 'womenMiscellaneous',
-  },
-  {
-    text: '여성의류',
-    value: 'womenClothing',
-  },
-  {
-    text: '남성패션/잡화',
-    value: 'menFashion_miscellaneous',
   },
   {
     text: '게임/취미',
@@ -40,25 +20,46 @@ const filterArray = [
     value: 'beauty',
   },
   {
-    text: '반려동물용품',
-    value: 'beauty',
-  },
-  {
-    text: '도서/티켓/음반',
-    value: 'book_ticket_album',
-  },
-  {
-    text: '식물',
-    value: 'plant',
-  },
-  {
-    text: '기타 중고물품',
-    value: 'usedStuff',
-  },
-  {
     text: '삽니다',
     value: 'buying',
   },
 ];
 
 export default filterArray;
+
+// {
+//   text: '유아동/유아도서',
+//   value: 'child_childrenBook',
+// },
+// {
+//   text: '스포츠/레저',
+//   value: 'sports_leisure',
+// },
+// {
+//   text: '여성잡화',
+//   value: 'womenMiscellaneous',
+// },
+// {
+//   text: '여성의류',
+//   value: 'womenClothing',
+// },
+// {
+//   text: '남성패션/잡화',
+//   value: 'menFashion_miscellaneous',
+// },
+// {
+//   text: '반려동물용품',
+//   value: 'beauty',
+// },
+// {
+//   text: '도서/티켓/음반',
+//   value: 'book_ticket_album',
+// },
+// {
+//   text: '식물',
+//   value: 'plant',
+// },
+// {
+//   text: '기타 중고물품',
+//   value: 'usedStuff',
+// },

@@ -6,10 +6,12 @@ import { bringStuff } from '../modules/bringStuff';
 import { Inner } from '../components/layout/Inner';
 import DefaultHeader from '../components/layout/DefaultHeader';
 import StuffList from '../components/layout/write/StuffList';
+import filterArray from '../utils/filterArray';
 
 const MainList = () => {
   const dispatch = useDispatch();
   const stuff = useSelector((state) => state.stuffs);
+  const filterStatus = useSelector((state) => state.filter);
 
   const listView = async () => {
     const list = [];
@@ -18,8 +20,15 @@ const MainList = () => {
       .orderBy('createAt', 'desc')
       .get();
     data.forEach((fstore) => list.push(fstore.data()));
+    const filter = list.filter((list) => {
+      const filterValue = filterArray[list.category - 1].value;
+      if (filterStatus[filterValue]) {
+        return filterStatus[filterValue];
+      }
+      return 0;
+    });
 
-    dispatch(bringStuff(list));
+    dispatch(bringStuff(filter));
   };
 
   useEffect(() => {
