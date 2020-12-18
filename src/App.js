@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
@@ -15,10 +15,14 @@ import { setUser } from './modules/user';
 import firebase from './utils/api/fbInstance';
 import Gps from './pages/Gps';
 import StuffDetail from './pages/StuffDetail';
+import Filter from './pages/Filter';
+import Search from './pages/Search';
+import Category from './pages/Category';
 
 const App = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.user.isLoading);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
@@ -45,6 +49,9 @@ const App = () => {
       <Route exact path="/mydanggeun" component={MyDanggeun} />
       <Route exact path="/profile" component={ProfilePage} />
       <Route exact path="/profileedit" component={ProfileEdit} />
+      <Route exact path="/filter" component={Filter} />
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/category/:category" component={Category} />
       <MenuBar />
     </Switch>
   );

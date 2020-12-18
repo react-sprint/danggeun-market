@@ -1,43 +1,48 @@
 import React, { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import getLocation from './getLocation';
-import * as StyledList from '../common/neighbor/List';
-import * as StyledBody from '../common/neighbor/Body';
+import * as Styled from '../common/neighbor/Body';
 import { setNeighbor } from '../../modules/neighbor';
-// import { Search } from './Header';
 
 const Neighbor = ({ neighbor }) => {
   const dispatch = useDispatch();
   const onSetNeighbor = (address) => dispatch(setNeighbor(address));
 
+  const history = useHistory();
+  const mainPage = () => history.push('/');
+
   return (
     <>
-      <StyledList.NeighborList>
-        <StyledList.Button
+      <Styled.NeighborList>
+        <Styled.SpanButton
           type="submit"
-          onClick={() => onSetNeighbor(neighbor.value)}
+          onClick={() => {
+            onSetNeighbor(neighbor.value);
+            mainPage();
+          }}
         >
           {neighbor.value}
-        </StyledList.Button>
-      </StyledList.NeighborList>
-      <StyledList.LongUnderline />
+        </Styled.SpanButton>
+      </Styled.NeighborList>
+      <Styled.Border />
     </>
   );
 };
 
 const AddressArray = ({ addressObj }) => {
   let addressObjElements = { ...addressObj };
-  let addressObjectArray = [];
+  let addressObjArray = [];
   const keys = Object.keys(addressObjElements);
 
   for (let i = 0; i < keys.length; i += 1) {
     const obj = { key: i, value: addressObjElements[i] };
-    addressObjectArray.push(obj);
+    addressObjArray.push(obj);
   }
 
   return (
     <div>
-      {addressObjectArray.map((neighbor) => (
+      {addressObjArray.map((neighbor) => (
         <Neighbor neighbor={neighbor} key={neighbor.key} />
       ))}
     </div>
@@ -63,8 +68,8 @@ const AddressObject = () => {
 const List = () => {
   return (
     <>
-      <StyledBody.Button>현재위치로 찾기</StyledBody.Button>
-      <StyledBody.Span>근처 동네</StyledBody.Span>
+      <Styled.Button>현재위치로 찾기</Styled.Button>
+      <Styled.Span>근처 동네</Styled.Span>
       <AddressObject />
     </>
   );

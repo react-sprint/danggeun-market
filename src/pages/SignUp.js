@@ -22,15 +22,16 @@ const SignUpPage = () => {
   password.current = watch('password');
 
   const onSubmit = async (data) => {
+    const { email, password, name } = data;
     try {
       setLoading(true);
       const createdUser = await firebase
         .auth()
-        .createUserWithEmailAndPassword(data.email, data.password);
+        .createUserWithEmailAndPassword(email, password);
       console.log('createdUser', createdUser);
 
       await createdUser.user.updateProfile({
-        displayName: data.name,
+        displayName: name,
         photoURL: `http://gravatar.com/avatar/${md5(
           createdUser.user.email,
         )}?d=identicon`,
@@ -64,7 +65,7 @@ const SignUpPage = () => {
       <form onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
           Email
-          <p>{errors.email && <>잘못된 이메일 입니다.</>}</p>
+          {errors.email && <p>잘못된 이메일 입니다.</p>}
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock

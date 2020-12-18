@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Underline } from './Header';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -20,4 +21,18 @@ export const Span = styled.span`
   height: 65px;
   font-size: 13px;
   font-weight: bold;
+`;
+
+export const Border = styled(Underline)`
+  width: 379px;
+`;
+
+export const NeighborList = styled.div`
+  display: flex;
+  align-items: center;
+  height: 47px;
+`;
+
+export const SpanButton = styled.button`
+  font-size: 18px;
 `;

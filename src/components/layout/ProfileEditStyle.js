@@ -23,6 +23,7 @@ export const BackArrow = styled.div`
   width: 17px;
   height: 17px;
 
+  margin-top: 5px;
   margin-left: 40px;
 
   cursor: pointer;
@@ -35,12 +36,11 @@ export const TextBlock = styled.div`
   font-weight: 500;
   font-size: 18px;
 
-  margin-right: 20px;
   margin-bottom: 100px;
 `;
 
 export const EndText = styled.p`
-  margin-right: 20px;
+  margin-right: 30px;
   font-weight: 500;
   font-size: 16px;
 `;
