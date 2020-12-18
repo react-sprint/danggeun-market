@@ -78,9 +78,16 @@ function DetailSale({ username, stuff }) {
           // eslint-disable-next-line consistent-return
           return (
             <SaleItem key={id}>
-              <SaleImgBx attachmentUrl={attachmentUrl} />
-              <SaleStuffName>{title}</SaleStuffName>
-              <SaleStuffPrice>{price}원</SaleStuffPrice>
+              <Link
+                to={`/stuff-detail?no=${id}`}
+                onClick={() => {
+                  window.scrollTo(0, 0);
+                }}
+              >
+                <SaleImgBx attachmentUrl={attachmentUrl} />
+                <SaleStuffName>{title}</SaleStuffName>
+                <SaleStuffPrice>{price}원</SaleStuffPrice>
+              </Link>
             </SaleItem>
           );
         })}
@@ -89,4 +96,4 @@ function DetailSale({ username, stuff }) {
   );
 }
 
-export default DetailSale;
+export default React.memo(DetailSale);

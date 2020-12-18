@@ -86,7 +86,8 @@
         "error",
         "never"
       ],
-      "no-alert":"off"
+      "no-alert":"off",
+      "no-unused-expressions":"off"
     },
     "env": {
       "browser": true

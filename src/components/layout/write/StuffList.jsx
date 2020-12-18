@@ -11,9 +11,10 @@ function StuffList({ data }) {
   return (
     <StuffContentsList>
       {data?.map((stuff) => {
-        const { region, attachmentUrl, category, createAt, creatorId, input } = stuff;
+        const { id, region, attachmentUrl, category, createAt, creatorId, input } = stuff;
         return (
           <Stuff
+            no={id}
             thumb={attachmentUrl}
             matter={input}
             time={createAt}

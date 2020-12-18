@@ -21,10 +21,11 @@ const SwiperWrap = styled.div`
 `;
 
 function WriteSwiper({ carouselImg }) {
+  console.log(carouselImg);
   return (
     <SwiperWrap>
       <Swiper spaceBetween={0} pagination>
-        {carouselImg.length >= 1 ? (
+        {carouselImg !== 'default' && carouselImg?.length >= 1 ? (
           carouselImg.map((img, idx) => {
             return (
               <SwiperSlide

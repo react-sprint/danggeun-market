@@ -17,8 +17,20 @@ const WritingStuff = () => {
   const [category, setCategory] = useState(1);
   const [attachment, setAttachment] = useState(null);
   const region = useSelector((state) => state.neighbor.address);
-  const uid = useSelector((state) => state.user.currentUser.email);
+  const uid = useSelector((state) => state.user.currentUser?.email);
   const history = useHistory();
+
+  if (uid === undefined) {
+    alert('로그인을 하지않은 상태입니다. 로그인을 해주세요.');
+    history.push('/login');
+    return <p>로그인을 하지않은 상태입니다. 로그인을 해주세요.</p>;
+  }
+
+  if (region === 'notMyNeighbor') {
+    alert('위치 정보가 등록되어있지 않습니다. 위치를 입력해주세요.');
+    history.push('/gps');
+    return <p>위치 정보가 등록되어있지 않습니다. 위치를 입력해주세요.</p>;
+  }
 
   const regionRegex = /...[동읍면리로]/g.exec(region)[0].replace(/ /gi, '');
   const uidRegex = /(.*?)[@]/g.exec(uid)[0].replace(/@/gi, '');

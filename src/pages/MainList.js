@@ -1,5 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
+import { useLocation } from 'react-router-dom';
 import MenuBar from '../components/common/MenuBar';
 import { Inner } from '../components/layout/Inner';
 import DefaultHeader from '../components/layout/DefaultHeader';

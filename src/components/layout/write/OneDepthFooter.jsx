@@ -82,4 +82,4 @@ function OneDepthFooter({ price }) {
   );
 }
 
-export default OneDepthFooter;
+export default React.memo(OneDepthFooter);

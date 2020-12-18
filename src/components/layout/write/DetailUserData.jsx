@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import styled from 'styled-components';
 import profile from '../../../images/ico/ico_profile_placeholder.png';
 import temperLevel1 from '../../../images/ico/ico_manner_01.png';
@@ -98,7 +98,7 @@ const TemperIcon = styled.div`
   margin-left: 10px;
 `;
 
-function DetailUserData({ username, region }) {
+const DetailUserData = forwardRef(({ username, region }, ref) => {
   const temper = Number((Math.random() * 100).toFixed(1));
 
   const temperFunc = ([props1, props2, props3, props4, props5, props6]) => {
@@ -125,7 +125,7 @@ function DetailUserData({ username, region }) {
 
   return (
     <UserDataWrap>
-      <UserData>
+      <UserData ref={ref}>
         <UserThumbnail>
           <img src={profile} alt="profile" />
         </UserThumbnail>
@@ -150,6 +150,6 @@ function DetailUserData({ username, region }) {
       </Temperature>
     </UserDataWrap>
   );
-}
+});
 
-export default DetailUserData;
+export default React.memo(DetailUserData);

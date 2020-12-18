@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { categoryList, returnTime } from './commonFunc';
 
 const ContentsWrap = styled.div`
   padding-top: 38px;
@@ -19,12 +20,16 @@ const ContentsInfo = styled.div`
 const ContentsTxt = styled.p``;
 
 function DetailContents({ title, contents, category, time }) {
+  const categoryFilter = categoryList();
+  const categoryName = categoryFilter.filter((list) => list.id === Number(category));
+  const [categoryItem] = categoryName;
+  const { listName } = categoryItem;
   return (
     <ContentsWrap>
-      <ContentsTitle>{title}</ContentsTitle>
+      <ContentsTitle>{title || '임시'}</ContentsTitle>
       <ContentsInfo>
         <span>
-          {category} · {time}전
+          {listName} · {returnTime(time)}전
         </span>
       </ContentsInfo>
       <ContentsTxt>{contents}</ContentsTxt>
@@ -35,4 +40,4 @@ function DetailContents({ title, contents, category, time }) {
   );
 }
 
-export default DetailContents;
+export default React.memo(DetailContents);
