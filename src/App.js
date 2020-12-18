@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import WritingStuff from './pages/WritingStuff';
 import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
@@ -19,6 +19,7 @@ import StuffDetail from './pages/StuffDetail';
 const App = () => {
   const history = useHistory();
   const dispatch = useDispatch();
+  const isLoading = useSelector((state) => state.user.isLoading);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {

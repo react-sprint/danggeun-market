@@ -22,9 +22,7 @@ const LoginPage = () => {
     const { email, password } = data;
     try {
       setLoading(true);
-
       await firebase.auth().signInWithEmailAndPassword(email, password);
-
       setLoading(false);
     } catch (error) {
       setErrorFromSubmit(error.message);
@@ -55,7 +53,6 @@ const LoginPage = () => {
             ref={register({ required: true, pattern: /^\S+@\S+$/i })}
           />
         </SortBlock>
-
         <EmailandPasswordText>
           Password
           {errors.password && errors.password.type === 'required' && (
@@ -73,13 +70,11 @@ const LoginPage = () => {
           />
         </SortBlock>
 
-        <Link to="/">
-          <SortBlock>
-            <LoginButton type="submit" disabled={loading}>
-              로그인
-            </LoginButton>
-          </SortBlock>
-        </Link>
+        <SortBlock>
+          <LoginButton type="submit" disabled={loading}>
+            로그인
+          </LoginButton>
+        </SortBlock>
 
         <Link to="/signup">
           <SortBlock>

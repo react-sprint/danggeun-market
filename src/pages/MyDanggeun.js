@@ -28,6 +28,7 @@ const MyDanggeun = () => {
   const { name } = useSelector(({ profilename }) => ({
     name: profilename.name,
   }));
+
   const Logout = async () => {
     try {
       await firebase.auth().signOut();

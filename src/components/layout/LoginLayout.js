@@ -51,6 +51,8 @@ export const EmailandPasswordBlock = styled.input`
   width: 80%;
   height: 53px;
 
+  margin-top: 10px;
+
   border: 1.5px solid #d6d5da;
   box-sizing: border-box;
   border-radius: 6px;
