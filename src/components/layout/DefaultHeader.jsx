@@ -38,7 +38,9 @@ function DefaultHeader() {
       <HeaderInner>
         <DefaultHeaderTitle>정자동</DefaultHeaderTitle>
         <IconWrap>
-          <DefaultHeaderIcon icoLink={search} />
+          <Link to="./search">
+            <DefaultHeaderIcon icoLink={search} />
+          </Link>
           <Link to="/filter">
             <DefaultHeaderIcon icoLink={filter}  />
           </Link>

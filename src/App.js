@@ -16,6 +16,8 @@ import firebase from './utils/api/fbInstance';
 import Gps from './pages/Gps';
 import StuffDetail from './pages/StuffDetail';
 import Filter from './pages/Filter';
+import Search from './pages/Search';
+import Category from './pages/Category';
 
 const App = () => {
   const history = useHistory();
@@ -47,6 +49,8 @@ const App = () => {
       <Route exact path="/profile" component={ProfilePage} />
       <Route exact path="/profileedit" component={ProfileEdit} />
       <Route exact path="/filter" component={Filter} />
+      <Route exact path="/search" component={Search} />
+      <Route exact path="/category/:category" component={Category} />
       <MenuBar />
     </Switch>
   );
