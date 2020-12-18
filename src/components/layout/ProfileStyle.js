@@ -8,6 +8,7 @@ export const BackArrow = styled.div`
   width: 17px;
   height: 17px;
 
+  margin-top: 5px;
   margin-left: 40px;
 
   cursor: pointer;
@@ -31,7 +32,8 @@ export const Profile = styled.p`
 export const MenuBlock = styled.div`
   width: 30px;
   height: 30px;
-  margin-right: 10px;
+
+  margin-right: 20px;
 
   cursor: pointer;
 
@@ -89,7 +91,7 @@ export const Temperature = styled.div`
 export const GrayHr = styled.hr`
   width: 50%;
   height: 10px;
-  margin-top: 2px;
+  margin-top: 4px;
 
   border-radius: 20px;
   border: none;
@@ -112,18 +114,19 @@ export const Heart = styled.div`
   background-image: url(${danggeun});
   background-size: cover;
 `;
+
 export const ChatBlock = styled.div`
   width: 25px;
   height: 25px;
 
-  margin-left: 100px;
+  margin-left: 30px;
 
   background-image: url(${danggeun});
   background-size: cover;
 `;
 
 export const TextMargintop = styled.p`
-  margin-top: 20px;
+  margin-top: 40px;
   font-size: 11px;
   font-weight: 300;
 `;
@@ -131,6 +134,8 @@ export const TextMargintop = styled.p`
 export const ListLine = styled.div`
   display: flex;
   height: 80px;
+
+  margin-top: 10px;
 
   background: #f0f0f0;
   p {

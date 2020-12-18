@@ -47,6 +47,7 @@ export const ProfileUrl = styled.button`
   height: 35px;
 
   margin-top: 40px;
+  margin-right: 20px;
 
   border: 2px solid #f0f0f0;
   border-radius: 5px;
