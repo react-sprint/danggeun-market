@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { returnTime } from '../../layout/write/commonFunc';
 
 const StuffContentWrap = styled.li`
   border-bottom: 1px solid #d7d7d7;
@@ -62,33 +63,9 @@ const PriceTag = styled.span`
   color: #333;
 `;
 
-function Stuff({ thumb, matter, time, creatorId }) {
+function Stuff({ thumb, matter, time, no, region }) {
   const { price, title } = matter;
-  let queryElement = { ...matter, creatorId };
-
-  if (typeof thumb === 'object') {
-    thumb?.map((img, idx) => {
-      const keyName = (idx) => `thumb${idx}`;
-      queryElement = { ...queryElement, [keyName(idx)]: img };
-      return queryElement;
-    });
-  } else queryElement = { ...matter, creatorId, thumb0: thumb };
-
-  // eslint-disable-next-line consistent-return
-  const returnTime = () => {
-    const rightNow = Date.now();
-    const gap = rightNow - time;
-    const gapSecond = Math.floor(gap / 1000);
-    const gapMinute = Math.floor(gapSecond / 60);
-    const gapHour = Math.floor(gapMinute / 60);
-    const gapDay = Math.floor(gapHour / 24);
-
-    if (gapSecond < 60) return `${gapSecond}초`;
-    if (gapMinute < 60) return `${gapMinute}분`;
-    if (gapHour < 24) return `${gapHour}시간`;
-    return `${gapDay}일`;
-  };
-
+  const queryElement = { no };
   const queryMatter = Object.entries(queryElement)
     .map((e) => e.join('='))
     .join('&');
@@ -101,7 +78,9 @@ function Stuff({ thumb, matter, time, creatorId }) {
         </Thumbnail>
         <StuffContent>
           <strong>{title}</strong>
-          <DateLocation>행복동 · {returnTime()} 전</DateLocation>
+          <DateLocation>
+            {region || '행복동'} · {returnTime(time)} 전
+          </DateLocation>
           <PriceTag>{price && `${price}원`}</PriceTag>
         </StuffContent>
       </Link>

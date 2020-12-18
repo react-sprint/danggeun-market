@@ -21,20 +21,34 @@ const SwiperWrap = styled.div`
 `;
 
 function WriteSwiper({ carouselImg }) {
+  console.log(carouselImg);
   return (
     <SwiperWrap>
       <Swiper spaceBetween={0} pagination>
-        {carouselImg.map((img, idx) => {
-          return (
-            <SwiperSlide
-              // eslint-disable-next-line react/no-array-index-key
-              key={idx}
-              style={{
-                background: `url(${img}) center center/cover no-repeat`,
-              }}
-            />
-          );
-        })}
+        {carouselImg !== 'default' && carouselImg?.length >= 1 ? (
+          carouselImg.map((img, idx) => {
+            return (
+              <SwiperSlide
+                // eslint-disable-next-line react/no-array-index-key
+                key={idx}
+                style={{
+                  background: `url(${img}) center center/cover no-repeat`,
+                }}
+              />
+            );
+          })
+        ) : (
+          <SwiperSlide
+            style={{
+              backgroundColor: '#CCC',
+              fontSize: '2rem',
+              textAlign: 'center',
+              lineHeight: '100vw',
+            }}
+          >
+            NO IMAGE
+          </SwiperSlide>
+        )}
       </Swiper>
     </SwiperWrap>
   );

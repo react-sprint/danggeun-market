@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { WriteInputWrap } from './WriteInputWrap';
 import selectArrow from '../../../images/ico/ico_arrow_down_s.png';
+import { categoryList } from './commonFunc';
 
 const Category = styled.select`
   position: relative;
@@ -29,32 +30,7 @@ const SelectWrap = styled(WriteInputWrap)`
 `;
 
 function SelectCategory({ onCategory }) {
-  const category = [
-    {
-      id: 1,
-      listName: '디지털/가전',
-    },
-    {
-      id: 2,
-      listName: '가구/인테리어',
-    },
-    {
-      id: 3,
-      listName: '생활/가공식품',
-    },
-    {
-      id: 4,
-      listName: '게임/취미',
-    },
-    {
-      id: 5,
-      listName: '뷰티/미용',
-    },
-    {
-      id: 6,
-      listName: '삽니다',
-    },
-  ];
+  const category = categoryList();
   return (
     <SelectWrap>
       <Category onChange={onCategory}>

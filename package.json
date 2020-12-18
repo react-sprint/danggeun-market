@@ -85,7 +85,9 @@
       "func-names": [
         "error",
         "never"
-      ]
+      ],
+      "no-alert":"off",
+      "no-unused-expressions":"off"
     },
     "env": {
       "browser": true
