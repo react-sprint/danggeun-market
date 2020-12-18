@@ -2,13 +2,14 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
 import * as Styled from '../common/neighbor/Body';
+import * as Line from '../common/neighbor/Line';
+import * as Button from '../common/neighbor/Button';
 import NeighborList from './List';
 import { setSearchAddress } from '../../modules/neighbor';
 
 const SearchListLoop = ({ address }) => {
   const dispatch = useDispatch();
-  const onSetSearchAddress = (address, isTyped) =>
-    dispatch(setSearchAddress(address, isTyped));
+  const onSetSearchAddress = (address, isTyped) => dispatch(setSearchAddress(address, isTyped));
 
   const history = useHistory();
   const mainPage = () => history.push('/');
@@ -16,7 +17,7 @@ const SearchListLoop = ({ address }) => {
   return (
     <>
       <Styled.NeighborList>
-        <Styled.SpanButton
+        <Button.Span
           type="submit"
           onClick={() => {
             onSetSearchAddress(address.value, false);
@@ -24,9 +25,9 @@ const SearchListLoop = ({ address }) => {
           }}
         >
           {address.value}
-        </Styled.SpanButton>
+        </Button.Span>
       </Styled.NeighborList>
-      <Styled.Border />
+      <Line.Border />
     </>
   );
 };

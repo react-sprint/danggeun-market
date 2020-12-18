@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import * as Styled from '../common/neighbor/Header';
+import * as Line from '../common/neighbor/Line';
+import * as Icon from '../common/neighbor/Icon';
 import searchLocation from './searchLocation';
 import { inputAddress, keepAddress } from '../../modules/neighbor';
 
@@ -10,8 +12,7 @@ const Header = () => {
   const [searchAddress, setSearchAddress] = useState('empty');
 
   const dispatch = useDispatch();
-  const onSearchAddress = (address, isSearched) =>
-    dispatch(inputAddress(address, isSearched));
+  const onSearchAddress = (address, isSearched) => dispatch(inputAddress(address, isSearched));
 
   useEffect(() => {
     searchLocation(searchAddress).then((passedAddress) => {
@@ -44,7 +45,7 @@ const Header = () => {
   return (
     <Styled.Wrapper>
       <Link to="/">
-        <Styled.ArrowBackIcon
+        <Icon.ArrowBack
           onClick={() => {
             mainPage();
             keepAddress();
@@ -53,14 +54,10 @@ const Header = () => {
         />
       </Link>
       <Styled.SearchBarWrapper>
-        <Styled.SearchIcon />
-        <Styled.Input
-          value={inputText}
-          placeholder="동명(읍, 면)으로 검색 (ex. 서초동)"
-          onChange={onChangeAddress}
-        />
-        <Styled.CloseIcon onClick={onReset} />
-        <Styled.Underline />
+        <Icon.Search />
+        <Styled.Input value={inputText} placeholder="동명(읍, 면)으로 검색 (ex. 서초동)" onChange={onChangeAddress} />
+        <Icon.Close onClick={onReset} />
+        <Line.Underline />
       </Styled.SearchBarWrapper>
     </Styled.Wrapper>
   );
