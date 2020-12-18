@@ -27,7 +27,7 @@ const App = () => {
         history.push('/');
         dispatch(setUser(user));
       } else {
-        // history.push('/login');
+        history.push('/login');
       }
     });
   });
