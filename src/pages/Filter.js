@@ -34,11 +34,9 @@ const FilterList = () => {
 
   return (
     <>
-      {filterArray.map((filter) => (
-        <FilterButton
-          value={filter.value}
-          onClick={() => onCheckFilter(filter.value)}
-        >
+      {filterArray.map((filter, id) => (
+        // eslint-disable-next-line react/no-array-index-key
+        <FilterButton key={id} value={filter.value} onClick={() => onCheckFilter(filter.value)}>
           <FilterIcon status={status[filter.value]} />
           {filter.text}
         </FilterButton>

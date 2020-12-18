@@ -7,16 +7,26 @@ import DefaultHeader from '../components/layout/DefaultHeader';
 import StuffList from '../components/layout/write/StuffList';
 import useCallList from '../utils/hooks/useCallList';
 import WritePlus from '../components/layout/write/WritePlus';
+import filterArray from '../utils/filterArray';
 
 const MainList = () => {
-  const stuff = useSelector((state) => state.stuffs);
+  const stuff = useSelector((state) => state.stuffs.data);
+  const filterStatus = useSelector((state) => state.filter);
   useCallList();
+
+  const filter = stuff?.filter((list) => {
+    const filterValue = filterArray[list.category - 1].value;
+    if (filterStatus[filterValue]) {
+      return filterStatus[filterValue];
+    }
+    return 0;
+  });
 
   return (
     <div>
       <DefaultHeader />
       <Inner>
-        <StuffList data={stuff.data} />
+        <StuffList data={filter} />
       </Inner>
       <WritePlus />
       <MenuBar />
