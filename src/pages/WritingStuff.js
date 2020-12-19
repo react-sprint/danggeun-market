@@ -37,7 +37,6 @@ const WritingStuff = () => {
   const regionRegex = /...[동읍면리]/g.exec(region)[0].replace(/ /gi, '');
   const uidRegex = /(.*?)[@]/g.exec(uid)[0].replace(/@/gi, '');
 
-  // eslint-disable-next-line consistent-return
   const onSubmit = async (event) => {
     event.preventDefault();
     setLoading(true);
@@ -55,9 +54,7 @@ const WritingStuff = () => {
     if (attachment) {
       for (const dataUrl of attachment) {
         const fileRef = storageService.ref().child(`userid/${uuidv4()}`);
-        // eslint-disable-next-line no-await-in-loop
         const response = await fileRef.putString(dataUrl, 'data_url');
-        // eslint-disable-next-line no-await-in-loop
         const attachmentUrl = await response.ref.getDownloadURL();
 
         stuffAttchmentUrl.push(attachmentUrl);

@@ -5,7 +5,6 @@ import { useSelector } from 'react-redux';
 import { Inner } from '../components/layout/Inner';
 import SaleHeader from '../components/layout/sale/SaleHeader';
 import useCallList from '../utils/hooks/useCallList';
-import Stuff from '../components/common/list/Stuff';
 import SaleBtnList from '../components/layout/sale/SaleBtnList';
 import SaleStuff from '../components/layout/sale/SaleStuff';
 
@@ -28,7 +27,6 @@ const SalePage = () => {
   const stuff = useSelector(({ stuffs }) => stuffs.data);
   const user = useSelector((state) => state.user.currentUser?.email);
 
-  // eslint-disable-next-line consistent-return
   const castingFunc = () => {
     if (user) {
       const uidRegex = /(.*?)[@]/g.exec(user)[0].replace(/@/gi, '');

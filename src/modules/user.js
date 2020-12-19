@@ -1,10 +1,4 @@
-import { createAction, handleActions } from 'redux-actions';
-
 const SET_USER = 'user/SET_USER';
-
-// export const setUser = createAction(SET_USER, (user) => {
-//   type: SET_USER,
-// });
 
 export function setUser(user) {
   return {

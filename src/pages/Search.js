@@ -1,11 +1,9 @@
-/* eslint-disable react/no-array-index-key */
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import categoryArray from '../utils/filterArray';
 import * as Body from '../components/common/search/Body';
 import * as Header from '../components/common/search/Header';
 import * as Icon from '../components/common/neighbor/Icon';
-import * as Line from '../components/common/neighbor/Line';
 import Monitor from '../images/ico/monitor.png';
 import Chair from '../images/ico/chair.png';
 import Pot from '../images/ico/pot.png';
@@ -19,11 +17,11 @@ const CategoryList = () => {
   return (
     <>
       {categoryArray.map((category, id) => (
-        <Body.ButtonBox key={id}>
+        <Body.ButtonBox key={category.id}>
           <Body.LinkWrapper>
             <Body.LinkBox to={`/category/${category.id}`}>
               <Body.CategoryIcon category={ImgArray[id]} />
-              <Body.TextLight key={id}>{category.text}</Body.TextLight>
+              <Body.TextLight key={category.id}>{category.text}</Body.TextLight>
             </Body.LinkBox>
           </Body.LinkWrapper>
         </Body.ButtonBox>
@@ -57,18 +55,19 @@ const Search = () => {
   return (
     <Body.Frame>
       <Header.Wrapper>
-        <Link to="/">
-          <Icon.ArrowBack />
-        </Link>
-        <Header.SearchBarBox>
-          <Header.SearchBarInner>
-            <Icon.Search />
-            <Header.Input placeholder="검색어를 입력 후 Enter를 누르세요" onChange={OnType} onKeyPress={OnSearch} />
-          </Header.SearchBarInner>
+        <Header.Inner>
+          <Link to="/">
+            <Icon.ArrowBack />
+          </Link>
+          <Header.SearchBarBox>
+            <Header.SearchBarInner>
+              <Icon.Search />
+              <Header.Input placeholder="검색어를 입력 후 Enter를 누르세요" onChange={OnType} onKeyPress={OnSearch} />
+            </Header.SearchBarInner>
+          </Header.SearchBarBox>
           <Header.Dummy />
-        </Header.SearchBarBox>
+        </Header.Inner>
       </Header.Wrapper>
-      <Line.Border />
       <Body.Wrapper>
         <Body.TextBox>
           <Body.TextBold>카테고리</Body.TextBold>

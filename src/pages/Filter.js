@@ -1,5 +1,4 @@
-/* eslint-disable react/no-array-index-key */
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 import * as Icon from '../components/common/neighbor/Icon';
@@ -23,8 +22,8 @@ const FilterList = () => {
 
   return (
     <>
-      {filterArray.map((filter, id) => (
-        <Body.CheckWrapper key={id} value={filter.value} onClick={() => onCheckFilter(filter.value)}>
+      {filterArray.map((filter) => (
+        <Body.CheckWrapper key={filter.id} value={filter.value} onClick={() => onCheckFilter(filter.value)}>
           <div>
             <Body.CheckButton>
               <FilterIcon status={status[filter.value]} />
@@ -52,7 +51,6 @@ const Filter = () => {
         <Body.Wrapper>
           <Body.TextBox>
             <Body.TextBold>홈 화면에서 보고 싶지 않은 카테고리는 체크를 해제하세요.</Body.TextBold>
-            {/* <Body.TextLight>최소 1개 이상 선택되어 있어야 합니다.</Body.TextLight> */}
           </Body.TextBox>
           <Body.CheckList>
             <FilterList />

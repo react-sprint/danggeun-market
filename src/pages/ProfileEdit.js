@@ -1,7 +1,6 @@
-import React, { useState, useCallback, useEffect } from 'react';
+import React, { useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom';
-import { ProfileImage, NameEdit, EndText, TextBlock, BackArrow, TopDiv } from '../components/layout/ProfileEditStyle';
+import { ProfileImage, NameEdit } from '../components/layout/ProfileEditStyle';
 import { changeName } from '../modules/profile';
 import { SortBlock, SortPaddingBlock } from '../components/common/SortBlock';
 import ProfileEditHeader from '../components/layout/profileEdit/ProfileEditHeader';
@@ -17,10 +16,6 @@ const ProfileEdit = () => {
 
   const onChangeName = useCallback((name) => dispatch(changeName(name)), [dispatch]);
 
-  useEffect(() => {}, []);
-  // (async () => {
-  //   await setTempName(name);
-  // })();
   return (
     <>
       <ProfileEditHeader onChangeName={onChangeName} tempName={tempName} />

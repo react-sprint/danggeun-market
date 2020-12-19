@@ -8,18 +8,9 @@ export const checkFilter = (filter) => ({
 const initialState = {
   digital_appliance: true,
   furniture_interior: true,
-  // child_childrenBook: true,
   living_processedFood: true,
-  // sports_leisure: true,
-  // womenMiscellaneous: true,
-  // womenClothing: true,
-  // menFashion_miscellaneous: true,
   game_hobby: true,
   beauty: true,
-  // petStuff: true,
-  // book_ticket_album: true,
-  // plant: true,
-  // usedStuff: true,
   buying: true,
 };
 

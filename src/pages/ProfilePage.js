@@ -1,5 +1,3 @@
-// 나의당근 -> 프로필 화면
-
 import React from 'react';
 import { useSelector } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';

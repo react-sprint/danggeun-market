@@ -6,7 +6,6 @@ import MainList from './pages/MainList';
 import LoginPage from './pages/LoginPage';
 import SignUpPage from './pages/SignUp';
 import SalePage from './pages/SalePage';
-import AttentionPage from './pages/Attention';
 import MyDanggeun from './pages/MyDanggeun';
 import ProfileEdit from './pages/ProfileEdit';
 import MenuBar from './components/common/MenuBar';
@@ -52,7 +51,6 @@ const App = () => {
       <Route exact path="/login" component={LoginPage} />
       <Route exact path="/signup" component={SignUpPage} />
       <Route exact path="/sale" component={SalePage} />
-      <Route exact path="/attention" component={AttentionPage} />
       <Route exact path="/gps" component={Gps} />
       <Route exact path="/mydanggeun" component={MyDanggeun} />
       <Route exact path="/profile" component={ProfilePage} />
