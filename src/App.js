@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Route, Switch, useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import WritingStuff from './pages/WritingStuff';
@@ -12,6 +12,7 @@ import ProfileEdit from './pages/ProfileEdit';
 import MenuBar from './components/common/MenuBar';
 import ProfilePage from './pages/ProfilePage';
 import { setUser } from './modules/user';
+import { changeName } from './modules/profile';
 import firebase from './utils/api/fbInstance';
 import Gps from './pages/Gps';
 import StuffDetail from './pages/StuffDetail';
@@ -20,15 +21,21 @@ import Search from './pages/Search';
 import Category from './pages/Category';
 
 const App = () => {
+  const [filterMail, setFilterMail] = useState('익명이');
   const history = useHistory();
   const dispatch = useDispatch();
-  const isLoading = useSelector((state) => state.user.isLoading);
+  const userEmail = useSelector((state) => state.user.currentUser?.email);
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
       // 로그인이 된 상태
       if (user) {
         dispatch(setUser(user));
+        if (userEmail) {
+          const uidRegex = /(.*?)[@]/g.exec(userEmail)[0].replace(/@/gi, '');
+          setFilterMail(uidRegex);
+        }
+        dispatch(changeName(filterMail));
       } else {
         history.push('/login');
         dispatch(setUser(null));
