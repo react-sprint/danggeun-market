@@ -1,70 +1,27 @@
-# Getting Started with Create React App
+## 🥕당근마켓(Clone)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Developer
 
-## Available Scripts
+- [성윤](https://github.com/sungyun6789)
+- [성재](https://github.com/stjae)
+- [건이](https://github.com/designagune)
 
-In the project directory, you can run:
+### SetUp
 
-### `yarn start`
+- [기능리스트와 일정](https://docs.google.com/spreadsheets/d/1VK7sS9dsnflOHcjKx3gA4v0eiZjsmXQ4ujO0o1Dpgzw/edit#gid=0)
+- [스토리보드](https://docs.google.com/presentation/d/1Beo0w6yuqUbI_hkpOvtZcjEP-LNY0r86GQ9obX7zVBk/edit#slide=id.gac9048d8c5_0_49)
+- [Figma - 로그인, 위치검색](https://www.figma.com/file/MT0GvguLZRFQ1hd14yT2xL/Dangun?node-id=0%3A1)
+- [Figma - 프로필](https://www.figma.com/file/KViW9jZ3vjDb1MjaklDg3r/Untitled?node-id=0%3A1)
+- [Figma - 프로필, 프로필수정, 나의 당근](https://www.figma.com/file/IL2j9rd338DbZlXTgipAjX/mydangguen?node-id=0%3A1)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Stack
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `yarn build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- [React]
+- [React-Router]
+- [React-Hook-Form]
+- [Redux]
+- [React-Redux]
+- [Redix-Action]
+- [Styled-Components]
+- [Firebase]
+- [Axios]
