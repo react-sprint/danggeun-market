@@ -87,7 +87,9 @@
         "never"
       ],
       "no-alert":"off",
-      "no-unused-expressions":"off"
+      "no-unused-expressions":"off",
+      "consistent-return":"off",
+      "no-await-in-loop":"off"
     },
     "env": {
       "browser": true
