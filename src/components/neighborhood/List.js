@@ -43,11 +43,11 @@ const AddressArray = ({ addressObj }) => {
   }
 
   return (
-    <div>
+    <>
       {addressObjArray.map((neighbor) => (
         <Neighbor neighbor={neighbor} key={neighbor.key} />
       ))}
-    </div>
+    </>
   );
 };
 

@@ -1,11 +1,11 @@
 import styled from 'styled-components';
 
 export const Underline = styled.div`
-  width: 334px;
+  width: 100%;
   height: 2px;
   background-color: #ebebed;
 `;
 
 export const Border = styled(Underline)`
-  width: 379px;
+  width: 100%;
 `;

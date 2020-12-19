@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 export const Orange = styled.button`
-  width: 379px;
-  height: 40px;
+  width: 100%;
+  height: 6.2%;
   border-radius: 4px;
   outline: none;
   color: white;

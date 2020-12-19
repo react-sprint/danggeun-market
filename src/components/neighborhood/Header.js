@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
+import styled from 'styled-components';
 import * as Styled from '../common/neighbor/Header';
 import * as Line from '../common/neighbor/Line';
 import * as Icon from '../common/neighbor/Icon';
@@ -54,9 +55,17 @@ const Header = () => {
         />
       </Link>
       <Styled.SearchBarWrapper>
-        <Icon.Search />
-        <Styled.Input value={inputText} placeholder="동명(읍, 면)으로 검색 (ex. 서초동)" onChange={onChangeAddress} />
-        <Icon.Close onClick={onReset} />
+        <Styled.SearchBarInner>
+          <Styled.SearchBarLeft>
+            <Icon.Search />
+            <Styled.Input
+              value={inputText}
+              placeholder="동명(읍, 면)으로 검색 (ex. 서초동)"
+              onChange={onChangeAddress}
+            />
+          </Styled.SearchBarLeft>
+          <Icon.Close onClick={onReset} />
+        </Styled.SearchBarInner>
         <Line.Underline />
       </Styled.SearchBarWrapper>
     </Styled.Wrapper>

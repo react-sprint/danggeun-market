@@ -47,11 +47,11 @@ const SearchList = () => {
   }
 
   return (
-    <div>
+    <>
       {addressObjArray.map((address) => (
         <SearchListLoop address={address} key={address.key} />
       ))}
-    </div>
+    </>
   );
 };
 
