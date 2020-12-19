@@ -25,6 +25,13 @@ import MenuBar from '../components/common/MenuBar';
 import { EmptyBlock } from '../components/common/EmptyBlock';
 
 const MyDanggeun = () => {
+  const user = firebase.auth().currentUser;
+  let email;
+  if (user != null) {
+    email = user.email;
+  }
+  const index = email.indexOf('@');
+
   const { name } = useSelector(({ profilename }) => ({
     name: profilename.name,
   }));

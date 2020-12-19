@@ -23,6 +23,7 @@ import {
   Line,
   EmptyBlock,
 } from '../components/layout/ProfileStyle';
+import firebase from '../utils/api/fbInstance';
 import { SortBlock } from '../components/common/SortBlock';
 
 const ProfilePage = () => {

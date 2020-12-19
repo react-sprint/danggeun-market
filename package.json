@@ -16,6 +16,7 @@
     "eslint-plugin-react-hooks": "^0.0.0-8e5adfbd7",
     "eslint-plugin-standard": "^5.0.0",
     "firebase": "^8.1.1",
+    "firebase-tools": "^9.0.1",
     "install": "^0.13.0",
     "md5": "^2.3.0",
     "moment-timezone": "^0.5.32",
@@ -86,8 +87,8 @@
         "error",
         "never"
       ],
-      "no-alert":"off",
-      "no-unused-expressions":"off"
+      "no-alert": "off",
+      "no-unused-expressions": "off"
     },
     "env": {
       "browser": true

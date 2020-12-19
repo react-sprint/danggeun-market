@@ -1,14 +1,7 @@
 import React, { useState, useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import {
-  ProfileImage,
-  NameEdit,
-  EndText,
-  TextBlock,
-  BackArrow,
-  TopDiv,
-} from '../components/layout/ProfileEditStyle';
+import { ProfileImage, NameEdit, EndText, TextBlock, BackArrow, TopDiv } from '../components/layout/ProfileEditStyle';
 import { changeName } from '../modules/profile';
 import { SortBlock } from '../components/common/SortBlock';
 
@@ -21,9 +14,7 @@ const ProfileEdit = () => {
 
   const dispatch = useDispatch();
 
-  const onChangeName = useCallback((name) => dispatch(changeName(name)), [
-    dispatch,
-  ]);
+  const onChangeName = useCallback((name) => dispatch(changeName(name)), [dispatch]);
 
   return (
     <>
@@ -43,10 +34,7 @@ const ProfileEdit = () => {
       </SortBlock>
 
       <SortBlock>
-        <NameEdit
-          onChange={(e) => setTempName(e.target.value)}
-          value={tempName}
-        />
+        <NameEdit onChange={(e) => setTempName(e.target.value)} value={tempName} />
       </SortBlock>
     </>
   );
