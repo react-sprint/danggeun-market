@@ -63,7 +63,7 @@ const Search = () => {
         <Header.SearchBarBox>
           <Header.SearchBarInner>
             <Icon.Search />
-            <Header.Input placeholder="검색어를 입력하세요." onChange={OnType} onKeyPress={OnSearch} />
+            <Header.Input placeholder="검색어를 입력 후 Enter를 누르세요" onChange={OnType} onKeyPress={OnSearch} />
           </Header.SearchBarInner>
           <Header.Dummy />
         </Header.SearchBarBox>
