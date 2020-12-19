@@ -1,8 +1,8 @@
 import styled from 'styled-components';
-import danggeun from '../../images/ico/ico_logo_48x48.png';
-import profile from '../../images/ico/ico_profile_placeholder.png';
-import back from '../../images/ico/ico_back_home_arrow.png';
-import menu from '../../images/ico/ico_more.png';
+import danggeun from '../../../images/ico/ico_logo_48x48.png';
+import profile from '../../../images/ico/ico_profile_placeholder.png';
+import back from '../../../images/ico/ico_back_home_arrow.png';
+import menu from '../../../images/ico/ico_more.png';
 
 export const BackArrow = styled.div`
   width: 17px;
@@ -32,8 +32,6 @@ export const Profile = styled.p`
 export const MenuBlock = styled.div`
   width: 30px;
   height: 30px;
-
-  margin-right: 20px;
 
   cursor: pointer;
 
@@ -66,6 +64,7 @@ export const MannerBlock = styled.p`
   display: flex;
 
   padding-right: 30px;
+  margin-top: 3px;
 
   text-decoration: underline;
   font-size: 12px;

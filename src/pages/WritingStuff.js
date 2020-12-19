@@ -34,7 +34,7 @@ const WritingStuff = () => {
     return <p>위치 정보가 등록되어있지 않습니다. 위치를 입력해주세요.</p>;
   }
 
-  const regionRegex = /...[동읍면리로구]/g.exec(region)[0].replace(/ /gi, '');
+  const regionRegex = /...[동읍면리]/g.exec(region)[0].replace(/ /gi, '');
   const uidRegex = /(.*?)[@]/g.exec(uid)[0].replace(/@/gi, '');
 
   // eslint-disable-next-line consistent-return

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Inner } from '../Inner';
 import likeIconOff from '../../../images/ico/ico_like_count.png';
-import likeIconOn from '../../../images/ico/ico_like_count_colored.png';
+import likeIconOn from '../../../images/ico/ico_like.png';
 
 const DepthFooter = styled.footer`
   position: fixed;

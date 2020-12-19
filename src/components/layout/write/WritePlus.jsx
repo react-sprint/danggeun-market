@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import writeIcon from '../../../images/ico/ico_post.png';
 
-const PlusWrap = styled.div`
+const PlusWrap = styled.button`
   position: fixed;
   bottom: 75px;
   right: 18px;
@@ -15,6 +15,7 @@ const PlusWrap = styled.div`
   transition: ease-in-out 0.3s all;
   transform: ${({ toggle }) => (toggle ? 'rotate(0deg)' : 'rotate(-45deg)')};
   z-index: 15;
+  outline: none;
 
   &::before,
   &::after {
@@ -50,7 +51,7 @@ const OverLab = styled.div`
   z-index: 10;
 `;
 
-const LinkBtn = styled.div`
+const LinkBtn = styled.button`
   position: fixed;
   bottom: 155px;
   right: 6px;
