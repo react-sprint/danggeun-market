@@ -15,7 +15,7 @@ const Category = ({ match }) => {
   const stuff = useSelector((state) => state.stuffs.data);
   useCallList();
 
-  const result = stuff?.filter((list) => list.category === category);
+  const result = stuff?.filter((list) => String(list.category) === category);
 
   const IsEmpty = ({ result }) => {
     if (result.length === 0) {
