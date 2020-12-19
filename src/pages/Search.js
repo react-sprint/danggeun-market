@@ -1,33 +1,63 @@
 /* eslint-disable react/no-array-index-key */
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
-import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import categoryArray from '../utils/filterArray';
-import CategoryResult from './Category';
-
-const CategoryButton = styled.button`
-  display: flex;
-  align-items: center;
-`;
+import * as Body from '../components/common/search/Body';
+import * as Header from '../components/common/search/Header';
+import * as Icon from '../components/common/neighbor/Icon';
+import * as Line from '../components/common/neighbor/Line';
+import Monitor from '../images/ico/monitor.png';
+import Chair from '../images/ico/chair.png';
+import Pot from '../images/ico/pot.png';
+import Lego from '../images/ico/lego.png';
+import Tube from '../images/ico/tube.png';
+import Speaker from '../images/ico/speaker.png';
 
 const CategoryList = () => {
-  const history = useHistory();
-  const categoryPage = () => history.push('/category');
+  const ImgArray = [Monitor, Chair, Pot, Lego, Tube, Speaker];
 
   return (
     <>
-      <h1>카테고리</h1>
       {categoryArray.map((category, id) => (
-        <Link to={`/category/${category.value}`}>
-          <CategoryButton key={id}>{category.text}</CategoryButton>
-        </Link>
+        <Body.ButtonBox key={id}>
+          <Body.LinkWrapper>
+            <Body.LinkBox to={`/category/${category.id}`}>
+              <Body.CategoryIcon category={ImgArray[id]} />
+              <Body.TextLight key={id}>{category.text}</Body.TextLight>
+            </Body.LinkBox>
+          </Body.LinkWrapper>
+        </Body.ButtonBox>
       ))}
     </>
   );
 };
 
 const Search = () => {
-  return <CategoryList />;
+  return (
+    <Body.Frame>
+      <Header.Wrapper>
+        <Link to="/">
+          <Icon.ArrowBack />
+        </Link>
+        <Header.SearchBarBox>
+          <Header.SearchBarInner>
+            <Icon.Search />
+            <Header.Input placeholder="검색어를 입력하세요." />
+          </Header.SearchBarInner>
+          <Header.Dummy />
+        </Header.SearchBarBox>
+      </Header.Wrapper>
+      <Line.Border />
+      <Body.Wrapper>
+        <Body.TextBox>
+          <Body.TextBold>카테고리</Body.TextBold>
+        </Body.TextBox>
+        <Body.CategoryBox>
+          <CategoryList />
+        </Body.CategoryBox>
+      </Body.Wrapper>
+    </Body.Frame>
+  );
 };
 
 export default Search;

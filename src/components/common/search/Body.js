@@ -59,3 +59,10 @@ export const ButtonBox = styled.div`
 export const LinkWrapper = styled.div`
   height: 100%;
 `;
+
+export const CategoryIcon = styled.button`
+  width: 52px;
+  height: 52px;
+  border-radius: 26px;
+  background: #f8f9fb url(${(props) => props.category}) center center/55% no-repeat;
+`;
