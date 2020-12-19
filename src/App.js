@@ -18,6 +18,7 @@ import StuffDetail from './pages/StuffDetail';
 import Filter from './pages/Filter';
 import Search from './pages/Search';
 import Category from './pages/Category';
+import SearchResult from './pages/SearchResult';
 
 const App = () => {
   const history = useHistory();
@@ -52,6 +53,7 @@ const App = () => {
       <Route exact path="/filter" component={Filter} />
       <Route exact path="/search" component={Search} />
       <Route exact path="/category/:category" component={Category} />
+      <Route exact path="/searchresult" component={SearchResult} />
       <MenuBar />
     </Switch>
   );

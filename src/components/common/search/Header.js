@@ -4,38 +4,38 @@ export const Wrapper = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
   height: 12.5%;
   width: 91%;
 `;
 
-export const SearchBarWrapper = styled.div`
+export const SearchBarBox = styled.div`
   display: flex;
-  justify-content: center;
-  align-content: space-between;
+  justify-content: space-around;
+  align-content: center;
+  background-color: #f2f2f4;
+  border-radius: 10px;
   width: 88.5%;
-  height: 54%;
+  height: 45%;
   flex-flow: wrap;
 `;
 
 export const SearchBarInner = styled.div`
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 92.8%;
-  height: 100%;
-  flex-flow: wrap;
-`;
-
-export const SearchBarLeft = styled.div`
-  display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   width: 90%;
 `;
 
 export const Input = styled.input`
-  width: 98%;
-  height: 40%;
+  width: 85%;
+  height: 100%;
   border: none;
   outline: none;
+  background-color: #f2f2f4;
+`;
+
+export const Dummy = styled.div`
+  width: 19.33px;
+  height: 17.17px;
 `;
