@@ -32,17 +32,24 @@ const HeaderInner = styled(Inner)`
   justify-content: space-between;
 `;
 
-function DefaultHeader() {
+function DefaultHeader({ addr, selecAddr }) {
+  const filterFunc = (addr) => {
+    const regex = /...[동읍면리로]/g;
+    const region = regex.exec(addr);
+    if (addr === 'notMyNeigbor') return null;
+    return region;
+  };
+
   return (
     <Header>
       <HeaderInner>
-        <DefaultHeaderTitle>정자동</DefaultHeaderTitle>
+        <DefaultHeaderTitle>{filterFunc(selecAddr) || filterFunc(addr[0]) || '행복동'}</DefaultHeaderTitle>
         <IconWrap>
           <Link to="./search">
             <DefaultHeaderIcon icoLink={search} />
           </Link>
           <Link to="/filter">
-            <DefaultHeaderIcon icoLink={filter}  />
+            <DefaultHeaderIcon icoLink={filter} />
           </Link>
           <DefaultHeaderIcon icoLink={notice} />
         </IconWrap>

@@ -8,8 +8,7 @@ const Preview = styled.div`
   height: 70px;
   margin-left: 20px;
   border-radius: 5px;
-  background: url(${({ attachment }) => attachment}) center center/cover
-    no-repeat;
+  background: url(${({ attachment }) => attachment}) center center/cover no-repeat;
 `;
 
 const DeletePreview = styled.button`
@@ -38,10 +37,10 @@ const DeletePreview = styled.button`
   }
 `;
 
-function PhotoPreview({ attachment, onClearPhoto }) {
+function PhotoPreview({ attachment, onClearPhoto, no }) {
   return (
     <Preview attachment={attachment}>
-      <DeletePreview type="button" onClick={onClearPhoto}>
+      <DeletePreview type="button" onClick={() => onClearPhoto(no)}>
         <CloseIcon />
       </DeletePreview>
     </Preview>

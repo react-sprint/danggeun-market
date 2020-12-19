@@ -81,23 +81,17 @@ const AddPhotoLabel = styled.label`
 function SelectPhoto({ onChange, attachment, onClearPhoto }) {
   return (
     <PhotoWrap>
-      <AddPhotoInupt
-        id="addPhoto"
-        type="file"
-        accept="image/*"
-        onChange={onChange}
-        multiple
-      />
+      <AddPhotoInupt id="addPhoto" type="file" accept="image/*" onChange={onChange} multiple />
       <AddPhotoLabel htmlFor="addPhoto">
         <img src={camera} alt="camera" />
-        <span>1/10</span>
+        <span>{attachment.length}/10</span>
       </AddPhotoLabel>
       {attachment?.map((dataUrl, idx) => {
-        // console.log(attachment);
         return (
           <PhotoPreview
             attachment={dataUrl}
             onClearPhoto={onClearPhoto}
+            no={idx}
             // eslint-disable-next-line react/no-array-index-key
             key={idx}
           />

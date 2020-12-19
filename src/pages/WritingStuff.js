@@ -11,11 +11,13 @@ import StuffTitle from '../components/layout/write/StuffTitle';
 import SelectCategory from '../components/layout/write/SelectCategory';
 import WriteContents from '../components/layout/write/WriteContents';
 import WritePrice from '../components/layout/write/WritePrice';
+import Loading from '../components/layout/write/Loading';
 
 const WritingStuff = () => {
   const [inputs, setInputs] = useState({ title: '', price: '', contents: '' });
   const [category, setCategory] = useState(1);
-  const [attachment, setAttachment] = useState(null);
+  const [attachment, setAttachment] = useState([]);
+  const [loading, setLoading] = useState(false);
   const region = useSelector((state) => state.neighbor.address);
   const uid = useSelector((state) => state.user.currentUser?.email);
   const history = useHistory();
@@ -32,15 +34,23 @@ const WritingStuff = () => {
     return <p>위치 정보가 등록되어있지 않습니다. 위치를 입력해주세요.</p>;
   }
 
-  const regionRegex = /...[동읍면리로]/g.exec(region)[0].replace(/ /gi, '');
+  const regionRegex = /...[동읍면리로구]/g.exec(region)[0].replace(/ /gi, '');
   const uidRegex = /(.*?)[@]/g.exec(uid)[0].replace(/@/gi, '');
 
   // eslint-disable-next-line consistent-return
   const onSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
 
     let stuffAttchmentUrl = [];
-    let stuff = null;
+    let stuff = {
+      input: inputs,
+      category,
+      createAt: Date.now(),
+      creatorId: uidRegex,
+      attachmentUrl: 'default',
+      region: regionRegex,
+    };
 
     if (attachment) {
       for (const dataUrl of attachment) {
@@ -60,30 +70,25 @@ const WritingStuff = () => {
           region: regionRegex,
         };
       }
-    } else {
-      stuff = {
-        input: inputs,
-        category,
-        createAt: Date.now(),
-        creatorId: uidRegex,
-        attachmentUrl: 'default',
-        region: regionRegex,
-      };
     }
 
-    const { title, contents } = stuff.input;
+    const { title, contents } = inputs;
 
     if (title.length < 3) {
+      setLoading(false);
       return alert('글 제목을 최소 세 글자 이상 작성해 주세요');
     }
 
     if (contents.length < 3) {
+      setLoading(false);
       return alert('글 내용을 최소 세 글자 이상 작성해 주세요');
     }
 
+    console.log(attachment, stuff);
     dbService.collection('stuffList').add(stuff);
     setInputs({ title: '', price: '', contents: '' });
-    setAttachment(null);
+    setAttachment([]);
+    setLoading(false);
     alert('상품이 성공적으로 등록되었습니다.');
     history.push('/');
   };
@@ -118,20 +123,23 @@ const WritingStuff = () => {
 
     fileArr.map((file) => {
       const reader = new FileReader();
+
       reader.onloadend = (event) => {
         const {
           currentTarget: { result },
         } = event;
+
         fileUrl.push(result);
-        // load가 끝나면 setState 시키게 변경
-        setAttachment(fileUrl);
+        setAttachment([...attachment, ...fileUrl]);
       };
       return reader && reader.readAsDataURL(file);
     });
   };
 
-  const onClearPhoto = () => {
-    setAttachment(null);
+  const onClearPhoto = (no) => {
+    setAttachment((state) => {
+      return state.filter((item) => item !== state[no]);
+    });
   };
 
   const onCategory = (event) => {
@@ -155,6 +163,7 @@ const WritingStuff = () => {
           <WriteContents onChange={onChange} contents={contents} />
         </form>
       </Inner>
+      {loading && <Loading />}
       <MenuBar />
     </div>
   );
