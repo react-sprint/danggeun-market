@@ -21,7 +21,7 @@ const Category = ({ match }) => {
     if (result.length === 0) {
       return (
         <Body.Article>
-          <Header.TextLight>카테고리에 해당하는 제품이 없습니다.</Header.TextLight>
+          <Header.TextLight>카테고리에 해당하는 상품이 없습니다.</Header.TextLight>
         </Body.Article>
       );
     }
