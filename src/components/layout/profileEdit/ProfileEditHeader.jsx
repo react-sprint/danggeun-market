@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { DefaultHeaderTitle } from '../../common/DefaultHeaderTitle';
 import { DefaultHeaderWrap } from '../../common/DefaultHeaderWrap';
 import { Inner } from '../Inner';
 import { ReactComponent as ArrowBlack } from '../../../icon/arrow_back_black.svg';
 import { BackArrow } from '../../common/BackArrow';
-import { MenuBlock } from './ProfileStyle';
+import { DefaultHeaderTitle } from '../../common/DefaultHeaderTitle';
+import { EndText } from '../ProfileEditStyle';
 
 const HeaderInner = styled(Inner)`
   display: flex;
@@ -20,23 +20,22 @@ const BackLink = styled(BackArrow)`
     fill: black;
   }
 `;
-
-function ProfileHeader() {
+function ProfileEditHeader({ onChangeName, tempName }) {
   return (
     <DefaultHeaderWrap>
       <HeaderInner>
         <BackLink>
-          <Link to="/mydanggeun">
+          <Link to="profile">
             <ArrowBlack />
           </Link>
         </BackLink>
-        <DefaultHeaderTitle>프로필</DefaultHeaderTitle>
-        <Link to="/profileedit">
-          <MenuBlock />
+        <DefaultHeaderTitle>프로필 수정</DefaultHeaderTitle>
+        <Link to="profile">
+          <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
         </Link>
       </HeaderInner>
     </DefaultHeaderWrap>
   );
 }
 
-export default ProfileHeader;
+export default ProfileEditHeader;

@@ -1,27 +1,17 @@
 // 나의당근 -> 프로필 화면
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import {
-  ProfileImage,
-  BackArrow,
-  Profile,
-  MenuBlock,
-  ProfileName,
-  MannerBlock,
   ListLine,
-  GrayHr,
-  Temperature,
   Heart,
   TextMargintop,
   ChatBlock,
   Response,
   ListBlock,
-  TopDiv,
   Line,
-  EmptyBlock,
+  ProfileInner,
 } from '../components/layout/profile/ProfileStyle';
 import { SortBlock } from '../components/common/SortBlock';
 import ProfileHeader from '../components/layout/profile/ProfileHeader';
@@ -39,12 +29,6 @@ const ProfilePage = () => {
       <Inner>
         <ProfileDetail userName={name} />
 
-        <Temperature>
-          <p>첫 온도 0.0 C</p>
-
-          <GrayHr />
-        </Temperature>
-
         <SortBlock>
           <Heart>
             <Response>재거래희망률 -%</Response>
@@ -56,16 +40,18 @@ const ProfilePage = () => {
           </ChatBlock>
           <TextMargintop>보통 1시간 내에 응답</TextMargintop>
         </SortBlock>
-
-        <ListLine>
+      </Inner>
+      <ListLine>
+        <Inner>
           <p>
             안양6동 9회 인증
             <br />
             <br />
             2020년 11월30일 가입 (최근 3일 이내 활동)
           </p>
-        </ListLine>
-
+        </Inner>
+      </ListLine>
+      <ProfileInner>
         <ListBlock>
           <p>활동 배지2개</p>
         </ListBlock>
@@ -90,7 +76,7 @@ const ProfilePage = () => {
           <p>받은 거래 후기(0)</p>
         </ListBlock>
         <Line />
-      </Inner>
+      </ProfileInner>
       <MenuBar />
     </>
   );

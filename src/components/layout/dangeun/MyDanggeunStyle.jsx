@@ -72,7 +72,7 @@ export const ListBlock = styled.div`
 
 export const Ptag = styled.p`
   font-size: 14px;
-  font-weight: 300;
+  font-weight: 400;
 `;
 
 export const TownBlock = styled.div`
@@ -97,4 +97,8 @@ export const LogOut = styled.div`
 export const DanggeunInner = styled(Inner)`
   border-bottom: 1px solid #d7d7d7;
   background-color: #fff;
+  margin-bottom: 10px;
+  &:last-of-type {
+    margin: 0;
+  }
 `;
