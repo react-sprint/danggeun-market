@@ -23,9 +23,9 @@ const FilterList = () => {
   return (
     <>
       {filterArray.map((filter) => (
-        <Body.CheckWrapper key={filter.id} value={filter.value} onClick={() => onCheckFilter(filter.value)}>
+        <Body.CheckWrapper key={filter.id} value={filter.value}>
           <div>
-            <Body.CheckButton>
+            <Body.CheckButton onClick={() => onCheckFilter(filter.value)}>
               <FilterIcon status={status[filter.value]} />
               <Body.Text>{filter.text}</Body.Text>
             </Body.CheckButton>
