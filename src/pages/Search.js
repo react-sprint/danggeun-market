@@ -1,6 +1,6 @@
 /* eslint-disable react/no-array-index-key */
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useHistory } from 'react-router-dom';
 import categoryArray from '../utils/filterArray';
 import * as Body from '../components/common/search/Body';
 import * as Header from '../components/common/search/Header';
@@ -33,6 +33,27 @@ const CategoryList = () => {
 };
 
 const Search = () => {
+  const [input, setInput] = useState('empty');
+
+  const OnType = (e) => {
+    if (e.target.value.trim() !== '') {
+      setInput(e.target.value);
+    }
+  };
+
+  const history = useHistory();
+  const SearchResult = () => history.push('/searchresult', input);
+
+  const OnSearch = (e) => {
+    if (e.key === 'Enter' && input === 'empty') {
+      alert('검색어를 입력해주세요');
+    } else if (e.key === 'Enter' && input.length < 2) {
+      alert('두 글자 이상 입력해 주세요');
+    } else if (e.key === 'Enter' && input.length >= 2) {
+      SearchResult();
+    }
+  };
+
   return (
     <Body.Frame>
       <Header.Wrapper>
@@ -42,7 +63,7 @@ const Search = () => {
         <Header.SearchBarBox>
           <Header.SearchBarInner>
             <Icon.Search />
-            <Header.Input placeholder="검색어를 입력하세요." />
+            <Header.Input placeholder="검색어를 입력하세요." onChange={OnType} onKeyPress={OnSearch} />
           </Header.SearchBarInner>
           <Header.Dummy />
         </Header.SearchBarBox>
