@@ -11,3 +11,7 @@ export const SortBlock = styled.div`
     margin-top: 40px;
   }
 `;
+
+export const SortPaddingBlock = styled(SortBlock)`
+  padding-top: 250px;
+`;
