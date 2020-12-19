@@ -45,10 +45,21 @@ export const TextLight = styled.p`
 `;
 
 export const Text = styled.span`
-  padding: 0 5%;
+  margin: 0px 0px 0px 10px;
 `;
 
 export const Dummy = styled.div`
   width: 19.33px;
   height: 17.17px;
+`;
+
+export const CheckWrapper = styled.div`
+  display: flex;
+  width: 50%;
+  font-size: 16px;
+`;
+
+export const CheckButton = styled.button`
+  display: flex;
+  align-items: center;
 `;
