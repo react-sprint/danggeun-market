@@ -8,9 +8,12 @@ import StuffList from '../components/layout/write/StuffList';
 import useCallList from '../utils/hooks/useCallList';
 import WritePlus from '../components/layout/write/WritePlus';
 import getLocation from '../components/neighborhood/getLocation';
+import filterArray from '../utils/filterArray';
+
 
 const MainList = () => {
-  const stuff = useSelector((state) => state.stuffs);
+  const stuff = useSelector((state) => state.stuffs.data);
+  const filterStatus = useSelector((state) => state.filter);
   const selecAddr = useSelector(({ neighbor: { address } }) => address);
   const geolocation = getLocation();
   const [addr, setAddr] = useState([]);
@@ -19,12 +22,22 @@ const MainList = () => {
   useEffect(() => {
     geolocation.then((res) => setAddr(Array.from(res)));
   }, []);
+  
+  useCallList();
+
+  const filter = stuff?.filter((list) => {
+    const filterValue = filterArray[list.category - 1].value;
+    if (filterStatus[filterValue]) {
+      return filterStatus[filterValue];
+    }
+    return 0;
+  });
 
   return (
     <div>
       <DefaultHeader addr={addr} selecAddr={selecAddr} />
       <Inner>
-        <StuffList data={stuff.data} />
+        <StuffList data={filter} />
       </Inner>
       <WritePlus />
       <MenuBar />

@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import Stuff from '../../common/list/Stuff';
 
 const StuffContentsList = styled.ul`
-  padding: 64px 0 80px;
+  padding: ${(props) => props.category? '0':'64px 0 80px'};
   overflow: hidden;
 `;
 
-function StuffList({ data }) {
+function StuffList({ data, category }) {
   return (
-    <StuffContentsList>
+    <StuffContentsList category={category}>
       {data?.map((stuff) => {
         const { id, region, attachmentUrl, category, createAt, creatorId, input } = stuff;
         return (

@@ -3,6 +3,8 @@ import { useHistory } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import getLocation from './getLocation';
 import * as Styled from '../common/neighbor/Body';
+import * as Line from '../common/neighbor/Line';
+import * as Button from '../common/neighbor/Button';
 import { setNeighbor } from '../../modules/neighbor';
 
 const Neighbor = ({ neighbor }) => {
@@ -15,7 +17,7 @@ const Neighbor = ({ neighbor }) => {
   return (
     <>
       <Styled.NeighborList>
-        <Styled.SpanButton
+        <Button.Span
           type="submit"
           onClick={() => {
             onSetNeighbor(neighbor.value);
@@ -23,9 +25,9 @@ const Neighbor = ({ neighbor }) => {
           }}
         >
           {neighbor.value}
-        </Styled.SpanButton>
+        </Button.Span>
       </Styled.NeighborList>
-      <Styled.Border />
+      <Line.Border />
     </>
   );
 };
@@ -41,11 +43,11 @@ const AddressArray = ({ addressObj }) => {
   }
 
   return (
-    <div>
+    <>
       {addressObjArray.map((neighbor) => (
         <Neighbor neighbor={neighbor} key={neighbor.key} />
       ))}
-    </div>
+    </>
   );
 };
 
@@ -68,7 +70,7 @@ const AddressObject = () => {
 const List = () => {
   return (
     <>
-      <Styled.Button>현재위치로 찾기</Styled.Button>
+      <Button.Orange>현재위치로 찾기</Button.Orange>
       <Styled.Span>근처 동네</Styled.Span>
       <AddressObject />
     </>
