@@ -7,9 +7,8 @@ import DefaultHeader from '../components/layout/write/DefaultHeader';
 import StuffList from '../components/layout/write/StuffList';
 import useCallList from '../utils/hooks/useCallList';
 import WritePlus from '../components/layout/write/WritePlus';
-import getLocation from '../components/neighborhood/getLocation';
+import getLocation from '../components/layout/neighborhood/getLocation';
 import filterArray from '../utils/filterArray';
-
 
 const MainList = () => {
   const stuff = useSelector((state) => state.stuffs.data);
@@ -22,7 +21,7 @@ const MainList = () => {
   useEffect(() => {
     geolocation.then((res) => setAddr(Array.from(res)));
   }, []);
-  
+
   useCallList();
 
   const filter = stuff?.filter((list) => {

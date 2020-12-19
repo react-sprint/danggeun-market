@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { useSelector, useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import getLocation from './getLocation';
-import * as Styled from '../common/neighbor/Body';
-import * as Line from '../common/neighbor/Line';
-import * as Button from '../common/neighbor/Button';
-import { setNeighbor } from '../../modules/neighbor';
+import * as Styled from '../../common/neighbor/Body';
+import * as Line from '../../common/neighbor/Line';
+import * as Button from '../../common/neighbor/Button';
+import { setNeighbor } from '../../../modules/neighbor';
 
 const Neighbor = ({ neighbor }) => {
   const dispatch = useDispatch();

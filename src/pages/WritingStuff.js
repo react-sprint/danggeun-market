@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import MenuBar from '../components/common/MenuBar';
 import { dbService, storageService } from '../utils/api/fbInstance';
 import WritingHeader from '../components/layout/write/WritingHeader';
-import { Inner } from '../components/layout/Inner';
+import { PaddingInner } from '../components/layout/Inner';
 import SelectPhoto from '../components/layout/write/SelectPhoto';
 import StuffTitle from '../components/layout/write/StuffTitle';
 import SelectCategory from '../components/layout/write/SelectCategory';
@@ -154,7 +154,7 @@ const WritingStuff = () => {
   return (
     <div>
       <WritingHeader onClick={onSubmit} />
-      <Inner>
+      <PaddingInner>
         <form>
           <SelectPhoto onChange={onFileChange} attachment={attachment} onClearPhoto={onClearPhoto} />
           <StuffTitle onChange={onChange} title={title} />
@@ -162,7 +162,7 @@ const WritingStuff = () => {
           <WritePrice onChange={onPrice} price={price} />
           <WriteContents onChange={onChange} contents={contents} />
         </form>
-      </Inner>
+      </PaddingInner>
       {loading && <Loading />}
       <MenuBar />
     </div>

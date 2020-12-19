@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import Header from '../components/neighborhood/Header';
-import Body from '../components/neighborhood/Body';
+import Header from '../components/layout/neighborhood/Header';
+import Body from '../components/layout/neighborhood/Body';
 
 const StyledWrapper = styled.div`
   display: flex;

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
-import * as Styled from '../common/neighbor/Header';
-import * as Line from '../common/neighbor/Line';
-import * as Icon from '../common/neighbor/Icon';
+import * as Styled from '../../common/neighbor/Header';
+import * as Line from '../../common/neighbor/Line';
+import * as Icon from '../../common/neighbor/Icon';
 import searchLocation from './searchLocation';
-import { inputAddress, keepAddress } from '../../modules/neighbor';
+import { inputAddress, keepAddress } from '../../../modules/neighbor';
 
 const Header = () => {
   const [inputText, setInputText] = useState('');

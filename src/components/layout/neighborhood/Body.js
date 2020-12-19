@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
-import * as Styled from '../common/neighbor/Body';
-import * as Line from '../common/neighbor/Line';
-import * as Button from '../common/neighbor/Button';
+import * as Styled from '../../common/neighbor/Body';
+import * as Line from '../../common/neighbor/Line';
+import * as Button from '../../common/neighbor/Button';
 import NeighborList from './List';
-import { setSearchAddress } from '../../modules/neighbor';
+import { setSearchAddress } from '../../../modules/neighbor';
 
 const SearchListLoop = ({ address }) => {
   const dispatch = useDispatch();

@@ -14,7 +14,7 @@ import MenuBar from '../components/common/MenuBar';
 import { EmptyBlock } from '../components/common/EmptyBlock';
 import DanggeunHeader from '../components/layout/dangeun/DangguenHeader';
 import ProfileWrap from '../components/layout/dangeun/ProfileWrap';
-import getLocation from '../components/neighborhood/getLocation';
+import getLocation from '../components/layout/neighborhood/getLocation';
 
 const MyDanggeun = () => {
   const [nearRegion, setNearRegion] = useState([]);
