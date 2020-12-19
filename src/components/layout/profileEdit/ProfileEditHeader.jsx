@@ -30,7 +30,7 @@ function ProfileEditHeader({ onChangeName, tempName }) {
           </Link>
         </BackLink>
         <DefaultHeaderTitle>프로필 수정</DefaultHeaderTitle>
-        <Link to="profile">
+        <Link to="profile" style={{padding: '10px 0 10px 10px'}}>
           <EndText onClick={() => onChangeName(tempName)}>완료</EndText>
         </Link>
       </HeaderInner>

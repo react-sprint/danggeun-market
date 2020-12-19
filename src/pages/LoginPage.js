@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useHistory } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
-import { useSelector } from 'react-redux';
 import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
 import {
@@ -11,6 +10,7 @@ import {
   EmailandPasswordText,
   RegisterButton,
   LoginButton,
+  StyledForm,
 } from '../components/layout/LoginLayout';
 import { SortBlock } from '../components/common/SortBlock';
 
@@ -51,7 +51,7 @@ const LoginPage = () => {
         </Link>
         <p>로그인</p>
       </TopBlock>
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <StyledForm onSubmit={handleSubmit(onSubmit)}>
         <EmailandPasswordText>
           Email
           {errors.email && <span>이메일 형식이 맞지 않습니다.</span>}
@@ -79,7 +79,7 @@ const LoginPage = () => {
             <RegisterButton>회원가입</RegisterButton>
           </Link>
         </SortBlock>
-      </form>
+      </StyledForm>
       <MenuBar />
     </>
   );

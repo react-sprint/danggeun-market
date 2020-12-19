@@ -117,3 +117,7 @@ export const SignUpBtn = styled(SortBlock)`
   margin: 0 auto;
   padding-top: 40px;
 `;
+
+export const StyledForm = styled.form`
+  padding-bottom: 100px;
+`;

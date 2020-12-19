@@ -2,11 +2,12 @@ import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   flex-wrap: wrap;
-  height: 12.5%;
-  width: 91%;
+  width: 100%;
+  height: 100px;
+  border-bottom: 1px solid #ebebed;
 `;
 
 export const SearchBarBox = styled.div`
@@ -15,7 +16,7 @@ export const SearchBarBox = styled.div`
   align-content: center;
   background-color: #f2f2f4;
   border-radius: 10px;
-  width: 88.5%;
+  width: 80%;
   height: 45%;
   flex-flow: wrap;
 `;
@@ -38,4 +39,12 @@ export const Input = styled.input`
 export const Dummy = styled.div`
   width: 19.33px;
   height: 17.17px;
+`;
+
+export const Inner = styled.div`
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 91%;
+  height: 100%;
 `;

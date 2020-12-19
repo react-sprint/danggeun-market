@@ -5,12 +5,12 @@ export const Wrapper = styled.div`
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 11.3%;
+  height: 100px;
   border-bottom: 1px solid #ebebed;
 `;
 
 export const TextBold = styled.p`
-  width: 100%;
+  width: 80%;
   font-size: 17px;
   font-weight: bold;
   text-align: center;
@@ -27,6 +27,7 @@ export const Inner = styled.div`
   justify-content: space-around;
   align-items: center;
   width: 91%;
+  height: 100%;
 `;
 
 export const Dummy = styled.div`

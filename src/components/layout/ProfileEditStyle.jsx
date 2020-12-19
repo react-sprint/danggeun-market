@@ -40,7 +40,6 @@ export const TextBlock = styled.div`
 `;
 
 export const EndText = styled.p`
-  margin-right: 30px;
   font-weight: 500;
   font-size: 16px;
 `;
