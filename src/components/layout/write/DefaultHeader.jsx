@@ -1,12 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
-import { DefaultHeaderTitle } from '../common/DefaultHeaderTitle';
-import DefaultHeaderIcon from '../common/DefaultHeaderIcon';
-import { Inner } from './Inner';
-import search from '../../images/ico/ico_search.png';
-import filter from '../../images/ico/ico_category_filter.png';
-import notice from '../../images/ico/ico_notification_outline_18.png';
+import { DefaultHeaderTitle } from '../../common/DefaultHeaderTitle';
+import DefaultHeaderIcon from '../../common/DefaultHeaderIcon';
+import { Inner } from '../Inner';
+import search from '../../../images/ico/ico_search.png';
+import filter from '../../../images/ico/ico_category_filter.png';
+import notice from '../../../images/ico/ico_notification_outline_18.png';
 
 const Header = styled.header`
   position: fixed;
@@ -22,6 +22,9 @@ const Header = styled.header`
 const IconWrap = styled.div`
   display: flex;
   align-items: center;
+  justify-content: space-around;
+  width: 35%;
+  max-width: 130px;
   & div:not(:last-of-type) {
     margin-right: 10px;
   }
@@ -32,17 +35,24 @@ const HeaderInner = styled(Inner)`
   justify-content: space-between;
 `;
 
-function DefaultHeader() {
+function DefaultHeader({ addr, selecAddr }) {
+  const filterFunc = (addr) => {
+    const regex = /...[동읍면리]/g;
+    const region = regex.exec(addr);
+    if (addr === 'notMyNeigbor') return null;
+    return region;
+  };
+
   return (
     <Header>
       <HeaderInner>
-        <DefaultHeaderTitle>정자동</DefaultHeaderTitle>
+        <DefaultHeaderTitle>{filterFunc(selecAddr) || filterFunc(addr[0]) || '행복동'}</DefaultHeaderTitle>
         <IconWrap>
           <Link to="./search">
             <DefaultHeaderIcon icoLink={search} />
           </Link>
           <Link to="/filter">
-            <DefaultHeaderIcon icoLink={filter}  />
+            <DefaultHeaderIcon icoLink={filter} />
           </Link>
           <DefaultHeaderIcon icoLink={notice} />
         </IconWrap>

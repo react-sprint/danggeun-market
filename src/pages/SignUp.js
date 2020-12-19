@@ -10,6 +10,7 @@ import {
   EmailandPasswordBlock,
   EmailandPasswordText,
   RegisterButton,
+  SignUpBtn,
 } from '../components/layout/LoginLayout';
 import { SortBlock } from '../components/common/SortBlock';
 
@@ -25,16 +26,12 @@ const SignUpPage = () => {
     const { email, password, name } = data;
     try {
       setLoading(true);
-      const createdUser = await firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password);
+      const createdUser = await firebase.auth().createUserWithEmailAndPassword(email, password);
       console.log('createdUser', createdUser);
 
       await createdUser.user.updateProfile({
         displayName: name,
-        photoURL: `http://gravatar.com/avatar/${md5(
-          createdUser.user.email,
-        )}?d=identicon`,
+        photoURL: `http://gravatar.com/avatar/${md5(createdUser.user.email)}?d=identicon`,
       });
 
       // Firebase 데이터베이스에 저장하기
@@ -68,38 +65,22 @@ const SignUpPage = () => {
           {errors.email && <p>잘못된 이메일 입니다.</p>}
         </EmailandPasswordText>
         <SortBlock>
-          <EmailandPasswordBlock
-            name="email"
-            type="email"
-            ref={register({ required: true, pattern: /^\S+@\S+$/i })}
-          />
+          <EmailandPasswordBlock name="email" type="email" ref={register({ required: true, pattern: /^\S+@\S+$/i })} />
         </SortBlock>
         <EmailandPasswordText>
           Password
-          {errors.password && errors.password.type === 'required' && (
-            <p>잘못된 비밀번호 입니다.</p>
-          )}
-          {errors.password && errors.password.type === 'minLength' && (
-            <p>비밀번호 길이가 맞지 않습니다.</p>
-          )}
+          {errors.password && errors.password.type === 'required' && <p>잘못된 비밀번호 입니다.</p>}
+          {errors.password && errors.password.type === 'minLength' && <p>비밀번호 길이가 맞지 않습니다.</p>}
         </EmailandPasswordText>
         <SortBlock>
-          <EmailandPasswordBlock
-            name="password"
-            type="password"
-            ref={register({ required: true, minLength: 6 })}
-          />
+          <EmailandPasswordBlock name="password" type="password" ref={register({ required: true, minLength: 6 })} />
         </SortBlock>
         <EmailandPasswordText>
           PasswordConfirm
-          {errors.password_confirm &&
-            errors.password_confirm.type === 'required' && (
-              <p>잘못된 비밀번호 입니다.</p>
-            )}
-          {errors.password_confirm &&
-            errors.password_confirm.type === 'validate' && (
-              <p>비밀번호가 일치하지 않습니다.</p>
-            )}
+          {errors.password_confirm && errors.password_confirm.type === 'required' && <p>잘못된 비밀번호 입니다.</p>}
+          {errors.password_confirm && errors.password_confirm.type === 'validate' && (
+            <p>비밀번호가 일치하지 않습니다.</p>
+          )}
         </EmailandPasswordText>
         <SortBlock>
           <EmailandPasswordBlock
@@ -112,11 +93,11 @@ const SignUpPage = () => {
           />
         </SortBlock>
 
-        <SortBlock>
+        <SignUpBtn>
           <RegisterButton type="submit" disabled={loading}>
             회원가입
           </RegisterButton>
-        </SortBlock>
+        </SignUpBtn>
       </form>
       <MenuBar />
     </>

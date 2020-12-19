@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import x from '../../images/ico/ico_window_close_outline_18.png';
+import { SortBlock } from '../common/SortBlock';
 
 export const TopBlock = styled.div`
   display: flex;
@@ -45,6 +46,13 @@ export const EmailandPasswordText = styled.p`
   line-height: 17px;
 
   color: #8e8e8e;
+
+  & span {
+    display: block;
+    padding: 5px 0;
+    font-size: 0.775rem;
+    color: #ff8a3d;
+  }
 `;
 
 export const EmailandPasswordBlock = styled.input`
@@ -82,10 +90,11 @@ export const LoginButton = styled.button`
 `;
 
 export const RegisterButton = styled.button`
-  width: 80%;
+  display: block;
+  width: 100%;
   height: 53px;
 
-  margin-top: 80px;
+  margin: 0 auto;
 
   border: none;
   border-radius: 6px;
@@ -101,4 +110,10 @@ export const RegisterButton = styled.button`
   cursor: pointer;
 
   background: #495058;
+`;
+
+export const SignUpBtn = styled(SortBlock)`
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 40px;
 `;

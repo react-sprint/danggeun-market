@@ -5,7 +5,7 @@ const CHANGE_NAME = 'profile/CHANGE_NAME';
 export const changeName = createAction(CHANGE_NAME, (name) => name);
 
 const initialState = {
-  name: '성윤',
+  name: 'Unknown',
 };
 
 const profilename = handleActions(

@@ -1,17 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useSelector } from 'react-redux';
 import { useLocation } from 'react-router-dom';
 import MenuBar from '../components/common/MenuBar';
 import { Inner } from '../components/layout/Inner';
-import DefaultHeader from '../components/layout/DefaultHeader';
+import DefaultHeader from '../components/layout/write/DefaultHeader';
 import StuffList from '../components/layout/write/StuffList';
 import useCallList from '../utils/hooks/useCallList';
 import WritePlus from '../components/layout/write/WritePlus';
+import getLocation from '../components/neighborhood/getLocation';
 import filterArray from '../utils/filterArray';
+
 
 const MainList = () => {
   const stuff = useSelector((state) => state.stuffs.data);
   const filterStatus = useSelector((state) => state.filter);
+  const selecAddr = useSelector(({ neighbor: { address } }) => address);
+  const geolocation = getLocation();
+  const [addr, setAddr] = useState([]);
+  useCallList();
+
+  useEffect(() => {
+    geolocation.then((res) => setAddr(Array.from(res)));
+  }, []);
+  
   useCallList();
 
   const filter = stuff?.filter((list) => {
@@ -24,7 +35,7 @@ const MainList = () => {
 
   return (
     <div>
-      <DefaultHeader />
+      <DefaultHeader addr={addr} selecAddr={selecAddr} />
       <Inner>
         <StuffList data={filter} />
       </Inner>

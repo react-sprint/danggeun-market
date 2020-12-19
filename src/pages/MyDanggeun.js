@@ -1,148 +1,122 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {
-  MyDanggeunBlock,
-  ProfileLine,
-  ProfileName,
-  ProfileUrl,
-  SaleBlock,
-  PurchaseBlock,
   LogOut,
-  WatchBlock,
-  TextBlock,
-  Line,
-  ProfileImage,
   ListBlock,
-  Block,
   Ptag,
   TownBlock,
-  DefaultBlock,
-  TopDiv,
-} from '../components/layout/MyDanggeunStyle';
+  DanggeunWrap,
+  DanggeunInner,
+} from '../components/layout/dangeun/MyDanggeunStyle';
 import firebase from '../utils/api/fbInstance';
 import MenuBar from '../components/common/MenuBar';
 import { EmptyBlock } from '../components/common/EmptyBlock';
+import DanggeunHeader from '../components/layout/dangeun/DangguenHeader';
+import ProfileWrap from '../components/layout/dangeun/ProfileWrap';
+import getLocation from '../components/neighborhood/getLocation';
 
 const MyDanggeun = () => {
+  const [nearRegion, setNearRegion] = useState([]);
   const { name } = useSelector(({ profilename }) => ({
     name: profilename.name,
   }));
 
+  const regex = /...[동읍면리]/g;
+  const regionRegex = regex.exec(nearRegion);
+
+  useEffect(() => {
+    getLocation().then((passedAddressSet) => {
+      setNearRegion(Array.from(passedAddressSet));
+    });
+  }, []);
+
   const Logout = async () => {
     try {
       await firebase.auth().signOut();
+      alert('로그아웃 되었습니다.');
     } catch (error) {
       // error
     }
   };
 
   return (
-    <>
-      <TopDiv>
-        <ProfileImage />
-        <MyDanggeunBlock>나의 당근</MyDanggeunBlock>
+    <DanggeunWrap>
+      <DanggeunHeader />
+      <ProfileWrap name={name} addr={regionRegex} />
 
-        <Link to="/profile">
-          <ProfileUrl>프로필 보기</ProfileUrl>
-        </Link>
-      </TopDiv>
-      <ProfileName>
-        {name}
-        <div>안양6동</div>
-      </ProfileName>
-      <ProfileLine />
+      <DanggeunInner>
+        <ListBlock>
+          <TownBlock>
+            <Ptag>내 동네 설정</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>동네 인증하기</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>키워드 알림</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>모아보기</Ptag>
+          </TownBlock>
+        </ListBlock>
+      </DanggeunInner>
 
-      <Block>
-        <DefaultBlock>
-          <SaleBlock />
-        </DefaultBlock>
-        <DefaultBlock>
-          <PurchaseBlock />
-        </DefaultBlock>
-        <DefaultBlock>
-          <WatchBlock />
-        </DefaultBlock>
-      </Block>
+      <DanggeunInner>
+        <ListBlock>
+          <TownBlock>
+            <Ptag>동네생활 글</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>동네생활 댓글</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>동네생활 주제 목록</Ptag>
+          </TownBlock>
+        </ListBlock>
+      </DanggeunInner>
 
-      <TextBlock>
-        <Ptag>판매내역</Ptag>
-        <Ptag>구매내역</Ptag>
-        <Ptag>관심목록</Ptag>
-      </TextBlock>
+      <DanggeunInner>
+        <ListBlock>
+          <TownBlock>
+            <Ptag>사장님 메뉴</Ptag>
+          </TownBlock>
+        </ListBlock>
+      </DanggeunInner>
 
-      <Line />
+      <DanggeunInner>
+        <ListBlock>
+          <TownBlock>
+            <Ptag>친구초대</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>당근마켓 공유</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>공지사항</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>자주 묻는 질문</Ptag>
+          </TownBlock>
+          <TownBlock>
+            <Ptag>앱 설정</Ptag>
+          </TownBlock>
+        </ListBlock>
+      </DanggeunInner>
 
-      <ListBlock>
-        <TownBlock>
-          <Ptag>내 동네 설정</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>동네 인증하기</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>키워드 알림</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>모아보기</Ptag>
-        </TownBlock>
-      </ListBlock>
-
-      <Line />
-
-      <ListBlock>
-        <TownBlock>
-          <Ptag>동네생활 글</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>동네생활 댓글</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>동네생활 주제 목록</Ptag>
-        </TownBlock>
-      </ListBlock>
-
-      <Line />
-
-      <ListBlock>
-        <TownBlock>
-          <Ptag>사장님 메뉴</Ptag>
-        </TownBlock>
-      </ListBlock>
-
-      <Line />
-
-      <ListBlock>
-        <TownBlock>
-          <Ptag>친구초대</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>당근마켓 공유</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>공지사항</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>자주 묻는 질문</Ptag>
-        </TownBlock>
-        <TownBlock>
-          <Ptag>앱 설정</Ptag>
-        </TownBlock>
-      </ListBlock>
-
-      <Line />
-
-      <ListBlock>
-        <Link to="/login">
-          <LogOut onClick={Logout}>
-            <Ptag>로그아웃</Ptag>
-          </LogOut>
-        </Link>
-        <EmptyBlock />
-      </ListBlock>
+      <DanggeunInner>
+        <ListBlock>
+          <Link to="/login">
+            <LogOut onClick={Logout}>
+              <Ptag>로그아웃</Ptag>
+            </LogOut>
+          </Link>
+          <EmptyBlock />
+        </ListBlock>
+      </DanggeunInner>
 
       <MenuBar />
-    </>
+    </DanggeunWrap>
   );
 };
 
