@@ -110,7 +110,6 @@ function SaleStuff({ thumb, matter, time, no, region, creatorId }) {
         </DateLocation>
         <PriceTag>{price && `${price}원`}</PriceTag>
         <MoreBtnWrap toggle={toggle}>
-          <MoreBtn>수정</MoreBtn>
           <MoreBtn onClick={onDelete}>삭제</MoreBtn>
         </MoreBtnWrap>
       </StuffContents>

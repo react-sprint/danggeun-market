@@ -3,6 +3,7 @@ import styled from 'styled-components';
 
 const SaleBtnWrap = styled.ul`
   display: flex;
+  border-bottom: 1px solid #D6D6D6;
 `;
 
 const SaleBtnItem = styled.li`
@@ -23,14 +24,7 @@ const SaleBtn = styled.button`
 
 function SaleBtnList() {
   return (
-    <SaleBtnWrap>
-      <SaleBtnItem>
-        <SaleBtn>예약중으로 변경</SaleBtn>
-      </SaleBtnItem>
-      <SaleBtnItem>
-        <SaleBtn>거래 완료</SaleBtn>
-      </SaleBtnItem>
-    </SaleBtnWrap>
+    <SaleBtnWrap />
   );
 }
 

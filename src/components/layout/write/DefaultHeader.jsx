@@ -23,7 +23,7 @@ const IconWrap = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-around;
-  width: 35%;
+  width: 20%;
   max-width: 130px;
   & div:not(:last-of-type) {
     margin-right: 10px;
@@ -54,7 +54,7 @@ function DefaultHeader({ addr, selecAddr }) {
           <Link to="/filter">
             <DefaultHeaderIcon icoLink={filter} />
           </Link>
-          <DefaultHeaderIcon icoLink={notice} />
+          {/* <DefaultHeaderIcon icoLink={notice} /> */}
         </IconWrap>
       </HeaderInner>
     </Header>

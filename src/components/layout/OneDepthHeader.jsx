@@ -52,11 +52,6 @@ function OneDepthHeader({ trigger }) {
             <ArrowWhite />
           </Link>
         </BackLink>
-        <RightMenu>
-          <MoreDot>
-            <img src={trigger ? moreBlack : moreWhite} alt="moredot" />
-          </MoreDot>
-        </RightMenu>
       </DepthInner>
     </DepthInHeader>
   );
