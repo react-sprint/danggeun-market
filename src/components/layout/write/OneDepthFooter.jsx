@@ -49,10 +49,10 @@ const PriceNotice = styled.span`
   color: #999;
 `;
 const ChatBx = styled.div``;
-const ChatBtn = styled.button`
+const ChatBtn = styled.div`
   padding: 18px 14px;
   border-radius: 6px;
-  background-color: #fd8a40;
+  background-color: #D6D6D6;
   font-size: 0.93rem;
   font-weight: 500;
   color: #fff;

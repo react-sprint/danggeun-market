@@ -35,7 +35,7 @@ const ProfileBotWrap = styled.div`
   &::before {
     content: '';
     display: block;
-    width: 80%;
+    width: 100%;
     height: 1px;
     margin: 20px auto;
     background-color: #d7d7d7;
@@ -73,7 +73,6 @@ function ProfileWrap({ name, addr }) {
             </Link>
           </ProfileView>
         </ProfileTop>
-
         <ProfileBotWrap>
           <ProfileBot>
             <OwnList>
@@ -83,16 +82,12 @@ function ProfileWrap({ name, addr }) {
               </Link>
             </OwnList>
             <OwnList>
-              <Link to="/">
-                <PurchaseBlock />
-                <span>구매내역</span>
-              </Link>
+              <PurchaseBlock />
+              <span>구매내역</span>
             </OwnList>
             <OwnList>
-              <Link to="/">
-                <WatchBlock />
-                <span>판매내역</span>
-              </Link>
+              <WatchBlock />
+              <span>관심내역</span>
             </OwnList>
           </ProfileBot>
         </ProfileBotWrap>

@@ -26,9 +26,6 @@ function DangguenHeader() {
     <DefaultHeaderWrap>
       <HeaderInner>
         <DefaultHeaderTitle>나의 당근</DefaultHeaderTitle>
-        <IconWrap>
-          <IconBtn type="button" />
-        </IconWrap>
       </HeaderInner>
     </DefaultHeaderWrap>
   );
