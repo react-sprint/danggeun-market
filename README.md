@@ -1,7 +1,4 @@
 ## 🥕당근마켓(Clone)
-url:https://danggeun-market-clone.web.app
-
-
 <img src="https://user-images.githubusercontent.com/49800442/102696864-ee80f380-4274-11eb-8663-49e80ae990a8.png" width='30' height='30' /> https://danggeun-market-clone.web.app
 ### Developer
 
