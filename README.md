@@ -21,7 +21,7 @@
 - [React-Hook-Form]
 - [Redux]
 - [React-Redux]
-- [Redix-Action]
+- [Redux-Action]
 - [Styled-Components]
 - [Firebase]
 - [Axios]
